@@ -16,6 +16,57 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sessionToken:
+                    type: string
+                    description: Authentication token
+                  redirectURL:
+                    type: string
+                    description: Redirection URL
+                  transactionID:
+                    type: string
+                    description: Transaction's ID
+                required:
+                  - sessionToken
+                  - redirectURL
+                  - transactionID
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_number:
+                    type: string
+                    description: |-
+                      Códigos de errores:
+
+                      1000 Error de conexión a un servicio externo
+                      1001 Respuesta no válida de un servicio externo
+                      1002 Argumentos no válidos para iniciar una petición
+                      1003 No se encontró un comercio asociado
+                      1004 No se encontró una suscripción asociada
+                      1005 La franquicia asociada no se encuentra habilitada
+                      1006 El adquiriente asociado no se encuentra habilitado
+                      1007 La suscripción asociada no está completamente configurada
+                      1008 Mensaje de error recibido desde un servicio externo
+                      1009 No hay un comercio asociado a este token, solicite un nuevo token
+                      1010 No se encontró un servidor de directorio para el protocolo seleccionado
+                      1011 El comercio no se encuentra habilitado
+                      1012 El comercio no tiene un código de categoría de comerciante (MCC)
+                  error_description:
+                    type: string
+                  errors:
+                    type: string
+                required:
+                  - error_number
+                  - error_description
+                  - errors
       requestBody:
         content:
           application/json:
@@ -436,7 +487,61 @@ paths:
                 - purchaseAmount
                 - purchaseCurrency
                 - redirectURI
-            examples: {}
+            examples:
+              Respuesta exitosa (Ejemplo 1 – con la mínima información requerida):
+                value:
+                  acctNumber: '4005580000000040'
+                  cardExpiryDate: '2411'
+                  purchaseAmount: '8.25'
+                  redirectURI: 'http://www.placetopay.com'
+                  purchaseCurrency: COP
+              Respuesta exitosa (Ejemplo 2 – con información de facturación del tarjehabiente):
+                value:
+                  acctNumber: '4012000000001097'
+                  cardExpiryDate: '2010'
+                  purchaseAmount: '15000'
+                  redirectURI: 'http://www.placetopay.com'
+                  purchaseCurrency: COP
+                  cardholderName: John Doe
+                  email: john.doe@example.com
+                  billAddrCity: Medellin
+                  billAddrCountry: COP
+                  billAddrLine1: 'Cl 72 No. 15 F-07, El libertador'
+                  billAddrPostCode: '76001'
+              Respuesta exitosa (Ejemplo 3 – con información adicional de la tarjeta):
+                value:
+                  acctNumber: '4012000000001097'
+                  cardExpiryDate: '2010'
+                  purchaseAmount: '15000'
+                  redirectURI: 'http://www.placetopay.com'
+                  purchaseCurrency: COP
+                  acctInfo:
+                    chAccAgeInd: '03'
+                    chAccChange: '20200801'
+                    chAccChangeInd: '02'
+                    chAccDate: '20200824'
+                    chAccPwChange: '20200801'
+                    chAccPwChangeInd: '01'
+                    nbPurchaseAccount: '0'
+                    provisionAttemptsDay: 1
+              Respuesta exitosa (Ejemplo 4 – con información de entrega del tarjehabiente):
+                value:
+                  acctNumber: '4012000000001097'
+                  cardExpiryDate: '2010'
+                  purchaseAmount: '15000'
+                  redirectURI: 'http://www.placetopay.com'
+                  purchaseCurrency: COP
+                  shipAddrCity: Medellin
+                  shipAddrCountry: COP
+                  shipAddrLine1: 'Cl 72 No. 15 F-07, El libertador'
+                  shipAddrPostCode: '76001'
+              Respuesta no exitosa (error de validación):
+                value:
+                  acctNumber: '4005580000000040'
+                  cardExpiryDate: '2411'
+                  purchaseAmount: '8.25'
+                  redirectURI: 'http://www.placetopay.com'
+                  email: john.doe@example.com
   '/transactions/{transactionID}':
     parameters:
       - schema:
