@@ -1,0 +1,9 @@
+openapi: 3.0.0
+info:
+  title: 3DS Server (MPI)
+  version: '1.0'
+  description: Especificación del servicio
+servers: []
+paths: {}
+components:
+  schemas: {}
