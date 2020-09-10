@@ -3,7 +3,31 @@ info:
   title: 3DS Server (MPI)
   version: '1.0'
   description: Especificación del servicio
-servers: []
-paths: {}
+servers:
+  - url: 'https://3ds-mpi.placetopay.com/api/threeds/v2'
+    description: Producción
+  - url: 'https://3dss-test.placetopay.com/api/threeds/v2'
+    description: Sandbox
+paths:
+  /sessions:
+    post:
+      summary: ''
+      operationId: post-sessions
+      responses:
+        '200':
+          description: OK
+  '/transactions/{transactionID}':
+    parameters:
+      - schema:
+          type: string
+        name: transactionID
+        in: path
+        required: true
+    post:
+      summary: ''
+      operationId: post-transactions-transactionID
+      responses:
+        '200':
+          description: OK
 components:
   schemas: {}
