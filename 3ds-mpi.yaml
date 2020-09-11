@@ -546,17 +546,39 @@ paths:
     parameters:
       - schema:
           type: string
-          format: uuid
         name: transactionID
         in: path
         required: true
         description: Identificador de la transacción obtenido en la respuesta del endpoint de sessión.
-    post:
+    get:
       summary: Enpoint de información
-      operationId: post-transactions-transactionID
+      operationId: get-transactions-transactionID
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  transStatus:
+                    type: string
+                  eci:
+                    type: string
+                  acsTransID:
+                    type: string
+                  threeDSServerTransID:
+                    type: string
+                  authenticationValue:
+                    type: string
+              examples:
+                Respuesta exitosa:
+                  value:
+                    transStatus: string
+                    eci: string
+                    acsTransID: string
+                    threeDSServerTransID: string
+                    authenticationValue: string
       requestBody:
         content:
           application/json:
@@ -611,6 +633,15 @@ paths:
                 - dsTransID
                 - threeDSServerTransID
                 - authenticationValue
+            examples:
+              Respuesta exitosa:
+                value:
+                  transStatus: 'Y'
+                  eci: '05'
+                  acsTransID: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+                  dsTransID: 139236ae-d4ec-4ac6-9446-4ecd2cd86f66
+                  threeDSServerTransID: da01dad3-0a37-456f-950f-04c293b23f42
+                  authenticationValue: AJkBABIWcQAAAAM5FwIzdGiYeHM=
       description: ''
-  components:
-    schemas: { }
+components:
+  schemas: {}
