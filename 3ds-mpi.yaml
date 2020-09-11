@@ -633,15 +633,7 @@ paths:
                 - dsTransID
                 - threeDSServerTransID
                 - authenticationValue
-            examples:
-              Respuesta exitosa:
-                value:
-                  transStatus: 'Y'
-                  eci: '05'
-                  acsTransID: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
-                  dsTransID: 139236ae-d4ec-4ac6-9446-4ecd2cd86f66
-                  threeDSServerTransID: da01dad3-0a37-456f-950f-04c293b23f42
-                  authenticationValue: AJkBABIWcQAAAAM5FwIzdGiYeHM=
+            examples: {}
       description: ''
 components:
   schemas: {}
