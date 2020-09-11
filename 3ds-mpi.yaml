@@ -5,7 +5,7 @@ info:
   description: Especificación del servicio
 servers:
   - url: 'https://3dss-test.placetopay.com/api/threeds/v2'
-      description: Sandbox
+    description: Sandbox
   - url: 'https://3ds-mpi.placetopay.com/api/threeds/v2'
     description: Producción
 paths:
