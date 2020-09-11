@@ -4,10 +4,10 @@ info:
   version: '1.0'
   description: Especificación del servicio
 servers:
+  - url: 'https://3dss-test.placetopay.com/api/threeds/v2'
+      description: Sandbox
   - url: 'https://3ds-mpi.placetopay.com/api/threeds/v2'
     description: Producción
-  - url: 'https://3dss-test.placetopay.com/api/threeds/v2'
-    description: Sandbox
 paths:
   /sessions:
     post:
@@ -546,14 +546,71 @@ paths:
     parameters:
       - schema:
           type: string
+          format: uuid
         name: transactionID
         in: path
         required: true
+        description: Identificador de la transacción obtenido en la respuesta del endpoint de sessión.
     post:
-      summary: ''
+      summary: Enpoint de información
       operationId: post-transactions-transactionID
       responses:
         '200':
           description: OK
-components:
-  schemas: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                transStatus:
+                  type: string
+                  description: |-
+                    Estado de la transacción.
+                    Valores devueltos:
+                    Y – Auteticación satisfactoria
+                    N – Autenticación fallida
+                    U – Autenticación no realizada
+                    A – Intento de autenticación
+                    C – Se requiere un challenge
+                    R – Autenticación rechazada
+                  minLength: 1
+                  maxLength: 1
+                eci:
+                  type: string
+                  description: Indicador de comercio electrónico
+                  minLength: 2
+                  maxLength: 2
+                acsTransID:
+                  type: string
+                  description: Identificador único de transación generado por el ACS.
+                  format: uuid
+                  minLength: 36
+                  maxLength: 36
+                dsTransID:
+                  type: string
+                  description: Identificador único de transación generado por el DS.
+                  format: uuid
+                  maxLength: 36
+                  minLength: 36
+                threeDSServerTransID:
+                  type: string
+                  description: Identificador único de transación generado por el 3DS Server.
+                  format: uuid
+                  minLength: 36
+                  maxLength: 36
+                authenticationValue:
+                  type: string
+                  description: Valor de autenticación para la franquicia generado por el ACS. Este valor se debe pasar en el proceso de autorización a la red financiera.
+                  minLength: 28
+                  maxLength: 28
+              required:
+                - transStatus
+                - eci
+                - acsTransID
+                - dsTransID
+                - threeDSServerTransID
+                - authenticationValue
+      description: ''
+  components:
+    schemas: { }
