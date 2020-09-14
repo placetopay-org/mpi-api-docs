@@ -3,6 +3,10 @@ info:
   title: 3DS Server (MPI)
   version: '1.0'
   description: Especificación del servicio
+  contact:
+    name: Evertec Placetopay
+    email: desarrollo@placetopay.com
+    url: 'https://www.placetopay.com/web/'
 servers:
   - url: 'https://3dss-test.placetopay.com/api/threeds/v2'
     description: Sandbox
@@ -11,7 +15,7 @@ servers:
 paths:
   /sessions:
     post:
-      summary: Endpoint de Sesión
+      summary: Crear nueva sesión
       operationId: post-sessions
       responses:
         '200':
@@ -81,10 +85,9 @@ paths:
                     Valores aceptados: Formato: ISO 7812
                   minLength: 13
                   maxLength: 19
-                cardExpityDate:
+                cardExpiryDate:
                   type: string
                   description: 'Fecha de vencimiento del PAN o token suministrado al Solicitante 3DS por el Titular de la Tarjeta. Formato: YYMM'
-                  format: date
                   minLength: 4
                   maxLength: 4
                 purchaseAmount:
@@ -217,8 +220,8 @@ paths:
                       description: |-
                         Fecha en la que se realizó el último cambio o recuperación de contraseña.
                         Valores aceptados: Fecha en formato YYYYMMDD
-                      minLength: 2
-                      maxLength: 2
+                      minLength: 8
+                      maxLength: 8
                     chAccPwChangeInd:
                       type: string
                       description: |-
@@ -483,7 +486,7 @@ paths:
                       maxLength: 2
               required:
                 - acctNumber
-                - cardExpityDate
+                - cardExpiryDate
                 - purchaseAmount
                 - purchaseCurrency
                 - redirectURI
@@ -523,7 +526,7 @@ paths:
                     chAccPwChange: '20200801'
                     chAccPwChangeInd: '01'
                     nbPurchaseAccount: '0'
-                    provisionAttemptsDay: 1
+                    provisionAttemptsDay: '1'
               Respuesta exitosa (Ejemplo 4 – con información de entrega del tarjehabiente):
                 value:
                   acctNumber: '4012000000001097'
@@ -542,6 +545,13 @@ paths:
                   purchaseAmount: '8.25'
                   redirectURI: 'http://www.placetopay.com'
                   email: john.doe@example.com
+        description: Datos a enviar en el servicio
+      description: Servicio para iniciar una sesión del flujo de 3DS
+      parameters: []
+      security:
+        - Authorization: []
+      tags:
+        - Sessions
   '/transactions/{transactionID}':
     parameters:
       - schema:
@@ -551,7 +561,7 @@ paths:
         required: true
         description: Identificador de la transacción obtenido en la respuesta del endpoint de sessión.
     get:
-      summary: Enpoint de información
+      summary: Obtener transacción
       operationId: get-transactions-transactionID
       responses:
         '200':
@@ -634,6 +644,18 @@ paths:
                 - threeDSServerTransID
                 - authenticationValue
             examples: {}
-      description: ''
+        description: Datos a enviar en el servicio
+      description: Servicio para obtener información de una transacción
+      tags:
+        - Transaction
 components:
   schemas: {}
+  securitySchemes:
+    Authorization:
+      type: http
+      scheme: bearer
+security:
+  - Authorization: []
+tags:
+  - name: Sessions
+  - name: Transaction
