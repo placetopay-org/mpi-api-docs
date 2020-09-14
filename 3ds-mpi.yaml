@@ -681,6 +681,8 @@ components:
         - cc
         - subscriber
       description: Valores de acuerdo a ITU-E.164
+      x-tags:
+        - Models
   securitySchemes:
     Authorization:
       type: http
