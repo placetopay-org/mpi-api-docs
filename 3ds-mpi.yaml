@@ -344,24 +344,9 @@ paths:
                   format: email
                   maxLength: 254
                 homePhone:
-                  type: object
-                  description: 'Número de teléfono de la casa del titular de la tarjeta. Valores aceptados: Formato: ITU-E. 164'
-                  maxProperties: 15
-                  properties:
-                    cc:
-                      type: string
-                      description: Country Code
-                    subscriber:
-                      type: string
+                  $ref: '#/components/schemas/PhoneProperties'
                 mobilePhone:
-                  description: 'Número de teléfono móvil del titular de la tarjeta Valores aceptados: Formato: ITU-E. 164'
-                  type: object
-                  properties:
-                    cc:
-                      type: string
-                      description: Country Code
-                    subscriber:
-                      type: string
+                  $ref: '#/components/schemas/PhoneProperties'
                 cardholderName:
                   type: string
                   description: Nombre del titular de la tarjeta
@@ -399,14 +384,7 @@ paths:
                     Valores aceptados: Formato: ISO 3166-2
                   maxLength: 3
                 workPhone:
-                  type: object
-                  description: 'Número de teléfono del trabajo del titular de la tarjeta. Valores aceptados: Formato: ITU-E. 164'
-                  properties:
-                    cc:
-                      type: string
-                      description: Country Code
-                    subscriber:
-                      type: string
+                  $ref: '#/components/schemas/PhoneProperties'
                 merchantRiskIndicator:
                   type: object
                   description: Evaluación del comerciante del nivel de riesgo de fraude para la autenticación específica tanto para el titular de la tarjeta como para la autenticación que se está realizando.
@@ -649,7 +627,26 @@ paths:
       tags:
         - Transaction
 components:
-  schemas: {}
+  schemas:
+    PhoneProperties:
+      title: PhoneProperties
+      type: object
+      x-examples:
+        Valores aceptados:
+          cc: '1'
+          subscriber: '1234567899'
+      properties:
+        cc:
+          type: string
+          minLength: 1
+          maxLength: 3
+        subscriber:
+          type: string
+          maxLength: 15
+      required:
+        - cc
+        - subscriber
+      description: Valores de acuerdo a ITU-E.164
   securitySchemes:
     Authorization:
       type: http
