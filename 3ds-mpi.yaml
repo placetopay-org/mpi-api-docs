@@ -19,7 +19,7 @@ paths:
       operationId: post-sessions
       responses:
         '200':
-          description: OK
+          description: '> Respuesta recibida: Ok'
           content:
             application/json:
               schema:
@@ -40,7 +40,7 @@ paths:
                   - transactionID
               examples: {}
         '422':
-          description: Unprocessable Entity
+          description: '> Respuesta recibida: Unprocessable Entity'
           content:
             application/json:
               schema:
@@ -557,8 +557,8 @@ paths:
                   purchaseAmount: '8.25'
                   redirectURI: 'http://www.placetopay.com'
                   email: john.doe@example.com
-        description: Datos a enviar en el servicio
-      description: Servicio para iniciar una sesión del flujo de 3DS
+        description: '> Datos a enviar en el servicio'
+      description: '> Servicio para iniciar una sesión del flujo de 3DS'
       parameters: []
       security:
         - Authorization: []
@@ -571,13 +571,13 @@ paths:
         name: transactionID
         in: path
         required: true
-        description: Identificador de la transacción obtenido en la respuesta del endpoint de sessión.
+        description: '> Identificador de la transacción obtenido en la respuesta del endpoint de sessión.'
     get:
       summary: Obtener transacción
       operationId: get-transactions-transactionID
       responses:
         '200':
-          description: OK
+          description: '> Respuesta recibida OK'
           content:
             application/json:
               schema:
@@ -601,65 +601,10 @@ paths:
                     acsTransID: string
                     threeDSServerTransID: string
                     authenticationValue: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                transStatus:
-                  type: string
-                  description: |-
-                    Estado de la transacción.
-                    **Valores devueltos:**
-                    * Y – Auteticación satisfactoria
-                    * N – Autenticación fallida
-                    * U – Autenticación no realizada
-                    * A – Intento de autenticación
-                    * C – Se requiere un challenge
-                    * R – Autenticación rechazada
-                  minLength: 1
-                  maxLength: 1
-                eci:
-                  type: string
-                  description: Indicador de comercio electrónico
-                  minLength: 2
-                  maxLength: 2
-                acsTransID:
-                  type: string
-                  description: Identificador único de transación generado por el ACS.
-                  format: uuid
-                  minLength: 36
-                  maxLength: 36
-                dsTransID:
-                  type: string
-                  description: Identificador único de transación generado por el DS.
-                  format: uuid
-                  maxLength: 36
-                  minLength: 36
-                threeDSServerTransID:
-                  type: string
-                  description: Identificador único de transación generado por el 3DS Server.
-                  format: uuid
-                  minLength: 36
-                  maxLength: 36
-                authenticationValue:
-                  type: string
-                  description: Valor de autenticación para la franquicia generado por el ACS. Este valor se debe pasar en el proceso de autorización a la red financiera.
-                  minLength: 28
-                  maxLength: 28
-              required:
-                - transStatus
-                - eci
-                - acsTransID
-                - dsTransID
-                - threeDSServerTransID
-                - authenticationValue
-            examples: {}
-        description: Datos a enviar en el servicio
-      description: Servicio para obtener información de una transacción
+      description: '> Servicio para obtener información de una transacción'
       tags:
         - Transaction
+      parameters: []
 components:
   schemas:
     PhoneProperties:
@@ -680,7 +625,7 @@ components:
       required:
         - cc
         - subscriber
-      description: Valores de acuerdo a ITU-E.164
+      description: '> Valores aceptados según especificación [ITU-E.164](https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-E.164-201011-I!!PDF-S&type=items)'
       x-tags:
         - Models
   securitySchemes:
