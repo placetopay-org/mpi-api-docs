@@ -413,6 +413,8 @@ components:
             Formato YYYYMMDDHHMM
           minLength: 12
           maxLength: 12
+      x-tags:
+        - Models
     acctInfoProperties:
       title: acctInfo
       type: object
@@ -557,6 +559,8 @@ components:
             * 02 - Se ha observado actividad sospechosa.
           minLength: 2
           maxLength: 2
+      x-tags:
+        - Models
     merchantRiskIndicatorProperties:
       title: merchantRiskIndicator
       type: object
@@ -637,6 +641,8 @@ components:
             * 07 = Otro (por ejemplo, juegos, servicios digitales no enviados, suscripciones a emedia, etc.)
           minLength: 2
           maxLength: 2
+      x-tags:
+        - Models
   securitySchemes:
     Authorization:
       type: http
