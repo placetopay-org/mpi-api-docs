@@ -36,6 +36,26 @@
       "uri": "docs/ClientRequirements.md"
     },
     {
+      "type": "item",
+      "title": "Estados del proceso de autenticación",
+      "uri": "docs/TransactionStatus.md"
+    },
+    {
+      "type": "item",
+      "title": "Tarjetas de prueba para el API",
+      "uri": "docs/TestCards.md"
+    },
+    {
+      "type": "item",
+      "title": "Descripción de códigos HTTP",
+      "uri": "docs/HttpCodes.md"
+    },
+    {
+      "type": "item",
+      "title": "Descripción de códigos de error",
+      "uri": "docs/ErrorCodes.md"
+    },
+    {
       "type": "divider",
       "title": "API"
     },
