@@ -1,4 +1,4 @@
-# Terminos y Definiciones
+# Términos y Definiciones
 
 - **EMVCo:** Es un organismo técnico global de propiedad de American Express, Discover, JCB, MasterCard, UnionPay y Visa. El cual facilita la interoperabilidad mundial y la aceptación de transacciones de pago seguras mediante la utilización de las especificaciones dadas por EMV.
       

@@ -561,6 +561,24 @@ components:
           maxLength: 2
       x-tags:
         - Models
+      x-examples:
+        example-1:
+          chAccAgeInd: st
+          chAccChange: stringst
+          chAccChangeInd: st
+          chAccDate: stringst
+          chAccPwChange: stringst
+          chAccPwChangeInd: st
+          nbPurchaseAccount: stri
+          provisionAttemptsDay: str
+          txnActivityDay: str
+          txnActivityYear: str
+          paymentAccAge: stringst
+          paymentAccInd: st
+          shipAddressUsage: stringst
+          shipAddressUsageInd: st
+          shipNameIndicator: st
+          suspiciousAccActivity: st
     merchantRiskIndicatorProperties:
       title: merchantRiskIndicator
       type: object
