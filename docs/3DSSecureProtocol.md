@@ -1,13 +1,7 @@
 <!--
 type: tab
-title: ¿Qué es el Protocolo 3-D Secure?
+title: Dominios y Componentes
 -->
-
-# ¿Qué es el Protocolo 3-D Secure?
-
-El protocolo 3-D Secure es un documento que describe la infraestructura y los componentes del EMV 3-D Secure para la autenticación del tarjetahabiente durante una transacción de comercio electrónico. Fue creado por EMVCo, un organismo global que busca la interoperabilidad en transacciones electrónicas de modo seguro.
-
-El protocolo de autenticación 3-D Secure se basa en un modelo de tres dominios, en el que el Dominio del Adquirente y el Dominio del Emisor están conectados por el Dominio de Interoperabilidad a través de una serie de mensajes, con el fin de autenticar a un tarjetahabiente durante una transacción de comercio electrónico (e-commerce) o para verificar la identidad o la cuenta del tarjetahabiente en autenticaciones de no pago. El proceso de autenticación puede darse mediante un flujo sin fricción o con fricción dependiendo del nivel de legitimidad evaluado en la información provista por el tarjetabiente.
 
 # Dominios y Componentes
 
@@ -16,17 +10,17 @@ Así mismo, estos dominios poseen una serie de componentes en cada uno, los cual
 
 Los dominios son los siguientes:
 
-**1. Dominio Adquiriente: **Inicia el flujo de autenticación. 
+**1. Dominio Adquiriente: ** Inicia el flujo de autenticación. 
 
-El dominio Adquiriente tiene los siguientes componentes:
-      
-- Entorno de solicitud de 3DS (3DS Requestor Environment)
-    - Solicitante 3DS (3DS Requestor)
-    - Cliente 3DS (3DS Client)
-    - Servidor 3DS (3DS Server)
-          
-- Integrador 3DS (3DS Integrator)
-- Adquiriente (Acquirer)
+  El dominio Adquiriente tiene los siguientes componentes:
+        
+  - Entorno de solicitud de 3DS (3DS Requestor Environment)
+      - Solicitante 3DS (3DS Requestor)
+      - Cliente 3DS (3DS Client)
+      - Servidor 3DS (3DS Server)
+            
+  - Integrador 3DS (3DS Integrator)
+  - Adquiriente (Acquirer)
 
 **2. Dominio de Interoperabilidad:** Conecta al dominio Adquiriente y Emisor a través de los mensajes que contienen información acerca de la autenticación.
 
@@ -36,7 +30,7 @@ El dominio de Interoperabilidad tiene los siguientes componentes:
 - Autoridad de Certificación del Servidor de Directorio (Directory Server Certificate Authority, DS CA)
 - Sistema de autorización (Authorisation System)
 
-**3. Dominio Emisor: **Las transacciones se autentican en este dominio. 
+**3. Dominio Emisor: ** Las transacciones se autentican en este dominio. 
 El dominio Emisor tiene los siguientes componentes:
        
 - Titular de la tarjeta (Cardholder)
@@ -44,63 +38,67 @@ El dominio Emisor tiene los siguientes componentes:
 - Emisor (Issuer)
 - Servidor de Control de Acceso (Access Control Server, ACS)
 
-# Funcionamiento del componente 3DS Server
+<!--
+type: tab
+title: Mensajes del Procolo 3-D Secure
+-->
 
-El componente 3DS Server pertenece al Dominio del Adquiriente. Este componente se comunica con el comercio o pasarela de pagos, para permitir las autenticaciones de las transacciones electrónicas. 
-
-Este componente se encarga de:
-
-- Recopilar los datos necesarios para los mensajes de 3-D Secure.
-
-- Recibir la petición de sesión enviada por el comercio o pasarela de pagos.
-
-- Responder al comercio o pasarela la petición de sesión. En esta respuesta se incluye la redirectUrl (url de redirección), en la cual el cliente realiza el proceso de autenticación.
-
-- Recibir la petición de información enviada por el comercio o pasarela de pagos.
-
-- Solicitar a la franquicia emisora, la validación del tarjetahabiente.
-
-- Responder al comercio o pasarela de pagos la petición de información. En esta respuesta se incluye el estado final de la autenticación.
-
-# Mensajes del Procolo 3-D Secure y su relación con el 3DS Server
+# Mensajes del Procolo 3-D Secure
 
 El protocolo 3-D Secure define una serie de mensajes de petición y de respuesta, para ofrecer información acerca del estado del proceso de autenticación y del tipo de flujo en el que se encuentra.
 
-> El componente de 3DS Server, se encarga de crear los siguientes mensajes:
+### Mensajes de autenticación:
 
 **AReq (Authentication Request Message): **
       El mensaje AReq es el mensaje inicial en el flujo de autenticación 3-D Secure. El 3DS Server crea este mensaje cuando inicia el proceso de autenticación. Puede contener información del titular de la tarjeta, el pago y el dispositivo para la transacción. 
 
-**RRes (Results Response Message): **
-      El mensaje RRes comunica el resultado del mensaje RReq. El mensaje es creado y enviado por el 3DS Server a través del DS al ACS. 
-      
-**PReq (Preparation Request Message): **
-      El mensaje PReq se crea y envía desde el 3DS Server al DS para solicitar información sobre el ACS y DS. Este mensaje no forma parte del flujo de mensajes de autenticación de 3-D Secure.
-
-**Error Message: **
-      Los mensajes de error proporcionan información adicional sobre un error que se produjo durante el procesamiento de un mensaje.
-      
-      
-> Además, el componente 3DS Server valida los siguientes mensajes:
-      
-
 **ARes (Authentication Response Message):**
       El mensaje ARes es la respuesta al mensaje AReq. Puede indicar que el tarjetahabiente ha sido autenticado, o que se requiere una mayor interacción del tarjetahabiente para completar la autenticación (autenticación con challenge). 
+
+---
+### Mensajes de desafío: 
+
+**CReq (Challenge Request Message): **      
+      Inicia la interacción del tarjetahabiente en un flujo con challenge. Este mensaje solo se presenta en un flujo con fricción o challenge.
+      
+**CRes (Challenge Response Message): **      
+      Indica el resultado de la autenticación o también puede indicar que se requiere la interacción del tarjetahabiente para completar la autenticación. Este mensaje solo se presenta en un flujo con fricción o challenge.
+
+--- 
+### Mensajes de resultados: 
+
+**RRes (Results Response Message): **
+      El mensaje RRes comunica el resultado del mensaje RReq. El mensaje es creado y enviado por el 3DS Server a través del DS al ACS. 
 
 **RReq (Results Request Message): **      
       El mensaje RReq comunica los resultados de la autenticación. Este mensaje es enviado por el componente ACS al DS y es recibido por el 3DS Server. Este mensaje no está presente en una transacción sin fricción.
       
+---
+### Mensajes de preparación: 
+
+**PReq (Preparation Request Message): **
+      El mensaje PReq se crea y envía desde el 3DS Server al DS para solicitar información sobre el ACS y DS. Este mensaje no forma parte del flujo de mensajes de autenticación de 3-D Secure.
+
 **PRes (Preparation Response Message): **      
       El mensaje RReq comunica los resultados de la autenticación. Este mensaje es enviado por el componente ACS al DS y es recibido por el 3DS Server. Este mensaje no forma parte del flujo de mensajes de autenticación de 3-D Secure.
 
-> Finalmente, están los mensajes originados en un flujo con fricción o challenge:
+---
 
-**CReq (Challenge Request Message): **      
-      Inicia la interacción del tarjetahabiente en un flujo con challenge.
-      
-**CRes (Challenge Response Message): **      
-      Indica el resultado de la autenticación o también puede indicar que se requiere la interacción del tarjetahabiente para completar la autenticación.
+### Mensaje de error: 
 
+**Error Message: **
+      Los mensajes de error proporcionan información adicional sobre un error que se produjo durante el procesamiento de un mensaje. Estos pueden originarse en cualquiera de los componentes del 3-D Secure.
+
+---
+
+> El componente 3DS Server crea los mensajes AReq, RRes, PReq y Erro.
+
+> El componente 3DS Server valida los mensajes ARes, RReq y PRes.
+
+<!--
+type: tab
+title: Canales del dispositivo
+-->
 
 # Canales del dispositivo 
 
@@ -116,6 +114,11 @@ Los siguientes son los canales del dispositivo posibles:
       
 - **RI:** Autenticación para confirmar la cuenta y verificar la identidad del tarjetahabiente. Este tipo de autenticación es de no pago y no requiere la presencia del tarjetahabiente. Se puede utilizar  por ejemplo para confirmar suscripciones.
 
+<!--
+type: tab
+title: Categorías de los mensajes
+-->
+
 # Categorías de los mensajes 
 
 Los mensajes creados por el Procolo 3-D Secure, están categorizados en dos grupos:
@@ -123,6 +126,11 @@ Los mensajes creados por el Procolo 3-D Secure, están categorizados en dos grup
 - **PA (Payment Authentication):** Autenticación para transacciones de comercio electrónico que incluyen pago.
       
 - **NPA (Non-Payment Authentication):** Autenticación de no pago, utilizada para verficar la identidad y la cuenta del tarjetahabiente.
+
+<!--
+type: tab
+title: Flujos de autenticación
+-->
 
 # Flujos de autenticación 
 

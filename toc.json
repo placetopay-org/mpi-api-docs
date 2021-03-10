@@ -10,10 +10,20 @@
       "title": "Términos y Definiciones",
       "uri": "docs/TermsAndDefinitions.md"
     },
+        {
+      "type": "item",
+      "title": "¿Qué es el Protocolo 3-D Secure?",
+      "uri": "docs/3DSSecureProtocolDefinition.md"
+    },
     {
       "type": "item",
       "title": "Generalidades del Protocolo 3-D Secure",
       "uri": "docs/3DSSecureProtocol.md"
+    },
+    {
+      "type": "item",
+      "title": "Acerca del componente 3DS Server",
+      "uri": "docs/3DSServerComponent.md"
     },
     {
       "type": "item",
