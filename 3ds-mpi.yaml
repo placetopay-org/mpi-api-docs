@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 3DS Server (MPI)
-  version: '1.0'
-  description: Especificación del servicio
+  version: '2.0'
+  description: 'La presente documentación presenta el funcionamiento del servicio del 3DS Server. Expone los endpoints a consumir, los tipos datos que recibe y ejemplos de respuestas para diferentes tipos de peticiones en el flujo de autenticación de un tarjetahabiente dentro del marco del protocolo 3-D Secure.'
   contact:
     name: Evertec Placetopay
     email: desarrollo@placetopay.com
