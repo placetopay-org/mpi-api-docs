@@ -376,79 +376,7 @@ paths:
       operationId: get-transactions-transactionID
       responses:
         '200':
-          description: '> Respuesta recibida: OK'
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  transStatus:
-                    type: string
-                    enum:
-                      - 'Y'
-                      - 'N'
-                      - U
-                      - A
-                      - C
-                      - R
-                    example: 'Y'
-                    minLength: 1
-                    maxLength: 1
-                    description: Indicador del estado de autenticación de una transacción.
-                    readOnly: true
-                  eci:
-                    type: string
-                    description: Indicador del resultado de la autenticación generado por el comercio electrónico.
-                    minLength: 2
-                    maxLength: 2
-                    example: '05'
-                    readOnly: true
-                  acsTransID:
-                    type: string
-                    description: Identificador único de transación generado por el ACS.
-                    minLength: 36
-                    maxLength: 36
-                    example: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
-                    readOnly: true
-                  threeDSServerTransID:
-                    type: string
-                    description: Identificador único de transación generado por el 3DS Server.
-                    minLength: 36
-                    maxLength: 36
-                    example: da01dad3-0a37-456f-950f-04c293b23f42
-                    readOnly: true
-                  authenticationValue:
-                    type: string
-                    description: |-
-                      Valor de autenticación para la franquicia generado por el ACS. Este
-                      valor se debe pasar en el proceso de autorización a la red financiera.
-                    example: AJkBABIWcQAAAAM5FwIzdGiYeHM=
-                    minLength: 28
-                    maxLength: 28
-                    readOnly: true
-                  dsTransID:
-                    type: string
-                    description: Identificador único de transación generado por el DS.
-                    minLength: 36
-                    maxLength: 36
-                    example: 139236ae-d4ec-4ac6-9446-4ecd2cd86f66
-                    readOnly: true
-                required:
-                  - transStatus
-                  - eci
-                  - acsTransID
-                  - threeDSServerTransID
-                  - authenticationValue
-                  - dsTransID
-              examples:
-                Respuesta exitosa:
-                  value:
-                    transStatus: 'Y'
-                    eci: '05'
-                    acsTransID: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
-                    dsTransID: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
-                    threeDSServerTransID: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
-                    authenticationValue: AJkBABIWcQAAAAM5FwIzdGiYeHM=
+          $ref: '#/components/responses/Respuesta-Exitosa-transactions'
         '401':
           description: |-
             > Respuesta recibida: 401 Unauthorized
@@ -781,6 +709,76 @@ components:
     Authorization:
       type: http
       scheme: bearer
+  responses:
+    Respuesta-Exitosa-transactions:
+      description: Example response
+      content:
+        application/json:
+          schema:
+            description: ''
+            type: object
+            properties:
+              transStatus:
+                type: string
+                minLength: 1
+                description: Indicador del estado de autenticación de una transacción.
+                enum:
+                  - 'Y'
+                  - 'N'
+                  - U
+                  - A
+                  - C
+                  - R
+                maxLength: 1
+                pattern: 'Y'
+              eci:
+                type: string
+                description: Indicador del resultado de la autenticación generado por el comercio electrónico.
+                example: '05'
+                minLength: 2
+                maxLength: 2
+              acsTransID:
+                type: string
+                description: Identificador único de transación generado por el ACS.
+                minLength: 36
+                maxLength: 36
+                example: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+              dsTransID:
+                type: string
+                description: Identificador único de transación generado por el DS.
+                minLength: 36
+                maxLength: 36
+                example: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+              threeDSServerTransID:
+                type: string
+                description: Identificador único de transación generado por el 3DS Server.
+                minLength: 36
+                maxLength: 36
+                example: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+              authenticationValue:
+                type: string
+                description: |-
+                  Valor de autenticación para la franquicia generado por el ACS. Este
+                  valor se debe pasar en el proceso de autorización a la red financiera.
+                minLength: 28
+                maxLength: 28
+                example: AJkBABIWcQAAAAM5FwIzdGiYeHM=
+            required:
+              - transStatus
+              - eci
+              - acsTransID
+              - dsTransID
+              - threeDSServerTransID
+              - authenticationValue
+          examples:
+            Respuesta Exitosa:
+              value:
+                transStatus: 'Y'
+                eci: '05'
+                acsTransID: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+                dsTransID: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+                threeDSServerTransID: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+                authenticationValue: AJkBABIWcQAAAAM5FwIzdGiYeHM=
 security:
   - Authorization: []
 tags:
