@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: 3DS Server (MPI)
   version: '1.0'
-  description: 'La presente documentación presenta el funcionamiento del servicio del 3DS Server. Expone los endpoints a consumir, los tipos datos que recibe y ejemplos de respuestas para diferentes tipos de peticiones en el flujo de autenticación de un tarjetahabiente dentro del marco del protocolo 3-D Secure.'
+  description: 'Este documento presenta el funcionamiento del servicio o la API del 3DS Server. Expone los endpoints a consumir (/sessions y /transactions), la url, el método, parámetros y los tipos datos que recibe. Además, contiene ejemplos de respuestas para diferentes tipos de peticiones en el flujo de autenticación de un tarjetahabiente dentro del marco del protocolo 3-D Secure.'
   contact:
     name: Evertec Placetopay
     email: desarrollo@placetopay.com
@@ -384,22 +384,71 @@ paths:
                 properties:
                   transStatus:
                     type: string
+                    enum:
+                      - 'Y'
+                      - 'N'
+                      - U
+                      - A
+                      - C
+                      - R
+                    example: 'Y'
+                    minLength: 1
+                    maxLength: 1
+                    description: Indicador del estado de autenticación de una transacción.
+                    readOnly: true
                   eci:
                     type: string
+                    description: Indicador del resultado de la autenticación generado por el comercio electrónico.
+                    minLength: 2
+                    maxLength: 2
+                    example: '05'
+                    readOnly: true
                   acsTransID:
                     type: string
+                    description: Identificador único de transación generado por el ACS.
+                    minLength: 36
+                    maxLength: 36
+                    example: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+                    readOnly: true
                   threeDSServerTransID:
                     type: string
+                    description: Identificador único de transación generado por el 3DS Server.
+                    minLength: 36
+                    maxLength: 36
+                    example: da01dad3-0a37-456f-950f-04c293b23f42
+                    readOnly: true
                   authenticationValue:
                     type: string
+                    description: |-
+                      Valor de autenticación para la franquicia generado por el ACS. Este
+                      valor se debe pasar en el proceso de autorización a la red financiera.
+                    example: AJkBABIWcQAAAAM5FwIzdGiYeHM=
+                    minLength: 28
+                    maxLength: 28
+                    readOnly: true
+                  dsTransID:
+                    type: string
+                    description: Identificador único de transación generado por el DS.
+                    minLength: 36
+                    maxLength: 36
+                    example: 139236ae-d4ec-4ac6-9446-4ecd2cd86f66
+                    readOnly: true
+                required:
+                  - transStatus
+                  - eci
+                  - acsTransID
+                  - threeDSServerTransID
+                  - authenticationValue
+                  - dsTransID
               examples:
                 Respuesta exitosa:
                   value:
                     transStatus: 'Y'
                     eci: '05'
-                    acsTransID: c83f3f5d-1a47-4eff
-                    threeDSServerTransID: 139236ae-d4ec
-                    authenticationValue: AJkBABIWcQAAAAM5FwI
+                    acsTransID: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+                    dsTransID: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+                    threeDSServerTransID: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+                    authenticationValue: AJkBABIWcQAAAAM5FwIzdGiYeHM=
         '401':
           description: |-
             > Respuesta recibida: 401 Unauthorized
@@ -428,6 +477,8 @@ paths:
                   authenticationValue:
                     type: string
                     minLength: 1
+                  dsTransID:
+                    type: string
               examples:
                 Respuesta con errores:
                   value:
