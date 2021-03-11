@@ -22,7 +22,7 @@ paths:
           description: |-
             > Respuesta recibida: Ok
 
-            > Para continuar con el proceso de autenticación, debe ir a la url recibida en el campo (redirectURL). Allí se le informará el resultado de la autenticación y posteriormente, se redirigirá al comercio.
+                Para continuar con el proceso de autenticación, debe ir a la url recibida en el campo (redirectURL). Allí se le informará el resultado de la autenticación y posteriormente, se redirigirá al comercio.
           content:
             application/json:
               schema:
@@ -84,9 +84,7 @@ paths:
                   value:
                     error_number: '1011'
                     error_description: Invalid arguments to initiate request
-                    errors:
-                      purchaseCurrency:
-                        - The purchase currency field is required.
+                    errors: The purchase currency field is required.
       requestBody:
         content:
           application/json:
@@ -336,11 +334,30 @@ paths:
                 value:
                   acctNumber: '4005580000000040'
                   cardExpiryDate: '2411'
+                  purchaseCurrency: COP
                   purchaseAmount: '8.25'
                   redirectURI: 'http://www.placetopay.com'
                   email: john.doe@example.com
-        description: '> Datos a enviar y ejemplos de peticiones'
-      description: '> Servicio para iniciar una sesión en el flujo de autenticación 3DS'
+          application/xml:
+            schema:
+              type: object
+              properties: {}
+          multipart/form-data:
+            schema:
+              type: object
+              properties: {}
+            examples:
+              example-1:
+                value: {}
+          text/html:
+            schema:
+              type: object
+              properties: {}
+        description: |-
+          ### Datos a enviar y ejemplos de peticiones
+
+              Para obtener transacciones con otros estados o challenge puede modificar el campo "acctNumber" con los números de tarjetas de prueba dados en esta documentación.
+      description: Servicio para iniciar una sesión en el flujo de autenticación 3DS
       parameters: []
       security:
         - Authorization: []
@@ -353,13 +370,13 @@ paths:
         name: transactionID
         in: path
         required: true
-        description: '> Identificador de la transacción obtenido en la respuesta del endpoint /sessions'
+        description: ' Identificador de la transacción obtenido en la respuesta del endpoint /sessions'
     get:
       summary: Obtener transacción
       operationId: get-transactions-transactionID
       responses:
         '200':
-          description: '> Respuesta recibida OK'
+          description: '> Respuesta recibida: OK'
           content:
             application/json:
               schema:
@@ -378,12 +395,50 @@ paths:
               examples:
                 Respuesta exitosa:
                   value:
-                    transStatus: string
-                    eci: string
-                    acsTransID: string
-                    threeDSServerTransID: string
-                    authenticationValue: string
-      description: '> Servicio para obtener información de una transacción'
+                    transStatus: 'Y'
+                    eci: '05'
+                    acsTransID: c83f3f5d-1a47-4eff
+                    threeDSServerTransID: 139236ae-d4ec
+                    authenticationValue: AJkBABIWcQAAAAM5FwI
+        '401':
+          description: |-
+            > Respuesta recibida: 401 Unauthorized
+
+                Este mensaje de error puede aparecer cuando en la petición no se pasan correctamente los encabezados requeridos:
+                  - Token ausente, expirado o inválido
+                  - Content Type ausente o inválido.
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  acctNumber:
+                    type: string
+                    minLength: 1
+                  cardExpiryDate:
+                    type: string
+                    minLength: 1
+                  purchaseAmount:
+                    type: string
+                    minLength: 1
+                  redirectURI:
+                    type: string
+                    minLength: 1
+                  purchaseCurrency:
+                    type: string
+                    minLength: 1
+                required:
+                  - acctNumber
+                  - cardExpiryDate
+                  - purchaseAmount
+                  - redirectURI
+                  - purchaseCurrency
+              examples:
+                Respuesta con errores:
+                  value:
+                    message: Unauthenticated.
+      description: Servicio para obtener información de una transacción
       tags:
         - Transaction
       parameters: []
