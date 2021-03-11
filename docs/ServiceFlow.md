@@ -2,4 +2,4 @@
 
 El siguiente diagrama representa la interacción del 3DS Server de Evertec dentro 	del flujo de autenticación del tarjetahabiente.
 
-![](../assets/images/basicFlow.png)
+![](assets/images/basicFlow.png)
