@@ -22,7 +22,7 @@ paths:
           description: |-
             > Respuesta recibida: 200 Ok
 
-                Para continuar con el proceso de autenticación, debe ir a la url recibida en el campo (redirectURL). Allí se le informará el resultado de la autenticación y posteriormente, se redirigirá al comercio.
+                Para continuar con el proceso de autenticación, se debe redirigir al usuario a la url recibida en el campo (redirectURL). Allí se le informará el resultado de la autenticación y posteriormente, se redirigirá al comercio.
           content:
             application/json:
               schema:
@@ -56,6 +56,8 @@ paths:
                     sessionToken: 8e580eb1948ae1b13e614aac04c75ad31d6431ef2ea7b1a85573979b7ec4e656
                     redirectURL: 'https://3dss-test.placetopay.com/threeds/v2/sessions/8e580eb1948ae1b13e614aac04c75ad31d6431ef2ea7b1a85573979b7ec4e656'
                     transactionID: 9071
+        '401':
+          $ref: '#/components/responses/unauthorized-response'
         '422':
           description: '> Respuesta recibida: 422 Unprocessable Entity'
           content:
@@ -302,7 +304,7 @@ paths:
                 - purchaseCurrency
                 - redirectURI
             examples:
-              Petición exitosa con campos mínimos requeridos:
+              Petición exitosa sin fricción y  campos mínimos requeridos:
                 value:
                   acctNumber: '4005580000000040'
                   cardExpiryDate: '2411'
@@ -356,6 +358,13 @@ paths:
                   purchaseAmount: '8.25'
                   redirectURI: 'http://www.placetopay.com'
                   email: john.doe@example.com
+              Petición con flujo con fricción o challenge:
+                value:
+                  acctNumber: '4009000000502'
+                  cardExpiryDate: '2110'
+                  purchaseAmount: '800'
+                  redirectURI: 'http://www.placetopay.com'
+                  purchaseCurrency: COP
           application/xml:
             schema:
               type: object
@@ -371,11 +380,32 @@ paths:
             schema:
               type: object
               properties: {}
-        description: |-
-          ### Datos a enviar y ejemplos de peticiones
+        description: '### Datos a enviar y ejemplos de peticiones'
+      description: |-
+        Este es el servicio para iniciar una sesión en el flujo de autenticación de 3DS Server. 
 
-              Para obtener transacciones con otros estados o challenge puede modificar el campo "acctNumber" con los números de tarjetas de prueba dados en esta documentación.
-      description: Servicio para iniciar una sesión en el flujo de autenticación 3DS
+        Los siguientes pasos le darán una guía en la utilización del mismo:
+
+        **1.** Cree una solicitud HTTP de tipo POST en su servidor y con el endpoint /sessions
+
+        **2.** En el encabezado de la petición, ingrese el bearer token, el cual le permitirá registrarse como un usuario autorizado. Este encabezado es obligatorio.
+
+        **3.** El encabezado deberá contener también, en el Content-Type, el valor de "application/json".
+
+        **4.** Ingrese en el cuerpo de la petición los campos mínimos requeridos, los cuales son:
+          - acctNumber
+          - cardExpiryDate
+          - purchaseAmount
+          - redirectURI
+          - purchaseCurrency
+            
+        La descripción de los campos de las peticiones y de las respuestas, el tipo de dato, longitud y demás especificaciones, puede visualizarse en el apartado de respuestas, en el esquema de datos.
+
+        **5.** Envíe la petición y obtenga una respuesta.
+
+        **6.** Puede visualizar el estado de la autenticación, redirigiéndose a la "redirectURI", dato arrojado en una respuesta exitosa o con estado "Y".
+
+        > Para obtener estados en la autenticación diferentes al "Y", puede modificar el campo "acctNumber" de la petición, con los números de tarjetas de prueba dados en esta documentación.
       parameters: []
       security:
         - Authorization: []
@@ -394,38 +424,32 @@ paths:
       operationId: get-transactions-transactionID
       responses:
         '200':
-          $ref: '#/components/responses/Respuesta-Exitosa-transactions'
+          $ref: '#/components/responses/success-response-transactions'
         '401':
-          description: |-
-            > Respuesta recibida: 401 Unauthorized
+          $ref: '#/components/responses/unauthorized-response'
+      description: |
+        Este es el servicio para obtener información de una transacción que realizó el proceso de autenticación mediante el 3DS Server. 
 
-                Este mensaje de error puede aparecer cuando en la petición no se pasan correctamente los encabezados requeridos:
-                  - Token ausente, expirado o inválido
-                  - Content Type ausente o inválido.
-          content:
-            application/json:
-              schema:
-                description: ''
-                type: object
-                properties:
-                  message:
-                    type: string
-                    minLength: 1
-                    description: Mensaje cuando se presenta un error en la petición al servicio.
-                required:
-                  - message
-              examples:
-                Respuesta con errores:
-                  value:
-                    message: Unauthenticated.
-            application/xml:
-              schema:
-                type: object
-                properties: {}
-      description: Servicio para obtener información de una transacción
+        Los siguientes pasos le darán una guía en la utilización del mismo:
+
+          **1.** Cree una solicitud HTTP de tipo GET en su servidor y con el endpoint /transactions
+          
+          **2.** Adjunte al final de la url, como parámetro, el identificador de la transacción, el cual corresponde al campo
+          transactionID que se obtiene en la respuesta del servicio /sessions
+          
+          **3.** En el encabezado de la petición, ingrese el bearer token, el cual le permitirá registrarse como un usuario autorizado. Este encabezado es obligatorio.
+          
+          **4.** El encabezado deberá contener también, en el Content-Type, el valor de "application/json".
+          
+          **5.** Esta petición no requiere que se pasen datos en el cuerpo
+          de la misma.
+            
+          **6.** Envíe la petición y obtenga una respuesta.
+
+        La descripción de los campos de la respuesta, el tipo de dato, longitud y demás especificaciones, puede visualizarse en el apartado de respuestas, en el esquema de datos.
       parameters: []
       tags:
-        - Transaction
+        - 'Transactions '
 components:
   schemas:
     PhoneProperties:
@@ -743,7 +767,7 @@ components:
       type: http
       scheme: bearer
   responses:
-    Respuesta-Exitosa-transactions:
+    success-response-transactions:
       description: '> Respuesta recibida: 200 Ok'
       content:
         application/json:
@@ -812,8 +836,36 @@ components:
                 dsTransID: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
                 threeDSServerTransID: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
                 authenticationValue: AJkBABIWcQAAAAM5FwIzdGiYeHM=
+    unauthorized-response:
+      description: |-
+        > Respuesta recibida: 401 Unauthorized
+
+            Este mensaje de error puede aparecer cuando en la petición no se pasan correctamente los encabezados requeridos:
+              - Token ausente, expirado o inválido
+              - Content Type ausente o inválido.
+      content:
+        application/json:
+          schema:
+            description: ''
+            type: object
+            properties:
+              message:
+                type: string
+                minLength: 1
+                description: |
+                  Mensaje cuando se presenta un error en la petición al servicio.
+            required:
+              - message
+          examples:
+            Respuesta No Autorizado:
+              value:
+                message: Unauthenticated.
+        application/xml:
+          schema:
+            type: object
+            properties: {}
 security:
   - Authorization: []
 tags:
   - name: Sessions
-  - name: Transaction
+  - name: 'Transactions '
