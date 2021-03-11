@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: 3DS Server (MPI)
-  version: '2.0'
+  version: '1.0'
   description: 'La presente documentación presenta el funcionamiento del servicio del 3DS Server. Expone los endpoints a consumir, los tipos datos que recibe y ejemplos de respuestas para diferentes tipos de peticiones en el flujo de autenticación de un tarjetahabiente dentro del marco del protocolo 3-D Secure.'
   contact:
     name: Evertec Placetopay
@@ -15,7 +15,7 @@ servers:
 paths:
   /sessions:
     post:
-      summary: Crear nueva sesión
+      summary: Crear una nueva sesión
       operationId: post-sessions
       responses:
         '200':
@@ -372,7 +372,7 @@ paths:
         required: true
         description: ' Identificador de la transacción obtenido en la respuesta del endpoint /sessions'
     get:
-      summary: Obtener transacción
+      summary: Obtener información de una transacción
       operationId: get-transactions-transactionID
       responses:
         '200':
@@ -413,35 +413,29 @@ paths:
                 description: ''
                 type: object
                 properties:
-                  acctNumber:
+                  transStatus:
                     type: string
                     minLength: 1
-                  cardExpiryDate:
+                  eci:
                     type: string
                     minLength: 1
-                  purchaseAmount:
+                  acsTransID:
                     type: string
                     minLength: 1
-                  redirectURI:
+                  threeDSServerTransID:
                     type: string
                     minLength: 1
-                  purchaseCurrency:
+                  authenticationValue:
                     type: string
                     minLength: 1
-                required:
-                  - acctNumber
-                  - cardExpiryDate
-                  - purchaseAmount
-                  - redirectURI
-                  - purchaseCurrency
               examples:
                 Respuesta con errores:
                   value:
                     message: Unauthenticated.
       description: Servicio para obtener información de una transacción
+      parameters: []
       tags:
         - Transaction
-      parameters: []
 components:
   schemas:
     PhoneProperties:
