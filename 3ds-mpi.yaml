@@ -19,7 +19,10 @@ paths:
       operationId: post-sessions
       responses:
         '200':
-          description: '> Respuesta recibida: Ok'
+          description: |-
+            > Respuesta recibida: Ok
+
+            > Para continuar con el proceso de autenticación, debe ir a la url recibida en el campo (redirectURL). Allí se le informará el resultado de la autenticación y posteriormente, se redirigirá al comercio.
           content:
             application/json:
               schema:
@@ -38,7 +41,12 @@ paths:
                   - sessionToken
                   - redirectURL
                   - transactionID
-              examples: {}
+              examples:
+                Respuesta exitosa:
+                  value:
+                    sessionToken: 0110abee964f2a2a90490a89b774bea3a1c05c
+                    redirectURL: 'https://3dss-test.placetopay.com/threeds/v2/sessions/0110abee964f2a2a90490a89b'
+                    transactionID: '9071'
         '422':
           description: '> Respuesta recibida: Unprocessable Entity'
           content:
@@ -71,6 +79,14 @@ paths:
                   - error_number
                   - error_description
                   - errors
+              examples:
+                Respuesta con errores:
+                  value:
+                    error_number: '1011'
+                    error_description: Invalid arguments to initiate request
+                    errors:
+                      purchaseCurrency:
+                        - The purchase currency field is required.
       requestBody:
         content:
           application/json:
@@ -269,14 +285,14 @@ paths:
                 - purchaseCurrency
                 - redirectURI
             examples:
-              Respuesta exitosa (Ejemplo 1 – con la mínima información requerida):
+              Petición exitosa con campos mínimos requeridos:
                 value:
                   acctNumber: '4005580000000040'
                   cardExpiryDate: '2411'
                   purchaseAmount: '8.25'
                   redirectURI: 'http://www.placetopay.com'
                   purchaseCurrency: COP
-              Respuesta exitosa (Ejemplo 2 – con información de facturación del tarjehabiente):
+              Petición exitosa con información de facturación del tarjetahabiente:
                 value:
                   acctNumber: '4012000000001097'
                   cardExpiryDate: '2010'
@@ -289,7 +305,7 @@ paths:
                   billAddrCountry: COP
                   billAddrLine1: 'Cl 72 No. 15 F-07, El libertador'
                   billAddrPostCode: '76001'
-              Respuesta exitosa (Ejemplo 3 – con información adicional de la tarjeta):
+              Petición exitosa con información de la cuenta del tarjetahabiente:
                 value:
                   acctNumber: '4012000000001097'
                   cardExpiryDate: '2010'
@@ -305,7 +321,7 @@ paths:
                     chAccPwChangeInd: '01'
                     nbPurchaseAccount: '0'
                     provisionAttemptsDay: '1'
-              Respuesta exitosa (Ejemplo 4 – con información de entrega del tarjehabiente):
+              Petición exitosa con información de entrega del tarjetahabiente:
                 value:
                   acctNumber: '4012000000001097'
                   cardExpiryDate: '2010'
@@ -316,15 +332,15 @@ paths:
                   shipAddrCountry: COP
                   shipAddrLine1: 'Cl 72 No. 15 F-07, El libertador'
                   shipAddrPostCode: '76001'
-              Respuesta no exitosa (error de validación):
+              Petición fallida con error de validación:
                 value:
                   acctNumber: '4005580000000040'
                   cardExpiryDate: '2411'
                   purchaseAmount: '8.25'
                   redirectURI: 'http://www.placetopay.com'
                   email: john.doe@example.com
-        description: '> Datos a enviar en el servicio'
-      description: '> Servicio para iniciar una sesión del flujo de 3DS'
+        description: '> Datos a enviar y ejemplos de peticiones'
+      description: '> Servicio para iniciar una sesión en el flujo de autenticación 3DS'
       parameters: []
       security:
         - Authorization: []
@@ -337,7 +353,7 @@ paths:
         name: transactionID
         in: path
         required: true
-        description: '> Identificador de la transacción obtenido en la respuesta del endpoint de sessión.'
+        description: '> Identificador de la transacción obtenido en la respuesta del endpoint /sessions'
     get:
       summary: Obtener transacción
       operationId: get-transactions-transactionID
