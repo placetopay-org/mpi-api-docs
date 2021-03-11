@@ -194,7 +194,7 @@ paths:
                   minLength: 2
                   maxLength: 2
                 threeDSRequestorAuthenticationInfo:
-                  $ref: '#/components/schemas/threeDSAuthenticationInfoProperties'
+                  $ref: '#/components/schemas/threeDSRequestorAuthenticationInfoProperties'
                 threeDSRequestorID:
                   type: string
                   description: |-
@@ -451,7 +451,7 @@ components:
       required:
         - cc
         - subscriber
-    threeDSAuthenticationInfoProperties:
+    threeDSRequestorAuthenticationInfoProperties:
       title: threeDSAuthenticationInfo
       type: object
       description: '> Información sobre cómo el Solicitante 3DS autenticó al titular de la tarjeta antes o durante la transacción.'
