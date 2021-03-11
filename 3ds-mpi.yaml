@@ -382,7 +382,7 @@ paths:
               properties: {}
         description: '### Datos a enviar y ejemplos de peticiones'
       description: |-
-        Este es el servicio para iniciar una sesión en el flujo de autenticación de 3DS Server. 
+        **Este es el servicio para iniciar una sesión en el flujo de autenticación de 3DS Server.**
 
         Los siguientes pasos le darán una guía en la utilización del mismo:
 
@@ -399,7 +399,7 @@ paths:
           - redirectURI
           - purchaseCurrency
             
-        La descripción de los campos de las peticiones y de las respuestas, el tipo de dato, longitud y demás especificaciones, puede visualizarse en el apartado de respuestas, en el esquema de datos.
+        > La descripción de los campos de las peticiones y de las respuestas, el tipo de dato, longitud y demás especificaciones, puede visualizarse en el apartado de respuestas, en el esquema de datos.
 
         **5.** Envíe la petición y obtenga una respuesta.
 
@@ -427,8 +427,8 @@ paths:
           $ref: '#/components/responses/success-response-transactions'
         '401':
           $ref: '#/components/responses/unauthorized-response'
-      description: |
-        Este es el servicio para obtener información de una transacción que realizó el proceso de autenticación mediante el 3DS Server. 
+      description: |-
+        **Este es el servicio para obtener información de una transacción que realizó el proceso de autenticación mediante el 3DS Server.**
 
         Los siguientes pasos le darán una guía en la utilización del mismo:
 
@@ -446,7 +446,8 @@ paths:
             
           **6.** Envíe la petición y obtenga una respuesta.
 
-        La descripción de los campos de la respuesta, el tipo de dato, longitud y demás especificaciones, puede visualizarse en el apartado de respuestas, en el esquema de datos.
+
+        >La descripción de los campos de la respuesta, el tipo de dato, longitud y demás especificaciones, puede visualizarse en el apartado de respuestas, en el esquema de datos. 
       parameters: []
       tags:
         - 'Transactions '
