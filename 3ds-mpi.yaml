@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 3DS Server (MPI)
-  version: '2.0'
-  description: 'La presente documentación presenta el funcionamiento del servicio del 3DS Server. Expone los endpoints a consumir, los tipos datos que recibe y ejemplos de respuestas para diferentes tipos de peticiones en el flujo de autenticación de un tarjetahabiente dentro del marco del protocolo 3-D Secure.'
+  version: '1.0'
+  description: 'Este documento presenta el funcionamiento del servicio o la API del 3DS Server. Expone los endpoints a consumir (/sessions y /transactions), la url, el método, parámetros y los tipos datos que recibe. Además, contiene ejemplos de respuestas para diferentes tipos de peticiones en el flujo de autenticación de un tarjetahabiente dentro del marco del protocolo 3-D Secure.'
   contact:
     name: Evertec Placetopay
     email: desarrollo@placetopay.com
@@ -15,11 +15,14 @@ servers:
 paths:
   /sessions:
     post:
-      summary: Crear nueva sesión
+      summary: Crear una nueva sesión
       operationId: post-sessions
       responses:
         '200':
-          description: '> Respuesta recibida: Ok'
+          description: |-
+            > Respuesta recibida: 200 Ok
+
+                Para continuar con el proceso de autenticación, se debe redirigir al usuario a la url recibida en el campo (redirectURL). Allí se le informará el resultado de la autenticación y posteriormente, se redirigirá al comercio.
           content:
             application/json:
               schema:
@@ -27,20 +30,36 @@ paths:
                 properties:
                   sessionToken:
                     type: string
-                    description: Authentication token
+                    description: Token de autenticación.
+                    minLength: 64
+                    maxLength: 64
+                    example: 8e580eb1948ae1b13e614aac04c75ad31d6431ef2ea7b1a85573979b7ec4e656
                   redirectURL:
                     type: string
-                    description: Redirection URL
+                    description: URL de redirección para continuar el proceso de autenticación.
+                    example: 'https://3dss-test.placetopay.com/threeds/v2/sessions/8e580eb1948ae1b13e614aac04c75ad31d6431ef2ea7b1a85573979b7ec4e656'
+                    minLength: 1
+                    maxLength: 256
                   transactionID:
-                    type: string
-                    description: Transaction's ID
+                    type: integer
+                    description: Indicador de la transacción.
+                    example: 9099
+                    minimum: 0
+                    maximum: 4294967295
                 required:
                   - sessionToken
                   - redirectURL
                   - transactionID
-              examples: {}
+              examples:
+                Respuesta exitosa:
+                  value:
+                    sessionToken: 8e580eb1948ae1b13e614aac04c75ad31d6431ef2ea7b1a85573979b7ec4e656
+                    redirectURL: 'https://3dss-test.placetopay.com/threeds/v2/sessions/8e580eb1948ae1b13e614aac04c75ad31d6431ef2ea7b1a85573979b7ec4e656'
+                    transactionID: 9071
+        '401':
+          $ref: '#/components/responses/unauthorized-response'
         '422':
-          description: '> Respuesta recibida: Unprocessable Entity'
+          description: '> Respuesta recibida: 422 Unprocessable Entity'
           content:
             application/json:
               schema:
@@ -71,6 +90,12 @@ paths:
                   - error_number
                   - error_description
                   - errors
+              examples:
+                Respuesta con errores:
+                  value:
+                    error_number: '1011'
+                    error_description: Invalid arguments to initiate request
+                    errors: The purchase currency field is required.
       requestBody:
         content:
           application/json:
@@ -90,14 +115,14 @@ paths:
                 cardExpiryDate:
                   type: string
                   description: |-
-                    Fecha de vencimiento del PAN o token suministrado al Solicitante 3DS por el Titular de la Tarjeta.
+                    Fecha de vencimiento del PAN o token suministrado al Solicitante 3DS por el titular de la tarjeta.
 
                     Formato: YYMM
                   minLength: 4
                   maxLength: 4
                 purchaseAmount:
                   type: string
-                  description: Monto de la transacción todos los signos de puntuación eliminados.
+                  description: Monto de la transacción. Se eliminan todos los signos de puntuación.
                   maxLength: 48
                 purchaseCurrency:
                   type: string
@@ -109,7 +134,7 @@ paths:
                   maxLength: 3
                 redirectURI:
                   type: string
-                  description: URL totalmente calificada del sistema donde el titular de lavtarjeta será redirigido después de completar una transacción de autenticación.
+                  description: URL totalmente calificada del sistema donde el titular de la tarjeta será redirigido después de completar una transacción de autenticación.
                   maxLength: 256
                   format: uri
                 threeDSAuthenticationInd:
@@ -125,7 +150,7 @@ paths:
                   maxLength: 2
                 reference:
                   type: string
-                  description: Referencia de la transacción
+                  description: Referencia de la transacción.
                   maxLength: 32
                 recurringFrequency:
                   type: string
@@ -147,7 +172,7 @@ paths:
                   description: |-
                     Indica el número máximo de autorizaciones permitidas para pagos a plazos.
 
-                    > El valor debe ser mayor que 1. Se requiere si el Comerciante y el Titular de la Tarjeta han acordado pagos a plazos, es decir, si threeDSAuthenticationInd = 03.
+                    > El valor debe ser mayor que 1. Se requiere si el comerciante y el titular de la tarjeta han acordado pagos a plazos, es decir, si threeDSAuthenticationInd = 03.
                     Se omite si no se trata de una autenticación de pago a plazos.
                   minLength: 8
                   maxLength: 8
@@ -156,7 +181,7 @@ paths:
                   description: |-
                     Indica si se solicita un desafío para esta transacción.
 
-                    >Si este parámetro no es enviado en la petición, se asumirá '01 = Sin preferencia' como valor por defecto
+                    > Si este parámetro no es enviado en la petición, se asumirá '01 = Sin preferencia' como valor por defecto
 
                     **Valores aceptados:**
                     * 01 = No preference
@@ -170,12 +195,12 @@ paths:
                     * 09 = Challenge requested (whitelist prompt requested if challenge required)
                   minLength: 2
                   maxLength: 2
-                threeDSAuthenticationInfo:
-                  $ref: '#/components/schemas/threeDSAuthenticationInfoProperties'
+                threeDSRequestorAuthenticationInfo:
+                  $ref: '#/components/schemas/threeDSRequestorAuthenticationInfoProperties'
                 threeDSRequestorID:
                   type: string
                   description: |-
-                    Identificador asociado por el Directory Server al Solicitante 3DS.
+                    Identificador asociado por el DS al Solicitante 3DS.
 
                     > Cualquier DS individual puede imponer requisitos específicos de formato y caracteres en el contenido de este campo.
                   maxLength: 35
@@ -183,27 +208,30 @@ paths:
                   $ref: '#/components/schemas/acctInfoProperties'
                 acctID:
                   type: string
-                  description: Identificador de la cuenta del tarjetahabiente
+                  description: Identificador de la cuenta del tarjetahabiente.
                   maxLength: 64
                 billAddrCity:
                   type: string
-                  description: Ciudad de la dirección de facturación
+                  description: Ciudad de la dirección de facturación.
                   maxLength: 50
                 billAddrCountry:
                   type: string
-                  description: 'País de la dirección de facturación Valores aceptados: Formato: [ISO 3166-1](https://es.wikipedia.org/wiki/ISO_3166-1)'
+                  description: |-
+                    País de la dirección de facturación.
+
+                    Valores aceptados: Formato: [ISO 3166-1](https://es.wikipedia.org/wiki/ISO_3166-1)
                   maxLength: 3
                 billAddrLine1:
                   type: string
-                  description: Línea 1 de la dirección de facturación
+                  description: Línea 1 de la dirección de facturación.
                   maxLength: 50
                 billAddrLine2:
                   type: string
-                  description: Línea 2 de la dirección de facturación
+                  description: Línea 2 de la dirección de facturación.
                   maxLength: 50
                 billAddrLine3:
                   type: string
-                  description: Línea 3 de la dirección de facturación
+                  description: Línea 3 de la dirección de facturación.
                   maxLength: 50
                 billAddrPostCode:
                   type: string
@@ -211,11 +239,14 @@ paths:
                   maxLength: 16
                 billAddrState:
                   type: string
-                  description: 'Estado de la dirección de facturación. Valores aceptados: Formato: [ISO 3166-2](https://es.wikipedia.org/wiki/ISO_3166-1)'
+                  description: |-
+                    Estado de la dirección de facturación. 
+
+                    Valores aceptados: Formato: [ISO 3166-2](https://es.wikipedia.org/wiki/ISO_3166-1)
                   maxLength: 3
                 email:
                   type: string
-                  description: Correo electrónico del tarjetahabiente
+                  description: Correo electrónico del tarjetahabiente.
                   format: email
                   maxLength: 254
                 homePhone:
@@ -224,38 +255,42 @@ paths:
                   $ref: '#/components/schemas/PhoneProperties'
                 cardholderName:
                   type: string
-                  description: Nombre del titular de la tarjeta
+                  description: Nombre del titular de la tarjeta.
                   minLength: 2
                   maxLength: 45
                 shipAddrCity:
                   type: string
-                  description: Ciudad de la dirección de envío
+                  description: Ciudad de la dirección de envío.
                   maxLength: 50
                 shipAddrCountry:
                   type: string
-                  description: 'País de la dirección de envío. Valores aceptados: Formato: [ISO 3166-1](https://es.wikipedia.org/wiki/ISO_3166-1)'
+                  description: |-
+                    País de la dirección de envío. 
+
+                    Valores aceptados: Formato: [ISO 3166-1](https://es.wikipedia.org/wiki/ISO_3166-1)
                   minLength: 3
                   maxLength: 3
                 shipAddrLine1:
                   type: string
-                  description: Línea 1 de la dirección de envío
+                  description: Línea 1 de la dirección de envío.
                   maxLength: 50
                 shipAddrLine2:
                   type: string
-                  description: Línea 2 de la dirección de envío
+                  description: Línea 2 de la dirección de envío.
                   maxLength: 50
                 shipAddrLine3:
                   type: string
-                  description: Línea 3 de la dirección de envío
+                  description: Línea 3 de la dirección de envío.
                   maxLength: 50
                 shipAddrPostCode:
                   type: string
-                  description: Postal code de la dirección de envío
+                  description: Código postal de la dirección de envío.
                   maxLength: 16
                 shipAddrState:
                   type: string
                   description: |-
-                    Estado de la dirección de envío
+                    Estado de la dirección de envío.
+
                     Valores aceptados: Formato: [ISO 3166-2](https://es.wikipedia.org/wiki/ISO_3166-1)
                   maxLength: 3
                 workPhone:
@@ -269,14 +304,14 @@ paths:
                 - purchaseCurrency
                 - redirectURI
             examples:
-              Respuesta exitosa (Ejemplo 1 – con la mínima información requerida):
+              Petición exitosa sin fricción y  campos mínimos requeridos:
                 value:
                   acctNumber: '4005580000000040'
                   cardExpiryDate: '2411'
                   purchaseAmount: '8.25'
                   redirectURI: 'http://www.placetopay.com'
                   purchaseCurrency: COP
-              Respuesta exitosa (Ejemplo 2 – con información de facturación del tarjehabiente):
+              Petición exitosa con información de facturación del tarjetahabiente:
                 value:
                   acctNumber: '4012000000001097'
                   cardExpiryDate: '2010'
@@ -289,7 +324,7 @@ paths:
                   billAddrCountry: COP
                   billAddrLine1: 'Cl 72 No. 15 F-07, El libertador'
                   billAddrPostCode: '76001'
-              Respuesta exitosa (Ejemplo 3 – con información adicional de la tarjeta):
+              Petición exitosa con información de la cuenta del tarjetahabiente:
                 value:
                   acctNumber: '4012000000001097'
                   cardExpiryDate: '2010'
@@ -305,7 +340,7 @@ paths:
                     chAccPwChangeInd: '01'
                     nbPurchaseAccount: '0'
                     provisionAttemptsDay: '1'
-              Respuesta exitosa (Ejemplo 4 – con información de entrega del tarjehabiente):
+              Petición exitosa con información de entrega del tarjetahabiente:
                 value:
                   acctNumber: '4012000000001097'
                   cardExpiryDate: '2010'
@@ -316,15 +351,61 @@ paths:
                   shipAddrCountry: COP
                   shipAddrLine1: 'Cl 72 No. 15 F-07, El libertador'
                   shipAddrPostCode: '76001'
-              Respuesta no exitosa (error de validación):
+              Petición fallida con error de validación:
                 value:
                   acctNumber: '4005580000000040'
                   cardExpiryDate: '2411'
                   purchaseAmount: '8.25'
                   redirectURI: 'http://www.placetopay.com'
                   email: john.doe@example.com
-        description: '> Datos a enviar en el servicio'
-      description: '> Servicio para iniciar una sesión del flujo de 3DS'
+              Petición con flujo con fricción o challenge:
+                value:
+                  acctNumber: '4009000000502'
+                  cardExpiryDate: '2110'
+                  purchaseAmount: '800'
+                  redirectURI: 'http://www.placetopay.com'
+                  purchaseCurrency: COP
+          application/xml:
+            schema:
+              type: object
+              properties: {}
+          multipart/form-data:
+            schema:
+              type: object
+              properties: {}
+            examples:
+              example-1:
+                value: {}
+          text/html:
+            schema:
+              type: object
+              properties: {}
+        description: '### Datos a enviar y ejemplos de peticiones'
+      description: |-
+        **Este es el servicio para iniciar una sesión en el flujo de autenticación de 3DS Server.**
+
+        Los siguientes pasos le darán una guía en la utilización del mismo:
+
+        **1.** Cree una solicitud HTTP de tipo POST en su servidor y con el endpoint /sessions
+
+        **2.** En el encabezado de la petición, ingrese el bearer token, el cual le permitirá registrarse como un usuario autorizado. Este encabezado es obligatorio.
+
+        **3.** El encabezado deberá contener también, en el Content-Type, el valor de "application/json".
+
+        **4.** Ingrese en el cuerpo de la petición los campos mínimos requeridos, los cuales son:
+          - acctNumber
+          - cardExpiryDate
+          - purchaseAmount
+          - redirectURI
+          - purchaseCurrency
+            
+        > La descripción de los campos de las peticiones y de las respuestas, el tipo de dato, longitud y demás especificaciones, puede visualizarse en el apartado de respuestas, en el esquema de datos.
+
+        **5.** Envíe la petición y obtenga una respuesta.
+
+        **6.** Puede visualizar el estado de la autenticación, redirigiéndose a la "redirectURI", dato arrojado en una respuesta exitosa o con estado "Y".
+
+        > Para obtener estados en la autenticación diferentes al "Y", puede modificar el campo "acctNumber" de la petición, con los números de tarjetas de prueba dados en esta documentación.
       parameters: []
       security:
         - Authorization: []
@@ -337,74 +418,85 @@ paths:
         name: transactionID
         in: path
         required: true
-        description: '> Identificador de la transacción obtenido en la respuesta del endpoint de sessión.'
+        description: ' Identificador de la transacción obtenido en la respuesta del endpoint /sessions'
     get:
-      summary: Obtener transacción
+      summary: Obtener información de una transacción
       operationId: get-transactions-transactionID
       responses:
         '200':
-          description: '> Respuesta recibida OK'
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  transStatus:
-                    type: string
-                  eci:
-                    type: string
-                  acsTransID:
-                    type: string
-                  threeDSServerTransID:
-                    type: string
-                  authenticationValue:
-                    type: string
-              examples:
-                Respuesta exitosa:
-                  value:
-                    transStatus: string
-                    eci: string
-                    acsTransID: string
-                    threeDSServerTransID: string
-                    authenticationValue: string
-      description: '> Servicio para obtener información de una transacción'
-      tags:
-        - Transaction
+          $ref: '#/components/responses/success-response-transactions'
+        '401':
+          $ref: '#/components/responses/unauthorized-response'
+      description: |-
+        **Este es el servicio para obtener información de una transacción que realizó el proceso de autenticación mediante el 3DS Server.**
+
+        Los siguientes pasos le darán una guía en la utilización del mismo:
+
+          **1.** Cree una solicitud HTTP de tipo GET en su servidor y con el endpoint /transactions
+          
+          **2.** Adjunte al final de la url, como parámetro, el identificador de la transacción, el cual corresponde al campo
+          transactionID que se obtiene en la respuesta del servicio /sessions
+          
+          **3.** En el encabezado de la petición, ingrese el bearer token, el cual le permitirá registrarse como un usuario autorizado. Este encabezado es obligatorio.
+          
+          **4.** El encabezado deberá contener también, en el Content-Type, el valor de "application/json".
+          
+          **5.** Esta petición no requiere que se pasen datos en el cuerpo
+          de la misma.
+            
+          **6.** Envíe la petición y obtenga una respuesta.
+
+
+        >La descripción de los campos de la respuesta, el tipo de dato, longitud y demás especificaciones, puede visualizarse en el apartado de respuestas, en el esquema de datos. 
       parameters: []
+      tags:
+        - 'Transactions '
 components:
   schemas:
     PhoneProperties:
       title: PhoneProperties
       type: object
       x-examples:
-        Valores aceptados:
+        Ejemplo de petición:
           cc: '1'
           subscriber: '1234567899'
+      description: '> Valores aceptados según especificación [ITU-E.164](https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-E.164-201011-I!!PDF-S&type=items)'
+      x-tags:
+        - Models
       properties:
         cc:
           type: string
           minLength: 1
           maxLength: 3
+          description: Código del país.
         subscriber:
           type: string
           maxLength: 15
+          description: Suscriptor.
       required:
         - cc
         - subscriber
-      description: '> Valores aceptados según especificación [ITU-E.164](https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-E.164-201011-I!!PDF-S&type=items)'
-      x-tags:
-        - Models
-    threeDSAuthenticationInfoProperties:
+    threeDSRequestorAuthenticationInfoProperties:
       title: threeDSAuthenticationInfo
       type: object
       description: '> Información sobre cómo el Solicitante 3DS autenticó al titular de la tarjeta antes o durante la transacción.'
+      x-tags:
+        - Models
+      x-examples:
+        Ejemplo de petición:
+          threeDSReqAuthData: 28401b9d217ef8731f0dbee99c73c5902c183c5b1428d572ef63a4fe26586548
+          threeDSReqAuthMethod: '01'
+          threeDSReqAuthTimestamp: '202103051200'
       properties:
         threeDSReqAuthData:
           type: string
           maxLength: 20000
+          description: Datos de autenticación del solicitante de 3DS.
         threeDSReqAuthMethod:
           type: string
           description: Mecanismo utilizado por el Titular de la tarjeta para autenticarse ante el 3DS Requestor.
+          minLength: 2
+          maxLength: 2
         threeDSReqAuthTimestamp:
           type: string
           description: |-
@@ -413,17 +505,35 @@ components:
             Formato YYYYMMDDHHMM
           minLength: 12
           maxLength: 12
-      x-tags:
-        - Models
     acctInfoProperties:
       title: acctInfo
       type: object
       description: '> Información adicional sobre la cuenta del titular de la tarjeta.'
+      x-tags:
+        - Models
+      x-examples:
+        'Ejemplo de petición ':
+          chAccAgeInd: '01'
+          chAccChange: '20210310'
+          chAccChangeInd: '02'
+          chAccDate: '20210310'
+          chAccPwChange: '20210310'
+          chAccPwChangeInd: '03'
+          nbPurchaseAccount: '1234'
+          provisionAttemptsDay: '002'
+          txnActivityDay: '02'
+          txnActivityYear: '2'
+          paymentAccAge: '20210307'
+          paymentAccInd: '01'
+          shipAddressUsage: '20210305'
+          shipAddressUsageInd: '02'
+          shipNameIndicator: '01'
+          suspiciousAccActivity: '02'
       properties:
         chAccAgeInd:
           type: string
           description: |-
-            Longitud del tiempo en que la cuenta fué creada en el sitio web del comercio
+            Longitud del tiempo en que la cuenta fue creada en el sitio web del comercio.
 
             **Valores aceptados:**
             * 01 - Sin cuenta (invitado)
@@ -486,6 +596,7 @@ components:
           type: string
           description: Número de compras durante los últimos 6 meses.
           maxLength: 4
+          minLength: 1
         provisionAttemptsDay:
           type: string
           description: Número de intentos de agregar tarjetas en las últimas 24 horas.
@@ -542,7 +653,7 @@ components:
         shipNameIndicator:
           type: string
           description: |-
-            Indica si el nombre del titular de la tarjeta es igual al nombre de envío usado en esta transacción
+            Indica si el nombre del titular de la tarjeta es igual al nombre de envío usado en esta transacción.
 
             **Valores aceptados:**
             01 - Nombre de cuenta idéntico al nombre de envío.
@@ -559,30 +670,23 @@ components:
             * 02 - Se ha observado actividad sospechosa.
           minLength: 2
           maxLength: 2
-      x-tags:
-        - Models
-      x-examples:
-        example-1:
-          chAccAgeInd: st
-          chAccChange: stringst
-          chAccChangeInd: st
-          chAccDate: stringst
-          chAccPwChange: stringst
-          chAccPwChangeInd: st
-          nbPurchaseAccount: stri
-          provisionAttemptsDay: str
-          txnActivityDay: str
-          txnActivityYear: str
-          paymentAccAge: stringst
-          paymentAccInd: st
-          shipAddressUsage: stringst
-          shipAddressUsageInd: st
-          shipNameIndicator: st
-          suspiciousAccActivity: st
     merchantRiskIndicatorProperties:
       title: merchantRiskIndicator
       type: object
-      description: '> Evaluación del comerciante del nivel de riesgo de fraude para la autenticación específica tanto para el titular de la tarjeta como para la autenticación que se está realizando.'
+      description: '> Evaluación del comerciante sobre el nivel de riesgo de fraude en la autenticación específica.'
+      x-tags:
+        - Models
+      x-examples:
+        Ejemplo de petición:
+          deliveryEmailAddress: string
+          deliveryTimeframe: st
+          giftCardAmount: string
+          giftCardCount: st
+          giftCardCurr: str
+          preOrderDate: stringst
+          preOrderPurchaseInd: st
+          reorderItemsInd: st
+          shipIndicator: st
       properties:
         deliveryEmailAddress:
           type: string
@@ -659,14 +763,110 @@ components:
             * 07 = Otro (por ejemplo, juegos, servicios digitales no enviados, suscripciones a emedia, etc.)
           minLength: 2
           maxLength: 2
-      x-tags:
-        - Models
   securitySchemes:
     Authorization:
       type: http
       scheme: bearer
+  responses:
+    success-response-transactions:
+      description: '> Respuesta recibida: 200 Ok'
+      content:
+        application/json:
+          schema:
+            description: ''
+            type: object
+            properties:
+              transStatus:
+                type: string
+                minLength: 1
+                description: Indicador del estado de autenticación de una transacción.
+                enum:
+                  - 'Y'
+                  - 'N'
+                  - U
+                  - A
+                  - C
+                  - R
+                maxLength: 1
+                pattern: 'Y'
+              eci:
+                type: string
+                description: Indicador del resultado de la autenticación generado por el comercio electrónico.
+                example: '05'
+                minLength: 2
+                maxLength: 2
+              acsTransID:
+                type: string
+                description: Identificador único de transación generado por el ACS.
+                minLength: 36
+                maxLength: 36
+                example: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+              dsTransID:
+                type: string
+                description: Identificador único de transación generado por el DS.
+                minLength: 36
+                maxLength: 36
+                example: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+              threeDSServerTransID:
+                type: string
+                description: Identificador único de transación generado por el 3DS Server.
+                minLength: 36
+                maxLength: 36
+                example: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+              authenticationValue:
+                type: string
+                description: |-
+                  Valor de autenticación para la franquicia generado por el ACS. Este
+                  valor se debe pasar en el proceso de autorización a la red financiera.
+                minLength: 28
+                maxLength: 28
+                example: AJkBABIWcQAAAAM5FwIzdGiYeHM=
+            required:
+              - transStatus
+              - eci
+              - acsTransID
+              - dsTransID
+              - threeDSServerTransID
+              - authenticationValue
+          examples:
+            Respuesta Exitosa:
+              value:
+                transStatus: 'Y'
+                eci: '05'
+                acsTransID: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+                dsTransID: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+                threeDSServerTransID: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+                authenticationValue: AJkBABIWcQAAAAM5FwIzdGiYeHM=
+    unauthorized-response:
+      description: |-
+        > Respuesta recibida: 401 Unauthorized
+
+            Este mensaje de error puede aparecer cuando en la petición no se pasan correctamente los encabezados requeridos:
+              - Token ausente, expirado o inválido
+              - Content Type ausente o inválido.
+      content:
+        application/json:
+          schema:
+            description: ''
+            type: object
+            properties:
+              message:
+                type: string
+                minLength: 1
+                description: |
+                  Mensaje cuando se presenta un error en la petición al servicio.
+            required:
+              - message
+          examples:
+            Respuesta No Autorizado:
+              value:
+                message: Unauthenticated.
+        application/xml:
+          schema:
+            type: object
+            properties: {}
 security:
   - Authorization: []
 tags:
   - name: Sessions
-  - name: Transaction
+  - name: 'Transactions '

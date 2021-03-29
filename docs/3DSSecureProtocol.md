@@ -49,6 +49,9 @@ title: Mensajes del Procolo 3-D Secure
 
 El protocolo 3-D Secure define una serie de mensajes de petición y de respuesta, para ofrecer información acerca del estado del proceso de autenticación y del tipo de flujo en el que se encuentra.
 
+
+> El componente 3DS Server crea los mensajes AReq, RRes, PReq y Erro.
+
 ### Mensajes de autenticación:
 
 **AReq (Authentication Request Message): **
@@ -93,9 +96,20 @@ El protocolo 3-D Secure define una serie de mensajes de petición y de respuesta
 
 ---
 
-> El componente 3DS Server crea los mensajes AReq, RRes, PReq y Erro.
-
 > El componente 3DS Server valida los mensajes ARes, RReq y PRes.
+
+<!--
+type: tab
+title: Categorías de los mensajes
+-->
+
+# Categorías de los mensajes 
+
+Los mensajes creados por el Procolo 3-D Secure, están categorizados en dos grupos:
+
+- **PA (Payment Authentication):** Autenticación para transacciones de comercio electrónico que incluyen pago.
+      
+- **NPA (Non-Payment Authentication):** Autenticación de no pago, utilizada para verficar la identidad y la cuenta del tarjetahabiente.
 
 <!--
 type: tab
@@ -115,19 +129,6 @@ Los siguientes son los canales del dispositivo posibles:
 - **BRW:** Autenticación de una transacción originada en un sitio web del comercio o pasarela de pago, que utiliza un navegador.
       
 - **RI:** Autenticación para confirmar la cuenta y verificar la identidad del tarjetahabiente. Este tipo de autenticación es de no pago y no requiere la presencia del tarjetahabiente. Se puede utilizar  por ejemplo para confirmar suscripciones.
-
-<!--
-type: tab
-title: Categorías de los mensajes
--->
-
-# Categorías de los mensajes 
-
-Los mensajes creados por el Procolo 3-D Secure, están categorizados en dos grupos:
-
-- **PA (Payment Authentication):** Autenticación para transacciones de comercio electrónico que incluyen pago.
-      
-- **NPA (Non-Payment Authentication):** Autenticación de no pago, utilizada para verficar la identidad y la cuenta del tarjetahabiente.
 
 <!--
 type: tab
