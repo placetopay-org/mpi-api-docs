@@ -21,6 +21,8 @@ Los dominios son los siguientes:
             
   - Integrador 3DS (3DS Integrator)
   - Adquiriente (Acquirer)
+  
+> Este dominio está representado por la aplicación de MPI.
 
 **2. Dominio de Interoperabilidad:** Conecta al dominio Adquiriente y Emisor a través de los mensajes que contienen información acerca de la autenticación.
 
@@ -138,7 +140,7 @@ El protocolo 3-D Secure contiene dos posibles flujos para el proceso de autentic
 
 - **Flujo sin fricción:**
       
-  El flujo sin fricción o sin challenge, no requiere interacción adicional por parte del tarjetahabiente para lograr una autenticación exitosa con 3-D Secure, ya que se evalúa la información obtenida del tarjetahabiente como legítima y de bajo riesgo. Se considera información de bajo riesgo por ejemplo cuando el tarjetabiente registra los mismos datos personales que suele registrar.
+  El flujo sin fricción o sin challenge, no requiere interacción adicional por parte del tarjetahabiente para lograr una autenticación exitosa con 3-D Secure, ya que se evalúa la información obtenida del tarjetahabiente como legítima, muy completa y de bajo riesgo. Se considera información de bajo riesgo por ejemplo cuando el tarjetabiente registra los mismos datos personales que suele registrar o cuando diligencia los campos opcionales de la autenticación.
       
   Este flujo inicia el proceso de autenticación de 3-D Secure y consiste en el envío de un mensaje de petición de autenticación (AReq) y posteriormente, un mensaje de respuesta a la autenticación (ARes).
 
@@ -152,12 +154,12 @@ El protocolo 3-D Secure contiene dos posibles flujos para el proceso de autentic
       
 ### Los tipos de challenge posibles son:
   
-  - **Autenticación con challenge:** Se suele presentar al tarjetahabiente un formulario de preguntas sobre su información personal.
+  - **Autenticación con challenge:** Se suele presentar al tarjetahabiente un formulario de preguntas sobre información personal adicional a la aportada, verificación de clave u OTP (autenticación con contraseña de un solo uso).
 
   - **Autenticación desacoplada:** En esta autenticación el flujo se pone en pausa y es el emisor de la tarjeta el que se comunica con el tarjetabiente para comprobar los datos dados y lo hace a través de un proceso manual.
           
-  - **Autenticación fuera de banda:** El proceso de comprobación de los datos del tarjetabiente queda a cargo del emisor de la tarjeta. Puede incluir otros medios de autenticación como un QR, un código enviado a una app, entre otros.
-      
+  - **Autenticación fuera de banda:** El proceso de comprobación de los datos del tarjetabiente queda a cargo del emisor de la tarjeta. Puede incluir otros medios de autenticación como un QR, un código enviado a una app, autenticación por biometría.
+
 > En cuanto a los mensajes presentes en este tipo de flujo, en adición a los mensajes AReq y ARes que comprenden el flujo sin fricción. El flujo con fricción o challenge comprende los mensajes CReq y CRes (excepto en el caso de una autenticación desacoplada) y los mensajes RReq y RRes.
   
   - El mensaje CReq se construye basado en la información recibida en el mensaje ARes.
