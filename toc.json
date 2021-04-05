@@ -1,0 +1,68 @@
+{
+  "items": [
+    {
+      "type": "item",
+      "title": "Introducción",
+      "uri": "docs/Introduction.md"
+    },
+    {
+      "type": "item",
+      "title": "Términos y Definiciones",
+      "uri": "docs/TermsAndDefinitions.md"
+    },
+        {
+      "type": "item",
+      "title": "¿Qué es el Protocolo 3-D Secure?",
+      "uri": "docs/3DSSecureProtocolDefinition.md"
+    },
+    {
+      "type": "item",
+      "title": "Generalidades del Protocolo 3-D Secure",
+      "uri": "docs/3DSSecureProtocol.md"
+    },
+    {
+      "type": "item",
+      "title": "Acerca del componente 3DS Server",
+      "uri": "docs/3DSServerComponent.md"
+    },
+    {
+      "type": "item",
+      "title": "Flujo del servicio de 3DS Server",
+      "uri": "docs/ServiceFlow.md"
+    },
+    {
+      "type": "item",
+      "title": "Requerimientos para el cliente que va a integrarse",
+      "uri": "docs/ClientRequirements.md"
+    },
+    {
+      "type": "item",
+      "title": "Estados del proceso de autenticación",
+      "uri": "docs/TransactionStatus.md"
+    },
+    {
+      "type": "item",
+      "title": "Tarjetas de prueba para la API",
+      "uri": "docs/TestCards.md"
+    },
+    {
+      "type": "item",
+      "title": "Descripción de códigos HTTP",
+      "uri": "docs/HttpCodes.md"
+    },
+    {
+      "type": "item",
+      "title": "Descripción de códigos de error",
+      "uri": "docs/ErrorCodes.md"
+    },
+    {
+      "type": "divider",
+      "title": "API"
+    },
+    {
+      "type": "item",
+      "title": "3DS Server (MPI)",
+      "uri": "3ds-mpi.yaml"
+    }
+  ]
+}
