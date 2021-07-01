@@ -107,36 +107,46 @@ paths:
                   description: |-
                     Número de cuenta que se utilizará en la solicitud de autorización para transacciones de pago.
 
-                    Debe pasar la validación del [Algoritmo de Luhn](https://es.wikipedia.org/wiki/Algoritmo_de_Luhn)
+                    > Debe pasar la validación del 
+                    <a href="https://es.wikipedia.org/wiki/Algoritmo_de_Luhn" target="_blank">Algoritmo de Luhn</a>
 
-                    **Valores aceptados:** Formato: [ISO 7812](https://es.wikipedia.org/wiki/ISO/IEC_7812)
+                    > **Valores aceptados:** Ver formato <a href="https://es.wikipedia.org/wiki/ISO/IEC_7812" target="_blank">ISO 7812</a>
                   minLength: 13
                   maxLength: 19
+                  example: '4005580000000040'
                 cardExpiryDate:
                   type: string
                   description: |-
-                    Fecha de vencimiento del PAN o token suministrado al Solicitante 3DS por el titular de la tarjeta.
+                    Fecha de vencimiento de la tarjeta suministrado por el titular.
 
-                    Formato: YYMM
+                    > **Formato:** ym
+
+                    > **Ejemplo:** 2506
                   minLength: 4
                   maxLength: 4
+                  example: '2506'
                 purchaseAmount:
                   type: string
-                  description: Monto de la transacción. Se eliminan todos los signos de puntuación.
-                  maxLength: 48
+                  description: |-
+                    Monto de la transacción.
+
+                    > **Ejemplo:** 20.5
+                  example: '20.5'
                 purchaseCurrency:
                   type: string
                   description: |-
-                    Moneda en la que se expresa el monto de la compra.
+                    El código alfabético de 3 letras de la moneda en la que se expresa el monto de la compra
 
-                    > Código de moneda de tres dígitos. Ver [ISO 4217](https://es.wikipedia.org/wiki/ISO_4217)
+                    > **Valores aceptados:** Ver formato <a href="https://es.wikipedia.org/wiki/ISO_4217" target="_blank">ISO 4217</a>
                   minLength: 3
                   maxLength: 3
+                  example: USD
                 redirectURI:
                   type: string
-                  description: URL totalmente calificada del sistema donde el titular de la tarjeta será redirigido después de completar una transacción de autenticación.
+                  description: URL del sistema donde el titular de la tarjeta será redirigido después de completar una transacción de autenticación.
                   maxLength: 256
                   format: uri
+                  example: 'https://www.placetopay.com'
                 threeDSAuthenticationInd:
                   type: string
                   description: |-
@@ -148,6 +158,7 @@ paths:
                     * 03 - Transacción a plazos
                   minLength: 2
                   maxLength: 2
+                  example: '01'
                 reference:
                   type: string
                   description: Referencia de la transacción.
@@ -157,14 +168,25 @@ paths:
                   description: |-
                     Indica el número mínimo de días entre autorizaciones.
 
-                    > Requerido si threeDSAuthenticationInd es igual a '02' o '03'
-                  maxLength: 32
+                    > Requerido sí threeDSAuthenticationInd es igual a '02' o '03'
+
+                    > Debe estar presente siempre que se envíe recurringExpiry
+
+                    > **Ejemplos de valores aceptados:** 31, 031, 0031
+                  minLength: 1
+                  maxLength: 4
                 recurringExpiry:
                   type: string
                   description: |-
                     Fecha después de la cual no se realizarán más autorizaciones.
 
                     > Requerido si threeDSAuthenticationInd es igual a '02' o '03'
+
+                    > Debe estar presente siempre que se envíe recurringFrequency
+
+                    > **Formato:** Ymd
+
+                    > **Ejemplo:** 20250601
                   minLength: 8
                   maxLength: 8
                 purchaseInstalData:
@@ -172,10 +194,14 @@ paths:
                   description: |-
                     Indica el número máximo de autorizaciones permitidas para pagos a plazos.
 
-                    > El valor debe ser mayor que 1. Se requiere si el comerciante y el titular de la tarjeta han acordado pagos a plazos, es decir, si threeDSAuthenticationInd = 03.
-                    Se omite si no se trata de una autenticación de pago a plazos.
-                  minLength: 8
-                  maxLength: 8
+                    > El valor debe ser mayor que 1. Se requiere sí el comerciante y el titular de la tarjeta han acordado pagos a plazos, es decir, si threeDSAuthenticationInd = 03.
+                    Se omite sí no se trata de una autenticación de pago a plazos.
+
+                    > **Ejemplos de valores aceptados:** 2, 02, 002
+                  minLength: 1
+                  maxLength: 3
+                threeDSAuthenticationInfo:
+                  $ref: '#/components/schemas/threeDSRequestorAuthenticationInfoProperties'
                 threeDSChallengeInd:
                   type: string
                   description: |-
@@ -184,69 +210,67 @@ paths:
                     > Si este parámetro no es enviado en la petición, se asumirá '01 = Sin preferencia' como valor por defecto
 
                     **Valores aceptados:**
-                    * 01 = No preference
-                    * 02 = No challenge requested
-                    * 03 = Challenge requested (3DS Requestor preference)
-                    * 04 = Challenge requested (Mandate)
-                    * 05 = No challenge requested (transactional risk analysis is already performed)
-                    * 06 = No challenge requested (Data share only)
-                    * 07 = No challenge requested (strong consumer authentication is already performed)
-                    * 08 = No challenge requested (utilise whitelist exemption if no challenge required)
-                    * 09 = Challenge requested (whitelist prompt requested if challenge required)
+                    * 01
+                    * 02
+                    * 03
+                    * 04
+                    * 05
+                    * 06
+                    * 07
+                    * 08
+                    * 09
                   minLength: 2
                   maxLength: 2
-                threeDSRequestorAuthenticationInfo:
-                  $ref: '#/components/schemas/threeDSRequestorAuthenticationInfoProperties'
                 threeDSRequestorID:
                   type: string
                   description: |-
                     Identificador asociado por el DS al Solicitante 3DS.
 
-                    > Cualquier DS individual puede imponer requisitos específicos de formato y caracteres en el contenido de este campo.
+                    > Cada Directory Server puede imponer requisitos específicos de formato y caracteres en el contenido de este campo.
                   maxLength: 35
                 acctInfo:
                   $ref: '#/components/schemas/acctInfoProperties'
                 acctID:
                   type: string
-                  description: Identificador de la cuenta del tarjetahabiente.
+                  description: Información adicional sobre la cuenta proporcionada por 3DS Requestor.
                   maxLength: 64
                 billAddrCity:
                   type: string
-                  description: Ciudad de la dirección de facturación.
+                  description: El nombre de la ciudad de la dirección de facturación del Titular de la tarjeta asociada con la tarjeta utilizada para esta compra.
                   maxLength: 50
                 billAddrCountry:
                   type: string
                   description: |-
-                    País de la dirección de facturación.
+                    El código alfabético de tres letras que relaciona al país de la dirección de facturación del Titular de la tarjeta asociada con la tarjeta utilizada para esta compra.
 
-                    Valores aceptados: Formato: [ISO 3166-1](https://es.wikipedia.org/wiki/ISO_3166-1)
+                    > **Valores aceptados:** Ver formato <a href="https://es.wikipedia.org/wiki/ISO_3166-1" target="_blank">ISO 3166-1</a>
                   maxLength: 3
                 billAddrLine1:
                   type: string
-                  description: Línea 1 de la dirección de facturación.
+                  description: Primera línea de la dirección postal o parte local equivalente de la dirección de facturación del titular de la tarjeta asociada con la tarjeta utilizada para esta compra.
                   maxLength: 50
                 billAddrLine2:
                   type: string
-                  description: Línea 2 de la dirección de facturación.
+                  description: Segunda línea de la dirección postal o parte local equivalente de la dirección de facturación del titular de la tarjeta asociada con la tarjeta utilizada para esta compra.
                   maxLength: 50
                 billAddrLine3:
                   type: string
-                  description: Línea 3 de la dirección de facturación.
+                  description: Tercera línea de la dirección postal o parte local equivalente de la dirección de facturación del titular de la tarjeta asociada con la tarjeta utilizada para esta compra.
                   maxLength: 50
                 billAddrPostCode:
                   type: string
-                  description: Código Postal de la dirección de facturación
+                  description: ZIP u otro código postal de la dirección de facturación del titular de la tarjeta asociada con la tarjeta utilizada para esta compra.
                   maxLength: 16
                 billAddrState:
                   type: string
                   description: |-
-                    Estado de la dirección de facturación. 
+                    Código alfabético de 3 letras de la subdivisión del país que representa el estado o provincia de la dirección de facturación del titular de la tarjeta asociada con la tarjeta utilizada para esta compra.
 
-                    Valores aceptados: Formato: [ISO 3166-2](https://es.wikipedia.org/wiki/ISO_3166-1)
+                    > **Valores aceptados:** Ver formato <a href="https://es.wikipedia.org/wiki/ISO_3166-2" target="_blank">ISO 3166-2</a>
                   maxLength: 3
                 email:
                   type: string
-                  description: Correo electrónico del tarjetahabiente.
+                  description: La dirección de correo electrónico asociada con la cuenta que ingresó el Titular de la tarjeta o que está archivada con el Solicitante de 3DS.
                   format: email
                   maxLength: 254
                 homePhone:
@@ -260,38 +284,38 @@ paths:
                   maxLength: 45
                 shipAddrCity:
                   type: string
-                  description: Ciudad de la dirección de envío.
+                  description: Nombre completo o parcial de la ciudad de la dirección de envío proporcionado por el titular de la tarjeta.
                   maxLength: 50
                 shipAddrCountry:
                   type: string
                   description: |-
-                    País de la dirección de envío. 
+                    El código alfabético de tres letras que relaciona al país de la dirección de envío proporcionado por el Titular de la tarjeta.
 
-                    Valores aceptados: Formato: [ISO 3166-1](https://es.wikipedia.org/wiki/ISO_3166-1)
+                    > **Valores aceptados:** Ver formato <a href="https://es.wikipedia.org/wiki/ISO_3166-1" target="_blank">ISO 3166-1</a>
                   minLength: 3
                   maxLength: 3
                 shipAddrLine1:
                   type: string
-                  description: Línea 1 de la dirección de envío.
+                  description: Primera línea de la dirección postal o parte local equivalente de la dirección de envío proporcionado por el titular de la tarjeta.
                   maxLength: 50
                 shipAddrLine2:
                   type: string
-                  description: Línea 2 de la dirección de envío.
+                  description: Segunda línea de la dirección postal o parte local equivalente de la dirección de envío proporcionado por el titular de la tarjeta.
                   maxLength: 50
                 shipAddrLine3:
                   type: string
-                  description: Línea 3 de la dirección de envío.
+                  description: Tercera línea de la dirección postal o parte local equivalente de la dirección de envío proporcionado por el titular de la tarjeta.
                   maxLength: 50
                 shipAddrPostCode:
                   type: string
-                  description: Código postal de la dirección de envío.
+                  description: ZIP u otro código postal de la dirección de envío proporcionado por el titular de la tarjeta
                   maxLength: 16
                 shipAddrState:
                   type: string
                   description: |-
-                    Estado de la dirección de envío.
+                    Código alfabético de 3 letras de la subdivisión del país que representa el estado o provincia de la dirección de envío proporcionado por el titular de la tarjeta.
 
-                    Valores aceptados: Formato: [ISO 3166-2](https://es.wikipedia.org/wiki/ISO_3166-1)
+                    > **Valores aceptados:** Ver formato <a href="https://es.wikipedia.org/wiki/ISO_3166-2" target="_blank">ISO 3166-2</a>
                   maxLength: 3
                 workPhone:
                   $ref: '#/components/schemas/PhoneProperties'
@@ -479,7 +503,7 @@ components:
     threeDSRequestorAuthenticationInfoProperties:
       title: threeDSAuthenticationInfo
       type: object
-      description: '> Información sobre cómo el Solicitante 3DS autenticó al titular de la tarjeta antes o durante la transacción.'
+      description: '> Información sobre cómo el 3DS Requestor autenticó al titular de la tarjeta antes o durante la transacción.'
       x-tags:
         - Models
       x-examples:
@@ -494,7 +518,18 @@ components:
           description: Datos de autenticación del solicitante de 3DS.
         threeDSReqAuthMethod:
           type: string
-          description: Mecanismo utilizado por el Titular de la tarjeta para autenticarse ante el 3DS Requestor.
+          description: |-
+            Mecanismo utilizado por el Titular de la tarjeta para autenticarse ante el 3DS Requestor.
+
+            **Valores aceptados:**
+            * 01
+            * 02
+            * 03
+            * 04
+            * 05
+            * 06
+            * 07
+            * 08
           minLength: 2
           maxLength: 2
         threeDSReqAuthTimestamp:
@@ -502,7 +537,9 @@ components:
           description: |-
             Fecha y hora en UTC de la autenticación del titular de la tarjeta.
 
-            Formato YYYYMMDDHHMM
+            > **Formato:** YYYYMMDDHHMM
+
+            > **Ejemplo:** 202506011200
           minLength: 12
           maxLength: 12
     acctInfoProperties:
@@ -548,7 +585,9 @@ components:
           description: |-
             Fecha del último cambio efectuado en la cuenta del tarjetahabiente en el sitio web del comercio. Incluyendo dirección de envío, dirección de pago.
 
-            **Valores aceptados:** Fecha en formato YYYYMMDD
+            > **Formato:** YYYYMMDD
+
+            > **Ejemplo:** 20250601
           minLength: 8
           maxLength: 8
         chAccChangeInd:
@@ -568,7 +607,9 @@ components:
           description: |-
             Fecha en la que se creó la cuenta en el sitio web del comercio.
 
-            **Valores aceptados:** Fecha en formato YYYYMMDD
+            > **Formato:** YYYYMMDD
+
+            > **Ejemplo:** 20250601
           minLength: 8
           maxLength: 8
         chAccPwChange:
@@ -576,7 +617,9 @@ components:
           description: |-
             Fecha en la que se realizó el último cambio o recuperación de contraseña.
 
-            **Valores aceptados:** Fecha en formato YYYYMMDD
+            > **Formato:** YYYYMMDD
+
+            > **Ejemplo:** 20250601
           minLength: 8
           maxLength: 8
         chAccPwChangeInd:
@@ -599,22 +642,33 @@ components:
           minLength: 1
         provisionAttemptsDay:
           type: string
-          description: Número de intentos de agregar tarjetas en las últimas 24 horas.
+          description: |-
+            Número de intentos de agregar tarjetas en las últimas 24 horas.
+
+            > **Ejemplos de valores aceptados:** 2, 02, 002
           maxLength: 3
         txnActivityDay:
           type: string
-          description: Número de transacciones (exitosas y abandonadas) para esta cuenta en las últimas 24 horas.
+          description: |-
+            Número de transacciones (exitosas y abandonadas) para esta cuenta en las últimas 24 horas.
+
+            > **Ejemplos de valores aceptados:** 2, 02, 002
           maxLength: 3
         txnActivityYear:
           type: string
-          description: Número de transacciones (exitosas y abandonadas) para esta cuenta en el último año.
+          description: |-
+            Número de transacciones (exitosas y abandonadas) para esta cuenta en el último año.
+
+            > **Ejemplos de valores aceptados:** 2, 02, 002
           maxLength: 3
         paymentAccAge:
           type: string
           description: |-
             Fecha en la que el método de pago se agregó a la cuenta del usuario en el sitio web del comercio.
 
-            **Valores aceptados:** Fecha en formato YYYYMMDD
+            > **Formato:** YYYYMMDD
+
+            > **Ejemplo:** 20250601
           minLength: 8
           maxLength: 8
         paymentAccInd:
@@ -635,7 +689,9 @@ components:
           description: |-
             Fecha en la que la dirección de entrega fue usada por primera vez en el sitio web del comercio.
 
-            **Valores aceptados:** Fecha en formato YYYYMMDD
+            > **Formato:** YYYYMMDD
+
+            > **Ejemplo:** 20250601
           minLength: 8
           maxLength: 8
         shipAddressUsageInd:
