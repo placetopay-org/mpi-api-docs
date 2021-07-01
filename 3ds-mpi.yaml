@@ -85,7 +85,8 @@ paths:
                   error_description:
                     type: string
                   errors:
-                    type: string
+                    type: object
+                    description: Listado de campos que presentan errores en la validación.
                 required:
                   - error_number
                   - error_description
@@ -95,7 +96,17 @@ paths:
                   value:
                     error_number: '1011'
                     error_description: Invalid arguments to initiate request
-                    errors: The purchase currency field is required.
+                    errors:
+                      acctNumber:
+                        - The acct number field is required.
+                      cardExpiryDate:
+                        - The card expiry date field is required.
+                      purchaseAmount:
+                        - The purchase amount field is required.
+                      redirectURI:
+                        - The redirect u r i field is required.
+                      purchaseCurrency:
+                        - The purchase currency field is required.
       requestBody:
         content:
           application/json:
@@ -338,20 +349,20 @@ paths:
               Petición exitosa con información de facturación del tarjetahabiente:
                 value:
                   acctNumber: '4012000000001097'
-                  cardExpiryDate: '2010'
+                  cardExpiryDate: '2411'
                   purchaseAmount: '15000'
                   redirectURI: 'http://www.placetopay.com'
                   purchaseCurrency: COP
                   cardholderName: John Doe
                   email: john.doe@example.com
                   billAddrCity: Medellin
-                  billAddrCountry: COP
+                  billAddrCountry: COL
                   billAddrLine1: 'Cl 72 No. 15 F-07, El libertador'
                   billAddrPostCode: '76001'
               Petición exitosa con información de la cuenta del tarjetahabiente:
                 value:
                   acctNumber: '4012000000001097'
-                  cardExpiryDate: '2010'
+                  cardExpiryDate: '2411'
                   purchaseAmount: '15000'
                   redirectURI: 'http://www.placetopay.com'
                   purchaseCurrency: COP
@@ -367,12 +378,12 @@ paths:
               Petición exitosa con información de entrega del tarjetahabiente:
                 value:
                   acctNumber: '4012000000001097'
-                  cardExpiryDate: '2010'
+                  cardExpiryDate: '2411'
                   purchaseAmount: '15000'
                   redirectURI: 'http://www.placetopay.com'
                   purchaseCurrency: COP
                   shipAddrCity: Medellin
-                  shipAddrCountry: COP
+                  shipAddrCountry: COL
                   shipAddrLine1: 'Cl 72 No. 15 F-07, El libertador'
                   shipAddrPostCode: '76001'
               Petición fallida con error de validación:
@@ -385,7 +396,7 @@ paths:
               Petición con flujo con fricción o challenge:
                 value:
                   acctNumber: '4009000000502'
-                  cardExpiryDate: '2110'
+                  cardExpiryDate: '2411'
                   purchaseAmount: '800'
                   redirectURI: 'http://www.placetopay.com'
                   purchaseCurrency: COP
@@ -484,7 +495,7 @@ components:
         Ejemplo de petición:
           cc: '1'
           subscriber: '1234567899'
-      description: '> Valores aceptados según especificación [ITU-E.164](https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-E.164-201011-I!!PDF-S&type=items)'
+      description: '> **Valores aceptados según especificación** Ver formato <a href="https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-E.164-201011-I!!PDF-S&type=items" target="_blank">ITU-E.164</a>'
       x-tags:
         - Models
       properties:
@@ -762,7 +773,10 @@ components:
           minLength: 2
         giftCardAmount:
           type: string
-          description: 'Para compras con tarjeta de regalo o prepago, el monto total de la compra de tarjetas de regalo o prepago en unidades principales (por ejemplo, 123,45 USD es 123).'
+          description: |-
+            Para compras con tarjeta de regalo o prepago, el monto total de la compra de tarjetas de regalo o prepago en unidades principales (por ejemplo, 123,45 USD es 123).
+
+            > **Ejemplos de valores aceptados:** 123, 0123, 00123
           maxLength: 15
         giftCardCount:
           type: string
@@ -773,7 +787,8 @@ components:
           type: string
           description: |-
             Para compras con tarjeta de regalo o prepago, código de moneda de tres dígitos ISO 4217 de la tarjeta de regalo.
-            Formato: [ISO 4217](https://es.wikipedia.org/wiki/ISO_4217)
+
+            > **Valores aceptados:** Ver formato <a href="https://es.wikipedia.org/wiki/ISO_4217" target="_blank">ISO 4217</a>
           minLength: 3
           maxLength: 3
         preOrderDate:
@@ -781,7 +796,9 @@ components:
           description: |-
             Para una compra pre-ordenada, la fecha esperada en que la mercancía estará disponible.
 
-            Formato: YYYYMMDD
+            > **Formato:** Ymd
+
+            > **Ejemplo:** 20250601
           minLength: 8
           maxLength: 8
         preOrderPurchaseInd:
