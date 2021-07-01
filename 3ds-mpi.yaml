@@ -221,15 +221,15 @@ paths:
                     > Si este parámetro no es enviado en la petición, se asumirá '01 = Sin preferencia' como valor por defecto
 
                     **Valores aceptados:**
-                    * 01
-                    * 02
-                    * 03
-                    * 04
-                    * 05
-                    * 06
-                    * 07
-                    * 08
-                    * 09
+                    * 01 = No preference
+                    * 02 = No challenge requested
+                    * 03 = Challenge requested (3DS Requestor preference)
+                    * 04 = Challenge requested (Mandate)
+                    * 05 = No challenge requested (transactional risk analysis is already performed)
+                    * 06 = No challenge requested (Data share only)
+                    * 07 = No challenge requested (strong consumer authentication is already performed)
+                    * 08 = No challenge requested (utilise whitelist exemption if no challenge required)
+                    * 09 = Challenge requested (whitelist prompt requested if challenge required)
                   minLength: 2
                   maxLength: 2
                 threeDSRequestorID:
