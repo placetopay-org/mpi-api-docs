@@ -938,6 +938,7 @@ components:
           schema:
             type: object
             properties: {}
+  examples: {}
 security:
   - Authorization: []
 tags:
