@@ -169,7 +169,7 @@ paths:
                     * 03 - Transacción a plazos
                     * 04 - Agregar una tarjeta
                     * 05 - Mantener una tarjeta
-                    * 06 - Verficación del tarjetahabiente como parte del EMV token ID&V
+                    * 06 - Verficación del tarjeta habiente como parte del EMV token ID&V
                   minLength: 2
                   maxLength: 2
                   example: '01'
