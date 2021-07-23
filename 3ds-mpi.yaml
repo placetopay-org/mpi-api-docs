@@ -402,7 +402,27 @@ paths:
                   cardExpiryDate: '2411'
                   purchaseAmount: '800'
                   redirectURI: 'http://www.placetopay.com'
-                  purchaseCurrency: COP
+                  purchaseCurrency: 'COP'
+              Petición con recurrencia:
+                value:
+                  acctNumber: '4009000000502'
+                  cardholderName: 'John Doe'
+                  cardExpiryDate: '2411'
+                  redirectURI: 'http://www.placetopay.com'
+                  messageCategory: '02'
+                  threeDSAuthenticationInd: '02'
+                  recurringFrequency: '30'
+                  recurringExpiry: '20210801'
+                  purchaseAmount: '800'
+                  purchaseCurrency: 'COP'
+              Petición para una suscripción:
+                value:
+                  acctNumber: '4009000000502'
+                  cardholderName: 'John Doe'
+                  cardExpiryDate: '2411'
+                  redirectURI: 'http://www.placetopay.com'
+                  messageCategory: '02'
+                  threeDSAuthenticationInd: '01'
           application/xml:
             schema:
               type: object
