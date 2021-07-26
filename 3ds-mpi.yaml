@@ -422,7 +422,7 @@ paths:
                   cardExpiryDate: '2411'
                   redirectURI: 'http://www.placetopay.com'
                   messageCategory: '02'
-                  threeDSAuthenticationInd: '01'
+                  threeDSAuthenticationInd: '04'
           application/xml:
             schema:
               type: object
