@@ -4,7 +4,7 @@ Los siguientes números de tarjetas de crédito, le permitirán hacer peticiones
 
 
 Franquicia   | Número de Tarjeta | Estado | Comportamiento                                                         |
--------------|-------------------|--------|------------------------------------------------------------------------|
+-------------|-------------------|:------:|------------------------------------------------------------------------|
  MasterCard  | 5107000000010000  |   Y    | Genera una transacción con autenticación satisfactoria y sin fricción. |
  Visa        | 4005580000000040  |   Y    | Genera una transacción con autenticación satisfactoria y sin fricción. |
  MasterCard  | 5107000000010018  |   C    | Genera una transacción que requiere desafío de autenticación (flujo con fricción).                                                                                                         |
