@@ -19,3 +19,10 @@ Franquicia   | Número de Tarjeta | Estado | Comportamiento                     
  Visa        | 4100000000038     |   I    | Genera una transacción informativa y de no pago (para consultas de cuentas y suscripciones).                                                                                                  |
  MasterCard  | 5107000000010141  |   N    | Genera una transacción no autenticada por el emisor.                   |
  Visa        | 4009000000510     |   N    | Genera una transacción no autenticada por el emisor.                   |
+
+
+# Datos de prueba para el desafío
+
+Código OTP | Descripción                               |
+-----------|-------------------------------------------|
+ 12345     | Pasa el desafío y autentica exitosamente. |  
