@@ -10,7 +10,7 @@
       "title": "Términos y Definiciones",
       "uri": "docs/TermsAndDefinitions.md"
     },
-        {
+    {
       "type": "item",
       "title": "¿Qué es el Protocolo 3-D Secure?",
       "uri": "docs/3DSSecureProtocolDefinition.md"
@@ -31,29 +31,72 @@
       "uri": "docs/ServiceFlow.md"
     },
     {
-      "type": "item",
-      "title": "Requerimientos para el cliente que va a integrarse",
-      "uri": "docs/ClientRequirements.md"
+      "type": "group",
+      "title": "Datos a tener en cuenta",
+      "items": [
+        {
+          "type": "item",
+          "title": "Estados de autenticación",
+          "uri": "docs/TransactionStatus.md"
+        },
+        {
+          "type": "item",
+          "title": "Tarjetas y datos de prueba para la API",
+          "uri": "docs/TestCards.md"
+        },
+        {
+          "type": "item",
+          "title": "Descripción de códigos HTTP",
+          "uri": "docs/HttpCodes.md"
+        },
+        {
+          "type": "item",
+          "title": "Descripción de códigos de error",
+          "uri": "docs/ErrorCodes.md"
+        }
+        ]
     },
     {
-      "type": "item",
-      "title": "Estados del proceso de autenticación",
-      "uri": "docs/TransactionStatus.md"
-    },
-    {
-      "type": "item",
-      "title": "Tarjetas y datos de prueba para la API",
-      "uri": "docs/TestCards.md"
-    },
-    {
-      "type": "item",
-      "title": "Descripción de códigos HTTP",
-      "uri": "docs/HttpCodes.md"
-    },
-    {
-      "type": "item",
-      "title": "Descripción de códigos de error",
-      "uri": "docs/ErrorCodes.md"
+      "type": "group",
+      "title": "Funcionamiento de MPI",
+      "items": [
+        {
+          "type": "group",
+          "title": "Configuración",
+          "items": [
+            {
+              "type": "item",
+              "title": "Configuración general de MPI",
+              "uri": "docs/MPIGeneralConfiguration.md"
+            },
+            {
+              "type": "item",
+              "title": "Otras configuraciones",
+              "uri": "docs/MPIConfigurations.md"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "title": "Funcionalidades",
+          "uri": "docs/MPIFunctionalities.md"
+        },
+        {
+          "type": "item",
+          "title": "Seguridad",
+          "uri": "docs/MPISecurity.md"
+        },
+        {
+          "type": "item",
+          "title": "Requerimientos de integración",
+          "uri": "docs/ClientRequirements.md"
+        },
+        {
+          "type": "item",
+          "title": "Solución de problemas frecuentes",
+          "uri": "docs/FAQ.md"
+        }
+      ]
     },
     {
       "type": "divider",
