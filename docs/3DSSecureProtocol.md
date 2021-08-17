@@ -155,7 +155,7 @@ El protocolo 3-D Secure contiene dos posibles flujos para el proceso de autentic
       
 ### Los tipos de challenge posibles son:
   
-  - **Autenticación con challenge:** Se suele presentar al tarjetahabiente un formulario de preguntas sobre información personal adicional a la aportada, verificación de clave u OTP (autenticación con contraseña de un solo uso).
+  - **Autenticación con challenge o desafío:** Se suele presentar al tarjetahabiente un formulario de preguntas sobre información personal adicional a la aportada, verificación de clave u OTP (autenticación con contraseña de un solo uso).
 
   - **Autenticación desacoplada:** En esta autenticación el flujo se pone en pausa y es el emisor de la tarjeta el que se comunica con el tarjetabiente para comprobar los datos dados y lo hace a través de un proceso manual.
           

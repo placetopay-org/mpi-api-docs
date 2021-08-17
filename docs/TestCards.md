@@ -23,6 +23,8 @@ Franquicia   | Número de Tarjeta | Estado | Comportamiento                     
 
 # Datos de prueba para el desafío
 
+El siguiente código deberá ser ingresado en autenticaciones de prueba con desafío.
+
 Código OTP | Descripción                               |
 -----------|-------------------------------------------|
  12345     | Pasa el desafío y autentica exitosamente. |  

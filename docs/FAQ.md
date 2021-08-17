@@ -86,16 +86,16 @@ De esta forma, al diligenciar el formulario puede encontrar y verificar dos tipo
     La siguiente imagen ilustra errores en validaciones del lado del cliente:
 
 
-    ![](https://wiki.placetopay.com/images/3/30/Issuer-pre-validations.png)
+    ![](https://wiki.placetopay.com/images/5/52/Client-validation.png)
 
 1. **Validaciones de lado del servidor:**
 
     Estas validaciones se aplican cuando se envía un formulario o unos datos al servidor y estos no cumplen con las validaciones requeridas, por lo cual se genera un error,se deniega la solicitud y posteriormente, se muestra al usuario el error encontrado. Estas validaciones se ejecutan cuando no se han registrado como validaciones del lado del cliente, o son complicadas de validar del lado del cliente o el usuario logra por algún medio pasar el primer filtro de validaciones del cliente con la información errónea, sin embargo, este filtro de validaciones detiene una solicitud con datos inválidos.
 
-    La siguiente imagen ilustra errores en validaciones del lado del servidor, en la cual se logró enviar el formulario con datos inválidos, pero al momento de recibirlo y validarlo, se encontraron errores en los datos de la solicitud, por lo cual no pudo ser procesada correctamente:
+    La siguiente imagen ilustra errores en validaciones del lado del servidor, en la cual se logró enviar el formulario con datos inválidos (con un archivo que no cumplía las validaciones requeridas), pero al momento de recibirlo y validarlo, se encontraron errores en los datos de la solicitud, por lo cual no pudo ser procesada correctamente (el archivo no pudo ser importado):
 
 
-    ![](https://wiki.placetopay.com/images/9/91/Image-issuer-error.png)    
+    ![](https://wiki.placetopay.com/images/9/90/Validation-server-error.png)    
 
 <!--
 type: tab
