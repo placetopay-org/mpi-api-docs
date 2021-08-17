@@ -23,7 +23,6 @@ El proceso de autenticación permite reducir el riesgo de fraude en las transacc
 
 El Protocolo 3-D Secure es quien define y describe la infraestructura y las pautas para la autenticación del tarjetahabiente durante una transacción de comercio electrónico.
 
-
 > Recomendamos leer la documentación en su totalidad, ya que en cada una de las secciones se describen situaciones particulares que se pueden experimentar y sus respectivas soluciones
 
 ## ¿Cómo acceder a MPI?
@@ -71,6 +70,32 @@ Cuando accede a la sección de métricas puede preguntarse ¿cómo obtener infor
 La aplicación de MPI contiene un módulo ubicado en el menú **Seguridad** -> **Logs**, donde se registran los movimientos realizados en la aplicación, con el detalle del número de registro, la fecha, hora, usuario, descripción del movimiento y datos del equipo desde el cual se realizó. Se visualizan como el siguiente ejemplo:
 
 ![](https://wiki.placetopay.com/images/b/b3/Log-detail.png)
+
+## ¿Cómo se validan los datos que ingresan los usuarios en los diferentes formularios de la aplicación?
+
+### Validación de datos:
+
+Para todos los formularios de la aplicación, se dispone de la funcionalidad de validación de los datos ingresados, lo cual permite asegurar la integridad y veracidad de éstos.
+
+De esta forma, al diligenciar el formulario puede encontrar y verificar dos tipos de validaciones:
+
+1. **Validaciones de lado del cliente:**
+
+    Estas validaciones se realizan cuando un dato no cumple las reglas mínimas de aceptación y no hay necesidad de enviar la respuesta al servidor si se ha validado previamente que está errónea la información. Se visualizan con mensajes en rojo para el campo erróneo y le ofrece al usuario una ayuda de cómo debe diligenciar el campo en cuestión para ser aceptado. Si hay errores en estas validaciones, la aplicación no permite el envío del formulario.
+
+    La siguiente imagen ilustra errores en validaciones del lado del cliente:
+
+
+    ![](https://wiki.placetopay.com/images/3/30/Issuer-pre-validations.png)
+
+1. **Validaciones de lado del servidor:**
+
+    Estas validaciones se aplican cuando se envía un formulario o unos datos al servidor y estos no cumplen con las validaciones requeridas, por lo cual se genera un error,se deniega la solicitud y posteriormente, se muestra al usuario el error encontrado. Estas validaciones se ejecutan cuando no se han registrado como validaciones del lado del cliente, o son complicadas de validar del lado del cliente o el usuario logra por algún medio pasar el primer filtro de validaciones del cliente con la información errónea, sin embargo, este filtro de validaciones detiene una solicitud con datos inválidos.
+
+    La siguiente imagen ilustra errores en validaciones del lado del servidor, en la cual se logró enviar el formulario con datos inválidos, pero al momento de recibirlo y validarlo, se encontraron errores en los datos de la solicitud, por lo cual no pudo ser procesada correctamente:
+
+
+    ![](https://wiki.placetopay.com/images/9/91/Image-issuer-error.png)    
 
 <!--
 type: tab
