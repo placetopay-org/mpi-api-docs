@@ -4,13 +4,16 @@ Para obtener un óptimo funcionamiento de la aplicación, esta se debe configura
 
 ## Pasos para la configuración:
 
-1. Primero debe contar con un **usuario con permisos** para hacer el proceso de configuración. Posteriormente, ingrese a la aplicación con este usuario y con la contraseña asignada.
+### Paso 1:
+Primero debe contar con un **usuario con permisos** para hacer el proceso de configuración. Posteriormente, ingrese a la aplicación con este usuario y con la contraseña asignada.
 
-2. Seleccione el **idioma** con el cual desea que se presente toda la información y funcionalidades en la aplicación. Están disponibles los idiomas español e inglés. Esta opción se encuentra ubicada en la parte superior derecha de la aplicación, en un menú desplegable.
+### Paso 2:
+Seleccione el **idioma** con el cual desea que se presente toda la información y funcionalidades en la aplicación. Están disponibles los idiomas español e inglés. Esta opción se encuentra ubicada en la parte superior derecha de la aplicación, en un menú desplegable.
 
 ![](https://wiki.placetopay.com/images/3/34/Language-configuration.png)
 
-3. Ubique y **familiarícese con los módulos** en los cuales se divide la aplicación y las funcionalidades que cada uno contiene. Estos se encuentran en el menú ubicado en la parte lateral izquierda de la aplicación. Y se visualizan así con el idioma Español:
+### Paso 3:
+Ubique y **familiarícese con los módulos** en los cuales se divide la aplicación y las funcionalidades que cada uno contiene. Estos se encuentran en el menú ubicado en la parte lateral izquierda de la aplicación. Y se visualizan así con el idioma Español:
 
 ![](https://wiki.placetopay.com/images/8/8a/Mpi-menu-options.png)
 
@@ -59,4 +62,35 @@ En este módulo se encuentran los componentes que gestionan los registros de mov
 
  > Este módulo y sus funcionalidades, se revisan y explican detalladamente en la sección de **Funcionamiento de MPI** -> **Seguridad**, de esta documentación.
 
-4. Cree las **franquicias** con las cuales esté certificada ACS, en el menú de *Franquicias*, y habílitelas según las requiera.
+### Paso 4:
+Cree los ***aliados comerciales***. Siga la guía dada en el menú de **Funcionamiento de MPI** -> **Configuración** -> **Otras configuraciones** -> **Aliados comerciales**  de la presente documentación, y habílitelos según los requiera.
+
+### Paso 5:
+Cree los ***consultores comerciales***. Siga la guía dada en el menú de **Funcionamiento de MPI** -> **Configuración** -> **Otras configuraciones** -> **Consultores comerciales**,  de la presente documentación, y habílitelos según los requiera.
+
+### Paso 6:
+Cree los ***comercios*** con los cuales tiene convenio. Siga la guía dada en el menú de **Funcionamiento de MPI** -> **Configuración** -> **Configuración de comercios**, de la presente documentación, y habílitelos según los requiera.
+
+### Paso 7:
+Cree las ***franquicias*** con las cuales esté certificada MPI. Siga la guía dada en el menú de **Funcionamiento de MPI** -> **Configuración** -> **Configuración de franquicias**,  de la presente documentación, y habílitelas según las requiera.
+
+### Paso 8:
+Cree los ***servidores de directorio*** (DS), respectivos para cada franquicia. Para ello vaya al detalle de cada franquicia, a la sección *Servidores de directorio*. Para obtener más detalles, siga la guía dada en el menú de **Funcionamiento de MPI** -> **Configuración** -> **Configuración de franquicias**,  de la presente documentación, y habílitelos según los requiera.
+
+### Paso 9:
+Cree ***configuraciones para cada servidor de directorio*** (DS). Para ello vaya al detalle de cada franquicia, luego a la sección *Servidores de directorio*, y luego al detalle de cada servidor de directorio y a la sección *Configuraciones*. Para obtener más detalles, siga la guía dada en el menú de **Funcionamiento de MPI** -> **Configuración** -> **Configuración de franquicias**,  de la presente documentación.
+
+### Paso 10:
+Cree los ***adquirientes*** con los cuales tiene convenio. Siga la guía dada en el menú de **Funcionamiento de MPI** -> **Configuración** **Otras configuraciones** -> **Adquirientes**, de la presente documentación, y habílitelos según los requiera.
+
+### Paso 11:
+Cree los ***bines*** que requiera para cada adquiriente creado. Los bines hacen referencia a los primeros 6 dígitos de las tarjetas que pueden procesar las franquicias de cada adquieriente. Para ello vaya al detalle de cada adquiriente, a la sección *Bines*. Para obtener más detalles, siga la guía dada en el menú de **Funcionamiento de MPI** -> **Configuración** **Otras configuraciones** -> **Adquirientes**, de la presente documentación.
+
+### Paso 12:
+Cree el ***certificado SSL*** para cada comercio, y fírmelo. Para más detalle de este proceso siga la guía dada en el menú de **Funcionamiento de MPI** -> **Configuración** **Otras configuraciones** -> **Certificados**, de la presente documentación.
+
+### Paso 13:
+***Suscriba adquirientes*** por franquicia y versión del protocolo para cada comercio. Para ello diríjase al detalle de cada comercio, a la sección *Adquirientes suscritos*, haga clic en el botón *Suscribir adquiriente*, diligencie el formulario y luego en el listado de *Adquirientes suscritos*, haga clic en el ícono con forma de probeta, para validar la suscripción, esta debe arrojarle un mensaje de éxito, además el certificado debe aparecer como "OK" y con el estado "Disponible*, en el listado de adquirientes suscritos.
+
+### Paso 14:
+Cree un ***token de acceso*** y autentiquese con este en la API para comenzar a procesar transacciones. Para ello vaya al detalle de cada comercio, a la sección *Tokens*. Para obtener más detalles, siga la guía dada en el menú de **Funcionamiento de MPI** -> **Configuración** **Otras configuraciones** -> **Certificados**, de la presente documentación.
