@@ -187,6 +187,3 @@ Luego visualizará una vista similar a la siguiente:
 En la parte inferior de la vista, encontrará tres pestañas que contienen los campos de configuración de los emisores, agrupados en tres secciones: General, Desafíos y Servicios.
 
 Ingresando a cada una de las pestañas, podrá ver la información de los campos del emisor organizada en tablas, en las cuales se muestra el nombre, el valor inicial del campo y el estado del mismo.
-
-
-<!-- type: tab-end -->
