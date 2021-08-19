@@ -5,7 +5,40 @@ title: Tokens
 
 # Tokens
 
-...
+Para acceder al módulo de tokens, diríjase al menú lateral izquierdo, despliegue la opción *Seguridad* y busque la sección de *Tokens* en los títulos.
+
+![](https://wiki.placetopay.com/images/3/30/Tokens-menu-mpi.png)
+
+## Listado de tokens:
+
+En este módulo se puede visualizar el listado de tokens creados para cada comercio. El listado contiene el nombre del token, el tipo, el comercio y sucursal asociados, el usuario que lo creó, la fecha de creación y de expiración del token.
+
+El siguiente es un ejemplo de un índice de tokens.
+
+![](https://wiki.placetopay.com/images/4/47/Tokens-index.png)
+
+
+#### Filtros:
+
+En el índice de datos se encuentra la funcionalidad de filtros, esta funcionalidad permite hacer búsquedas específicas de datos. Los filtros están ubicados en la parte superior lateral izquierda.
+
+Para los tokens están disponibles para búsquedas, los campos de nombre del token, nombre del comercio y/o sucursal y el usuario que haya creado el token.
+
+Para ejecutar la búsqueda haga clic en el botón **Buscar** y para limpiar los datos de búsqueda ingresados previamente, haga clic en el botón **Limpiar filtros**.
+
+![](https://wiki.placetopay.com/images/e/ed/Token-filters.png)
+
+
+## Acciones para los tokens
+
+En el índice de tokens puede acceder a las acciones disponibles para cada token, haciendo clic en el menú con tres puntos, ubicado al final de cada registro:
+
+Las acciones disponibles son:
+
+- **Eliminar:** Puede eliminar el token seleccionado.
+
+> Es importante recordar que los tokens se crean a través del módulo **Comercios**, en el detalle de cada comercio y luego en la sección **Tokens**. Para obtener más detalles de este proceso, diríjase a la sección de la documentación **Funcionamiento de MPI** -> **Configuración** -> **Configuración de comercios**.
+
 
 <!--
 type: tab
@@ -17,6 +50,7 @@ title: Usuarios
 Para acceder al módulo de usuarios, diríjase al menú lateral izquierdo, despliegue la opción *Seguridad* y busque la sección de *Usuarios* en los títulos.
 
 ![](https://wiki.placetopay.com/images/c/c8/Users-menu-2.png)
+
 
 ## Listado de usuarios:
 
@@ -134,6 +168,16 @@ En este módulo se puede visualizar el listado de invitaciones creadas. El lista
 El siguiente es un ejemplo de un índice de invitaciones, con una invitación en estado *Aceptada*.
 
 ![](https://wiki.placetopay.com/images/f/fb/Invitations-index-2.png)
+
+#### Filtros:
+
+En el índice de datos se encuentra la funcionalidad de filtros, esta funcionalidad permite hacer búsquedas específicas de datos. Los filtros están ubicados en la parte superior lateral izquierda.
+
+Para los ** están disponibles para búsquedas, los campos de **.
+
+Para ejecutar la búsqueda haga clic en el botón **Buscar** y para limpiar los datos de búsqueda ingresados previamente, haga clic en el botón **Limpiar filtros**.
+
+![]()
 
 ### Estados de las invitaciones:
 
@@ -377,5 +421,8 @@ Para hacer búsquedas de los logs registrados utilice la sección de filtros. Ha
 
 ![](https://wiki.placetopay.com/images/b/bb/Acs-logs-filters.png)
 
+Para ejecutar la búsqueda haga clic en el botón **Buscar** y para limpiar los datos de búsqueda ingresados previamente, haga clic en el botón **Limpiar filtros**.
+
+![]()
 
 <!-- type: tab-end -->

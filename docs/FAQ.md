@@ -85,7 +85,6 @@ De esta forma, al diligenciar el formulario puede encontrar y verificar dos tipo
 
     La siguiente imagen ilustra errores en validaciones del lado del cliente:
 
-
     ![](https://wiki.placetopay.com/images/5/52/Client-validation.png)
 
 1. **Validaciones de lado del servidor:**
@@ -94,8 +93,31 @@ De esta forma, al diligenciar el formulario puede encontrar y verificar dos tipo
 
     La siguiente imagen ilustra errores en validaciones del lado del servidor, en la cual se logró enviar el formulario con datos inválidos (con un archivo que no cumplía las validaciones requeridas), pero al momento de recibirlo y validarlo, se encontraron errores en los datos de la solicitud, por lo cual no pudo ser procesada correctamente (el archivo no pudo ser importado):
 
-
     ![](https://wiki.placetopay.com/images/9/90/Validation-server-error.png)    
+
+
+## ¿Cómo funciona el paginador que se encuentra en los módulos de la aplicación?
+
+En la vista principal de cada módulo, donde se presenta el listado de datos, se encuentra un paginador en la parte inferior de la pantalla. Este paginador permite obtener listas de datos agrupadas más fáciles de visualizar. 
+
+Un ejemplo de paginador es el siguiente:
+
+![](https://wiki.placetopay.com/images/f/fd/Paginator--mpi.png)
+
+El paginador contiene varias funcionalidades dentro de sí:
+
+ 1. **Seleccionar cantidad de registros:** Puede seleccionar la cantidad de registros a visualizar en la opción **Mostrar** ubicada en la parte izquierda, despliegue el campo y seleccione la cantidad de registros que desea mostrar por página.
+
+  ![](https://wiki.placetopay.com/images/9/98/Paginator-registers.png)
+
+2. **Cambiar de página:** Puede cambiar de página en dos partes. En la parte central puede hacer clic en el número de la página que desea mostrar y en la parte lateral derecha, puede aumentar o disminuir la página a mostrar, haciendo uso de las flechas de arriba y abajo del campo.
+
+  ![](https://wiki.placetopay.com/images/c/c5/Change-page.png)
+
+3. **Mostrar cantidad de registros:** El paginador muestra la cantidad de registros en dos partes. En la parte central muestra el rango de datos iniciales y finales dependiendo de la página seleccionada y muestra el total de registros. Además, en la parte lateral derecha muestra cuántas páginas tiene el listado de registros.
+
+  ![](https://wiki.placetopay.com/images/9/94/Quantity-pages.png)
+
 
 <!--
 type: tab

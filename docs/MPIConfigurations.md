@@ -13,15 +13,17 @@ Para acceder al módulo de países, diríjase al menú lateral izquierdo, despli
 
 En esta sección se visualiza el índice o listado de los países creados para utilizarse en ACS. La información se encuentra organizada en una tabla y muestra los datos más relevantes de los países como son: Nombre, Código alfabético, Código numérico, Estado y acciones disponibles.
 
-#### Buscador:
-
-También, en el índice se encuentra un buscador ubicado en la parte superior lateral izquierda para facilitar las búsquedas de países.
-
-#### Paginador:
-
-En el índice encuentra además un paginador en la parte inferior de la vista, que le permitirá obtener listas de datos agrupadas más fáciles de visualizar. 
-
 ![](https://wiki.placetopay.com/images/6/69/Countries-index.png)
+
+#### Filtros:
+
+En el índice de datos se encuentra la funcionalidad de filtros, esta funcionalidad permite hacer búsquedas específicas de datos. Los filtros están ubicados en la parte superior lateral izquierda.
+
+Para los ** están disponibles para búsquedas, los campos de **.
+
+Para ejecutar la búsqueda haga clic en el botón **Buscar** y para limpiar los datos de búsqueda ingresados previamente, haga clic en el botón **Limpiar filtros**.
+
+![]()
 
 ## Acciones para los **:
 
@@ -74,15 +76,17 @@ Para acceder al módulo de países, diríjase al menú lateral izquierdo, despli
 
 En esta sección se visualiza el índice o listado de los países creados para utilizarse en ACS. La información se encuentra organizada en una tabla y muestra los datos más relevantes de los países como son: Nombre, Código alfabético, Código numérico, Estado y acciones disponibles.
 
-#### Buscador:
-
-También, en el índice se encuentra un buscador ubicado en la parte superior lateral izquierda para facilitar las búsquedas de países.
-
-#### Paginador:
-
-En el índice encuentra además un paginador en la parte inferior de la vista, que le permitirá obtener listas de datos agrupadas más fáciles de visualizar. 
-
 ![](https://wiki.placetopay.com/images/6/69/Countries-index.png)
+
+#### Filtros:
+
+En el índice de datos se encuentra la funcionalidad de filtros, esta funcionalidad permite hacer búsquedas específicas de datos. Los filtros están ubicados en la parte superior lateral izquierda.
+
+Para los ** están disponibles para búsquedas, los campos de **.
+
+Para ejecutar la búsqueda haga clic en el botón **Buscar** y para limpiar los datos de búsqueda ingresados previamente, haga clic en el botón **Limpiar filtros**.
+
+![]()
 
 ## Acciones para los **:
 
@@ -261,15 +265,17 @@ Para acceder al módulo de países, diríjase al menú lateral izquierdo, despli
 
 En esta sección se visualiza el índice o listado de los países creados para utilizarse en ACS. La información se encuentra organizada en una tabla y muestra los datos más relevantes de los países como son: Nombre, Código alfabético, Código numérico, Estado y acciones disponibles.
 
-#### Buscador:
-
-También, en el índice se encuentra un buscador ubicado en la parte superior lateral izquierda para facilitar las búsquedas de países.
-
-#### Paginador:
-
-En el índice encuentra además un paginador en la parte inferior de la vista, que le permitirá obtener listas de datos agrupadas más fáciles de visualizar. 
-
 ![](https://wiki.placetopay.com/images/6/69/Countries-index.png)
+
+#### Filtros:
+
+En el índice de datos se encuentra la funcionalidad de filtros, esta funcionalidad permite hacer búsquedas específicas de datos. Los filtros están ubicados en la parte superior lateral izquierda.
+
+Para los ** están disponibles para búsquedas, los campos de **.
+
+Para ejecutar la búsqueda haga clic en el botón **Buscar** y para limpiar los datos de búsqueda ingresados previamente, haga clic en el botón **Limpiar filtros**.
+
+![]()
 
 ## Acciones para los **:
 
@@ -322,15 +328,17 @@ Para acceder al módulo de países, diríjase al menú lateral izquierdo, despli
 
 En esta sección se visualiza el índice o listado de los países creados para utilizarse en ACS. La información se encuentra organizada en una tabla y muestra los datos más relevantes de los países como son: Nombre, Código alfabético, Código numérico, Estado y acciones disponibles.
 
-#### Buscador:
-
-También, en el índice se encuentra un buscador ubicado en la parte superior lateral izquierda para facilitar las búsquedas de países.
-
-#### Paginador:
-
-En el índice encuentra además un paginador en la parte inferior de la vista, que le permitirá obtener listas de datos agrupadas más fáciles de visualizar. 
-
 ![](https://wiki.placetopay.com/images/6/69/Countries-index.png)
+
+#### Filtros:
+
+En el índice de datos se encuentra la funcionalidad de filtros, esta funcionalidad permite hacer búsquedas específicas de datos. Los filtros están ubicados en la parte superior lateral izquierda.
+
+Para los ** están disponibles para búsquedas, los campos de **.
+
+Para ejecutar la búsqueda haga clic en el botón **Buscar** y para limpiar los datos de búsqueda ingresados previamente, haga clic en el botón **Limpiar filtros**.
+
+![]()
 
 ## Acciones para los **:
 

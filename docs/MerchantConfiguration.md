@@ -73,6 +73,16 @@ En esta sección se visualiza el listado o índice de emisores, la información 
 
 ![](https://wiki.placetopay.com/images/4/4a/Issuer-actions.png)
 
+#### Filtros:
+
+En el índice de datos se encuentra la funcionalidad de filtros, esta funcionalidad permite hacer búsquedas específicas de datos. Los filtros están ubicados en la parte superior lateral izquierda.
+
+Para los ** están disponibles para búsquedas, los campos de **.
+
+Para ejecutar la búsqueda haga clic en el botón **Buscar** y para limpiar los datos de búsqueda ingresados previamente, haga clic en el botón **Limpiar filtros**.
+
+![]()
+
 ### Acciones disponibles para los comercios:
 
 En el título "Acciones" ubicado en la parte lateral derecha del índice de emisores, se encuentra un menú con tres puntos,haga clic en este menú y despliegue las acciones o funcionalidades disponibles para cada emisor. En el menú se encuentran las siguientes acciones:
