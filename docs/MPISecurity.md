@@ -49,22 +49,44 @@ title: Usuarios
 
 Para acceder al módulo de usuarios, diríjase al menú lateral izquierdo, despliegue la opción *Seguridad* y busque la sección de *Usuarios* en los títulos.
 
-![](https://wiki.placetopay.com/images/c/c8/Users-menu-2.png)
+![](https://wiki.placetopay.com/images/e/ef/Users-mpi-menu.png)
 
 
 ## Listado de usuarios:
 
-En este módulo se puede visualizar el listado de usuarios con acceso a ACS. El listado contiene el nombre y el correo electrónico asociado al usuario.
+En este módulo se puede visualizar el listado de usuarios con acceso a MPI. El listado contiene el nombre, el correo electrónico asociado al usuario y el estado de habilitación en el que se encuentra.
 
-> Es importante recordar que los usuarios se crean a través del módulo invitaciones y solo aparece en este módulo, cuando haya aceptado la invitación para unirse a ACS, creado el usuario y haya iniciado sesión sin conflicto alguno.
+> Es importante recordar que los usuarios se crean a través del módulo invitaciones. Además, un usuario solo aparece en este módulo, cuando haya aceptado la invitación para unirse a MPI, haya creado el usuario y haya iniciado sesión sin conflicto alguno.
 
 El siguiente es un ejemplo de un índice de usuarios.
 
-![](https://wiki.placetopay.com/images/4/48/Users-index-2.png)
+![](https://wiki.placetopay.com/images/a/a3/Users-mpi-index.png)
 
 <!-- theme: warning -->
 
-> Los usuarios no se pueden eliminar ni editar. Para hacer ediciones del correo electrónico de un usuario o la contraseña, se deben realizar en la aplicación de *Accounts*, que es quien gestiona los usuarios y accesos para ACS.
+### Buscador de usuarios:
+
+El índice de usuarios tiene la funcionalidad de buscador, está ubicado en la parte lateral izquierda y se puede buscar por el nombre y el correo electrónico, digitándolos completos o fragmentos de éstos.
+
+![](https://wiki.placetopay.com/images/1/14/Users-search.png)
+
+### Acciones para los usuarios:
+
+En el índice de usuarios puede acceder a las acciones disponibles para las usuarios, haciendo clic en el menú con tres puntos, ubicado al final de cada registro de usuario:
+
+Las acciones disponibles son:
+
+- **Ver:** Puede visualizar los detalles de cada usuario haciendo clic en la opción *Ver*. Visualizará una pantalla como la siguiente:
+
+![](https://wiki.placetopay.com/images/1/1d/User-mpi-detail.png)
+
+- **Editar:** Puede editar la información con la cual creó el usuario, haciendo clic en la opción *Editar*. Tenga en cuenta que solo puede editar el nombre del usuario y la zona horaria. 
+
+> Para hacer ediciones del correo electrónico de un usuario o la contraseña, se deben realizar en la aplicación de *Accounts*, que es quien gestiona los usuarios y accesos para MPI y esto se hace a través del módulo de cuenta, que se describe en la siguiente pestaña de esta documentación.
+
+- **Habilitar/Deshabilitar:** Puede habilitar o deshabilitar un usuario en la vista del detalle de un usuario. Haga clic en el menú con tres puntos ubicado en la parte lateral derecha y desliza el botón tipo switch con nombre *Habilitar* cuando está deshabilitado el país, o con nombre *Deshabilitar* cuando está habilitado y desea deshabilitarlo.
+
+- **Eliminar:** Puede eliminar un usuario, haciendo clic en la opción *Eliminar*. 
 
 
 <!--
@@ -111,7 +133,7 @@ title: Roles
 
 Para acceder a este módulo, dírijase al menú ubicado en la parte lateral izquierda, y despliegue la opción de *Seguridad*, luego seleccione el título *Roles*.
 
-![](https://wiki.placetopay.com/images/b/b4/Roles-menu-2.png)
+![](https://wiki.placetopay.com/images/a/a2/Roles-mpi-menu.png)
 
 ## Índice de roles:
 
@@ -157,7 +179,7 @@ title: Invitaciones
 
 Para acceder al módulo de invitaciones, diríjase al menú lateral izquierdo, despliegue la opción *Seguridad* y busque la sección de *Invitaciones* en los títulos.
 
-![](https://wiki.placetopay.com/images/d/d6/Invitations-menu-2.png)
+![](https://wiki.placetopay.com/images/b/b1/Invitations-mpi-menu.png)
 
 En este módulo se gestionan las invitaciones que realiza un usuario registrado en ACS a otro usuario u otro grupo de usuarios que desean utilizar la aplicación.
 
@@ -292,7 +314,7 @@ title: Perfiles
 
 Para acceder a este módulo, dírijase al menú ubicado en la parte lateral izquierda, y despliegue la opción de *Seguridad*, luego seleccione el título *Perfiles*.
 
-![](https://wiki.placetopay.com/images/f/f8/Profiles-menu-2.png)
+![](https://wiki.placetopay.com/images/7/7c/Profiles-mpi-menu.png)
 
 ## Índice de perfiles:
 
@@ -386,7 +408,7 @@ title: Logs
 
 Para acceder a este módulo, dírijase al menú ubicado en la parte lateral izquierda, y despliegue la opción de *Seguridad*, luego seleccione el título *Logs*.
 
-![](https://wiki.placetopay.com/images/3/3a/Logs-menu-2.png)
+![](https://wiki.placetopay.com/images/a/a8/Logs-mpi-menu.png)
 
 ## Índice de logs:
 
