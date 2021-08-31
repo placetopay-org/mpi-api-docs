@@ -178,7 +178,17 @@ Al dar clic en la opción *Ver* de un rol, se presentarán los detalles del rol 
 
 ![](https://wiki.placetopay.com/images/c/c5/Acs-permissions.png)
 
-Aquí se pueden buscar permisos referentes a diversas funcionalidades de ACS, seleccionarlos, denegarlos y concederlos. Estos permisos determinan las funcionalidades y acciones a las cuales tiene acceso el rol.
+#### Funcionalidades para los permisos:
+
+- **Buscar permisos:** Puede buscar roles y permisos, ingresando el nombre de este o parte del nombre en el recuadro de búsqueda.
+
+- **Seleccionar permisos:** Haga clic en los recuadros con checkbox para seleccionar permisos específicos y ejecutar acciones específicas para cada uno.
+
+- **Denegar permisos:** Seleccione el o los permisos que desea denegar y haga clic en el botón **Denegar**, que sale en la parte superior derecha al seleccionar uno o más permisos.
+
+- **Conceder permisos:** Seleccione el o los permisos que desea conceder y haga clic en el botón **Conceder**, que sale en la parte superior derecha al seleccionar uno o más permisos.
+
+> Los permisos determinan las funcionalidades y acciones a las cuales tiene acceso el rol seleccionado.
 Además, se pueden conceder y denegar otros roles al actual.
 
 ### 2. Roles ancestros:
@@ -189,7 +199,19 @@ Aquí registran los roles que están utilizando el rol actual. Esto puede darse 
 
 ### 3. Usado por:
 
-En esta sección se listan los usuarios que usan el rol que seleccionó.
+En esta sección se listan los perfiles de los usuarios que usan el rol que seleccionó. Se visualiza el nombre, el email y el botón para ver el detalle de cada perfil.
+
+Esta sección se visualiza como en la siguiente imagen:
+
+![](https://wiki.placetopay.com/images/e/e2/Used-by-roles.png)
+
+#### Detalle de un perfil:
+
+Para ver los detalles de un perfil que usa el rol seleccionado. Haga clic en el botón **Ver**, y lo llevará a una vista como la siguiente:
+
+![](https://wiki.placetopay.com/images/f/fe/Profile-detail-in-roles.png)
+
+Aquí se pueden agregar más roles y permisos para el perfil seleccionado, buscando el rol o permiso en la barra de búsquedas y luego haciendo clic en el botón **Agregar**.
 
 <!--
 type: tab
