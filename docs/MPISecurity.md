@@ -224,17 +224,37 @@ Para acceder al módulo de invitaciones, diríjase al menú lateral izquierdo, d
 
 ![](https://wiki.placetopay.com/images/b/b1/Invitations-mpi-menu.png)
 
-En este módulo se gestionan las invitaciones que realiza un usuario registrado en ACS a otro usuario u otro grupo de usuarios que desean utilizar la aplicación.
 
 ## Listado de invitaciones:
 
-En este módulo se puede visualizar el listado de invitaciones creadas. El listado contiene el nombre de la invitación, el estado y las fechas de creación y actualización.
+En este módulo se gestionan las invitaciones que realiza un usuario registrado en MPI a otro usuario u otro grupo de usuarios que desean utilizar la aplicación.
 
-El siguiente es un ejemplo de un índice de invitaciones, con una invitación en estado *Aceptada*.
+En esta sección se visualiza el listado de invitaciones creadas. El listado contiene el nombre de la invitación, el estado y las fechas de creación y aceptación. Además, de las funcionalidades para cada invitación.
 
-![](https://wiki.placetopay.com/images/f/fb/Invitations-index-2.png)
+El siguiente es un ejemplo de un índice de invitaciones.
 
-#### Filtros:
+![](https://wiki.placetopay.com/images/0/0f/Mpi-invitations-index.png)
+
+### Acciones para las invitaciones:
+
+En el índice de invitaciones puede acceder a las acciones disponibles para cada una, haciendo clic en el menú con tres puntos, ubicado al final de cada registro de invitación:
+
+Las acciones disponibles son:
+
+- **Ver:** Puede visualizar los detalles de cada invitación haciendo clic en la opción *Ver*. En esta sección puede ver el o los correos electrónicos a los cuales se envío la invitación y el estado de aceptación de esta. Además, de las reglas ACL relacionadas con la invitación.
+
+Visualizará una pantalla como la siguiente:
+
+![](https://wiki.placetopay.com/images/a/a3/Invitation-detail-2.png)
+
+- **Editar:** Puede editar la información con la cual creó la invitación, haciendo clic en la opción *Editar*. 
+
+> Tenga en cuenta que solo puede editar invitaciones si tiene los permisos suficientes para hacerlo.
+
+- **Eliminar:** Puede eliminar una invitación, haciendo clic en la opción *Eliminar*. 
+
+
+### Filtros:
 
 En el índice de datos se encuentra la funcionalidad de filtros, esta funcionalidad permite hacer búsquedas específicas de datos. Los filtros están ubicados en la parte superior lateral izquierda.
 
