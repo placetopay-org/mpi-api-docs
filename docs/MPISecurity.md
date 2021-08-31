@@ -91,38 +91,59 @@ Las acciones disponibles son:
 
 <!--
 type: tab
-title: Cuenta
+title: Gestión de cuenta
 -->
 
-# Gestión de cuenta
+# Cuenta de usuario
+
+## ¿Cómo acceder a la gestión de cuenta?
 
 Para acceder al módulo de gestión de la cuenta de usuario,
 haga clic en el menú desplegable que se encuentra al lado derecho del avatar de usuario con sus iniciales, ubicado en la parte superior derecha de la aplicación.
 
-Visualizará un menú como el siguiente:
+Visualizará un menú como el siguiente, para visualizar los datos de su cuenta, haga clic en el botón **Cuenta**:
 
-![](https://wiki.placetopay.com/images/6/6e/Account-menu.png)
+![](https://wiki.placetopay.com/images/7/7c/Mpi-account.png)
 
-El menú puede contener las siguientes secciones:
+## ¿Qué funcionalidades se encuentran en el módulo de cuenta?
 
-## Cuenta:
+### Sección principal:
 
-En esta parte registra el nombre de usuario y el correo electrónico, si se hace clic en esta sección, le llevará a una vista con los datos de su cuenta como la siguiente:
+En esta parte registra el nombre de usuario, el correo electrónico y el perfil al cual está asociada la cuenta. Además, se presenta el avatar o imagen de perfil de usuario y los botones de **Administrar cuenta** y **Editar**. Esta sección se visualiza como en la siguiente imagen:
 
-![](https://wiki.placetopay.com/images/3/33/Account-info-2.png)
+![](https://wiki.placetopay.com/images/2/2a/Account-information.png)
 
-- Para actualizar datos de la cuenta, haga clic en la opción *Administra tu cuenta*, ubicado en la parte inferior del avatar de usuario.
+#### Funcionalidades:
 
-- Para visualizar los datos del perfil de la cuenta, haga clic en el nombre del perfil ubicado en la parte lateral derecha de la vista. 
+- Para actualizar datos de la cuenta, haga clic en la opción **Administrar cuenta**, ubicado en la parte inferior del avatar de usuario.
 
-## Perfiles:
+- Para visualizar los datos del perfil de la cuenta, haga clic en el campo relacionado con el título **Perfil**.
 
-Si tiene varios perfiles, al desplegar el menú se listarán todos y al hacer clic en un perfil específico, podrá cambiar el perfil con el que inició sesión previamente, por el perfil seleccionado.
+- Para editar algunos datos de la cuenta, haga clic en el botón **Editar**, ubicado en la parte inferior del avatar de usuario.
 
-## Sesión:
+### Sección de registro de actividad:
 
-En esta sección encontrará el botón *Cerrar sesión*, para cuando desee salir de la aplicación.
+En esta parte se registran los movimiento realizados por el usuario que posee la cuenta. La información se muestra en una tabla con el tipo de actividad realizada, el dispositivo utilizado, la dirección IP del dispositivo, el navegador, el sistema operativo y la fecha de la actividad.
 
+## ¿Cómo acceder al módulo de soporte?
+
+Haga clic en el menú desplegable que se encuentra al lado derecho del avatar de usuario. Visualizará un menú como el siguiente, haga clic en el botón **Soporte**:
+
+![](https://wiki.placetopay.com/images/6/6d/Mpi-account-support.png)
+
+### ¿Para qué sirve el módulo de soporte?
+
+Al seleccionar esta opción en el menú, se desplegará un formulario como el siguiente, el cual le permitirá indicar y enviar un reporte de un error o conflicto que encuentre en la aplicación relacionado con su cuenta de usuario. 
+
+Describa en el formulario con la descripción del conflicto con detalle y pantallazos, para ser solucionado efectivamente por el equipo de soporte de Evertec.
+
+## ¿Cómo cerrar sesión en MPI?:
+
+Para cerrar sesión cuando desea finalizar la actividad en la aplicación, diríjase al menú desplegable que se encuentra al lado derecho del avatar de usuario.
+
+Visualizará un menú como el siguiente, haga clic en el botón *Cerrar sesión*.
+
+![](https://wiki.placetopay.com/images/f/f9/Close-sesion-account.png)
 
 <!--
 type: tab
