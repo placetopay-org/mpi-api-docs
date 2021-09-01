@@ -385,26 +385,25 @@ Para acceder a este módulo, dírijase al menú ubicado en la parte lateral izqu
 
 Los roles se asocian con los perfiles, ya que varios perfiles pueden estar asociados a un mismo rol. El siguiente es un ejemplo de un índice de perfiles.
 
-Para acceder a este módulo, el usuario con los permisos necesarios para crear los perfiles, ingresa a través del menú despegable ubicado en la izquierda del panel, en la pestaña de seguridad.
+Al ingresar al listado de perfiles, la plataforma muestra una tabla con los campos del nombre, descripción, usuario y fechas de creación y actualización del perfil. 
 
-Al ingresar al módulo, la plataforma muestra una tabla con los campos del nombre, descripción, usuario y fechas de creación y actualización del perfil. 
+### Buscador de perfiles:
 
-Además, esta sección posee un buscador de perfiles en la parte superior izquierda.
+El índice de perfiles tiene la funcionalidad de buscador, está ubicado en la parte lateral izquierda y se puede buscar por nombre, usuario o correo electrónico, digitándolos completos o fragmentos de éstos.
 
+### Acciones para los perfiles:
 
-![](https://wiki.placetopay.com/images/d/d1/Profiles-index-2.png)
+Cada perfil cuenta con unas opciones para ser gestionado como son la opción de ver, editar o eliminar.
 
-## Acciones para los perfiles:
+![](https://wiki.placetopay.com/images/6/6a/Mpi-profiles-actions.png)
 
-Cada perfil cuenta con unas opciones para ser gestionado como son la opción de ver, editar o deshabilitar.
+**Ver:** 
 
-![](https://wiki.placetopay.com/images/9/95/Acs-options-profile.png)
-
-**Ver:** Permite visualizar una información más detallada del perfil como son el nombre, la fecha de creación, actualización, y el usuario que lo creó, al igual que los permisos que el perfil tiene a disposición o los que desea agregar. 
+Permite visualizar una información más detallada del perfil como son el nombre, la fecha de creación, actualización, y el usuario que lo creó, al igual que los permisos y roles que el perfil tiene a disposición o los que desea agregar. 
 
   Un ejemplo de una vista de detalle de un perfil es el siguiente:
 
-  ![](https://wiki.placetopay.com/images/2/2e/Profile-detail.png)
+  ![](https://wiki.placetopay.com/images/2/2c/Mpi-profile-detail.png)
 
   En el detalle de un perfil se encuentran tres secciones:
 
@@ -417,13 +416,20 @@ Cada perfil cuenta con unas opciones para ser gestionado como son la opción de 
   > Las excepciones a una regla ACL, permiten que una regla con acción *Denegar*, permita que el perfil actual pueda visualizar solo aquellos registros que se hayan creado con ese mismo perfil.
 
 
-**Editar:** Permite actualizar el nombre y la descripción del perfil.
+**Editar:** 
+
+Permite actualizar únicamente el nombre del perfil.
 
   Un ejemplo del formulario de edición es el siguiente.
 
-  ![](https://wiki.placetopay.com/images/7/73/Profile-edit-2.png)
+  ![](https://wiki.placetopay.com/images/4/4b/Mpi-profile-edit.png)
 
-> Es importante tener en cuenta que un perfil no se puede eliminar, ya que existen actividades que se han realizado en nombre de ese perfil y si se pudiera eliminar, se puede producir un error. Por esta razón, la aplicación tiene la opción de deshabilitar el perfil para denegar el acceso.
+
+**Eliminar:** 
+
+Puede eliminar un perfil, haciendo clic en la opción *Eliminar*. 
+
+> Es importante tener en cuenta al momento de eliminar un perfil, que existen actividades que se han realizado en nombre de ese perfil y al eliminarse, puede ocasionar fallas en permisos o demás. 
 
 
 ## ¿Cómo crear un nuevo perfil?
