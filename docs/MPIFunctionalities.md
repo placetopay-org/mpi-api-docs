@@ -127,9 +127,11 @@ Para acceder a la gestión de transacciones, vaya al menú lateral izquierdo, se
 
 ## Índice de transacciones:
 
-En este módulo se registra la información de todas las autenticaciones procesadas por el ACS. En la primera vista se encuentra el listado de las transacciones con fecha, estado y otros datos importantes. También, puede desplegar más información de cada transacción con el botón desplegable ubicado antes del botón *Ver*.
+En este módulo se registra la información de todas las transacciones procesadas por MPI. En este índice se encuentra el listado de las transacciones con fecha, país, comercio, referencia, monto de la transacción, categoría, versión y resumen de la traza.
 
-![](https://wiki.placetopay.com/images/f/fd/Acs-auth-index.png)
+El índice de transacciones se visualiza como en la siguiente imagen:
+
+![](https://wiki.placetopay.com/images/3/3d/Mpi-transactions-index-2.png)
 
 ## Filtros:
 
