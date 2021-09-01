@@ -33,37 +33,85 @@ Para filtrar las transacciones se requieren los siguientes datos:
 
 - **Comercio,** comercio para el cual se procesaron las transacciones a buscar.
 
-### Tipos de métricas:
+> Para generar nuevas métricas, haga clic en el botón *Limpiar filtros* y genera un nuevo rango de fechas, moneda y emisor.
+
+## Tipos de métricas:
 
 MPI cuenta actualmente con los siguientes dos tipos de métricas:
 
-## Métrica de verificaciones
+### Métrica de verificaciones
 
-## Métrica de autenticaciones
+Esta métrica muestra en una gráfica, la cantidad y monto de verificaciones realizadas por estados, filtradas por un rango de fechas.
 
-## Métrica de flujo de autenticación
+Un ejemplo de esta métrica se presenta a continuación:
 
-## Métrica de razones por rechazo de marca
+![](https://wiki.placetopay.com/images/c/c8/Mpi-verification-metric.png)
 
-## Métrica de tasa de conversión
+En la parte inferior puede visualizarse el rango de fecha con el cual se obtuvo la métrica y la cantidad de transacciones que cumplieron con los filtros, así como los datos agrupados por color y barra.
 
-## Métrica de estado de transacción
+### Métrica de autenticaciones
 
-## Métrica de tasa de sesiones
+Esta métrica muestra en una gráfica, la cantidad y monto de autenticaciones realizadas por estados, filtradas por un rango específico de fechas.
 
-ej
+Un ejemplo de esta métrica se presenta a continuación:
 
-## Métrica por estado de transacción
+![](https://wiki.placetopay.com/images/9/9a/Mpi-autentication-metric.png)
 
-Esta métrica muestra en una gráfica la cantidad de transacciones procesadas por el ACS, filtradas por un rango de fechas y diferenciadas por el estatus obtenido en la autenticación. 
+En la parte inferior puede visualizarse el rango de fecha con el cual se obtuvo la métrica y la cantidad de transacciones que cumplieron con los filtros, así como los datos agrupados por color y barra.
 
-Un ejemplo de métrica por estado de transacción, se presenta a continuación:
+### Métrica de flujo de autenticación
 
-![](https://wiki.placetopay.com/images/8/8f/Acs-metric.png)
+Esta métrica muestra en una gráfica, una comparación de los flujos de autenticación. Para obtener más información de estos flujos, haga clic a cada columna.
 
-En la parte inferior puede visualizarse el rango de fecha con el cual se obtuvo la métrica y la cantidad de transacciones que cumplieron con los filtros.
+Un ejemplo de esta métrica se presenta a continuación:
 
-> Para generar nuevas métricas, haga clic en el botón *Limpiar filtros* y genera un nuevo rango de fechas, moneda y emisor.
+![](https://wiki.placetopay.com/images/2/29/Mpi-auth-flow-metric-2.png)
+
+En la parte inferior puede visualizarse el rango de fecha con el cual se obtuvo la métrica y la cantidad de transacciones que cumplieron con los filtros, así como los datos agrupados por color y barra.
+
+### Métrica de razones por rechazo de marca
+
+Esta métrica muestra en una gráfica, la información acerca de las razones de rechazo de las transaciones según la marca.
+
+Un ejemplo de esta métrica se presenta a continuación:
+
+![](https://wiki.placetopay.com/images/9/9f/Metrics-franchise.png)
+
+En la parte inferior puede visualizarse el rango de fecha con el cual se obtuvo la métrica y la cantidad de transacciones que cumplieron con los filtros, así como los datos agrupados por color y barra.
+
+### Métrica de tasa de conversión
+
+Esta métrica muestra en una gráfica, los porcentajes de autenticaciones, con desafíos e intentos de autenticación. 
+
+Los datos se grafican en un funnel o embudo de conversión, que permite filtrar en la primera gráfica, las autenticaciones sin fricción, permitiendo visualizar las transacciones generales iniciales, luego presenta las autenticadas y los intentos de autenticación, y finalmente las autenticaciones autorizadas. 
+
+En segundo lugar para las transacciones con fricción, se muestra una gráfica con los anteriores datos, además de incluir las transacciones a las cuales se solicita desafío, en el funnel.
+
+Un ejemplo de esta métrica se presenta a continuación:
+
+![](https://wiki.placetopay.com/images/7/73/Metric-conversion.png)
+
+En la parte inferior puede visualizarse el rango de fecha con el cual se obtuvo la métrica y la cantidad de transacciones que cumplieron con los filtros, así como los datos agrupados por color y barra.
+
+### Métrica de estado de transacción
+
+Esta métrica muestra en una gráfica, la cantidad de transacciones por estados de un banco adquirente, filtradas por un rango de fechas.
+
+Un ejemplo de esta métrica se presenta a continuación:
+
+![](https://wiki.placetopay.com/images/1/1a/Metrics-status.png)
+
+En la parte inferior puede visualizarse el rango de fecha con el cual se obtuvo la métrica y la cantidad de transacciones que cumplieron con los filtros, así como los datos agrupados por color y barra.
+
+### Métrica de tasa de sesiones
+
+Esta métrica muestra en una gráfica, la comparación entre las sesiones abiertas, abandonadas y completadas de una transacción, filtradas por un rango de fechas y presentadas en una gráfica tipo funnel.
+
+Un ejemplo de esta métrica se presenta a continuación:
+
+![](https://wiki.placetopay.com/images/2/2b/Metrics-sessions.png)
+
+En la parte inferior puede visualizarse el rango de fecha con el cual se obtuvo la métrica y la cantidad de transacciones que cumplieron con los filtros, así como los datos agrupados por color y barra.
 
 
 <!--
