@@ -256,13 +256,15 @@ Visualizará una pantalla como la siguiente:
 
 ### Filtros:
 
-En el índice de datos se encuentra la funcionalidad de filtros, esta funcionalidad permite hacer búsquedas específicas de datos. Los filtros están ubicados en la parte superior lateral izquierda.
+En el índice de datos se encuentra la funcionalidad de filtros, esta funcionalidad permite hacer búsquedas específicas de invitaciones. Los filtros están ubicados en la parte superior lateral izquierda. Haga clic en el botón **Filtrar** para desplegar la sección de filtros.
 
-Para los ** están disponibles para búsquedas, los campos de **.
+Para las invitaciones están disponibles para búsquedas, los campos de nombre de la invitación y de fecha de creación.
 
 Para ejecutar la búsqueda haga clic en el botón **Buscar** y para limpiar los datos de búsqueda ingresados previamente, haga clic en el botón **Limpiar filtros**.
 
-![]()
+Los filtros se verán como ilustra la siguiente imagen:
+
+![](https://wiki.placetopay.com/images/0/0a/Mpi-invitations-filters.png)
 
 ### Estados de las invitaciones:
 
@@ -277,9 +279,9 @@ Las invitaciones poseen dos estados:
 ![](https://wiki.placetopay.com/images/0/05/Invitation-state.png)
 
 
-## Invitaciones para crear nuevos usuarios de ACS:
+## Invitaciones para crear nuevos usuarios en MPI:
 
-Es a través de una invitación que se pueden crear nuevos usuarios. Una invitación se envía a uno o varios correos electrónicos y allí redirecciona al usuario a la aplicación de Accounts de PlacetoPay. En esta redirección, el usuario podrá registrar sus datos personales y contraseña para acceder posteriormente a ACS.
+Es a través de una invitación que se pueden crear nuevos usuarios. Una invitación se envía a uno o varios correos electrónicos y allí redirecciona al usuario a la aplicación de Accounts de PlacetoPay. En esta redirección, el usuario podrá registrar sus datos personales y contraseña para acceder posteriormente a MPI.
 
 > Los datos que registre deben ser los mismos que se utilizaron para enviar la invitación.
 
