@@ -7,9 +7,9 @@ title: Métricas
 
 Las métricas son estadísticas que reportan el comportamiento de la aplicación conforme al flujo de transacciones procesadas.
 
-Para acceder a la gestión de métricas de la aplicación vaya al menú lateral izquierdo dónde visualizará tres opciones, "Dashboard", "Sistema" y "Seguridad", seleccione la opción *Dashboard* y luego *Métricas*.
+Para acceder a la gestión de métricas de la aplicación vaya al menú lateral izquierdo, seleccione la opción *Tablero* y luego *Métricas*.
 
-![](https://wiki.placetopay.com/images/7/70/Menu-metrics.png)
+![](https://wiki.placetopay.com/images/e/ea/Mpi-metrics-menu-2.png)
 
 ## Filtros:
 
@@ -56,9 +56,9 @@ title: Transacciones
 
 # Transacciones
 
-Para acceder a la gestión de autenticaciones de la aplicación vaya al menú lateral izquierdo dónde visualizará tres opciones, "Dashboard", "Sistema" y "Seguridad", seleccione la opción *Dashboard* y luego *Autenticaciones*.
+Para acceder a la gestión de transacciones, vaya al menú lateral izquierdo, seleccione la opción *Tablero* y luego *Transacciones*.
 
-![](https://wiki.placetopay.com/images/8/80/Menu-auth.png)
+![](https://wiki.placetopay.com/images/1/1a/Mpi-metrics-transactions-2.png)
 
 ## Índice de transacciones:
 
@@ -136,9 +136,9 @@ title: Reportes
 
 # Reportes
 
-Para acceder al módulo de reportes, diríjase al menú lateral izquierdo, despliegue la opción *Dashboard* y busque la sección de *Reportes* en los títulos.
+Para acceder al módulo de reportes, diríjase al menú lateral izquierdo, despliegue la opción *Tablero* y busque la sección de *Reportes* en los títulos.
 
-![](https://wiki.placetopay.com/images/0/09/Reports-menu-2.png)
+![](https://wiki.placetopay.com/images/e/e4/Mpi-metrics-reports-2.png)
 
 ## Índice de reportes:
 
