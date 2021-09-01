@@ -13,30 +13,47 @@ Para acceder a la gestión de métricas de la aplicación vaya al menú lateral 
 
 ## Filtros:
 
-Para mostrar en la gráfica de la métrica los datos específicos que se requieran, se debe hacer un filtro de las autenticaciones. Para acceder a los filtros haga clic en el botón *Filtrar*, ubicado en la parte superior lateral izquierda.
+Para mostrar en la gráfica de la métrica los datos específicos que se requieran, se debe hacer un filtro de las transacciones. 
+
+Para acceder a los filtros haga clic en el botón **Filtrar**, ubicado en la parte superior lateral derecha.
+
+### Datos en los filtros:
+
+La vista de filtros se visualiza de la siguiente manera:
+
+![](https://wiki.placetopay.com/images/a/af/Mpi-filters-metrics-2.png)
 
 Para filtrar las transacciones se requieren los siguientes datos:
 
-- Rango de fecha, seleccione una fecha inicial y una posterior en el calendario. Luego de clic en el botón negro para guardar el rango.
+- **Rango de fecha,** seleccione una fecha inicial y una posterior en el calendario. Luego de clic en el botón con ícono de *check*, para guardar el rango.
 
-- Periodo.
+- **Periodo,** seleccione si desea filtrar por días con fechas o por días con sus nombres.
 
-- Moneda, divisa utilizada para las transacciones.
+- **Moneda,** divisa utilizada al procesas las transacciones a filtrar.
 
-- Emisor, banco emisor que por el cual se procesó el grupo de transacciones.
+- **Comercio,** comercio para el cual se procesaron las transacciones a buscar.
 
+### Tipos de métricas:
 
-![](https://wiki.placetopay.com/images/6/6a/Acs-filter-metrics.png)
+MPI cuenta actualmente con los siguientes dos tipos de métricas:
 
+## Métrica de verificaciones
 
-ACS cuenta actualmente con los siguientes dos tipos de métricas:
+## Métrica de autenticaciones
 
-## Métricas por monto de transacción
+## Métrica de flujo de autenticación
 
-Esta métrica muestra en una gráfica el monto de las transacciones procesadas por el ACS, filtradas por un rango de fechas y diferenciadas por el estatus obtenido en la autenticación.
+## Métrica de razones por rechazo de marca
 
+## Métrica de tasa de conversión
 
-## Métricas por estado de transacción
+## Métrica de estado de transacción
+
+## Métrica de tasa de sesiones
+
+ej
+
+## Métrica por estado de transacción
 
 Esta métrica muestra en una gráfica la cantidad de transacciones procesadas por el ACS, filtradas por un rango de fechas y diferenciadas por el estatus obtenido en la autenticación. 
 

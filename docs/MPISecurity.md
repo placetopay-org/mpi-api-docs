@@ -297,7 +297,7 @@ Datos a diligenciar:
 
 - **Correo electrónico:** Debe ingresar un correo válido porque allí es dónde se enviará la invitación. Puede ingresar uno o varios para conformar una invitación grupal.
 
-- **Copiar datos de un usuario existente:** Con este botón deslizable, puede activar o desactivar la opción de copiar la información (permisos), que posee un usuario existente actualmente en ACS, a el usuario o usuarios nuevos que desea crear. 
+- **Copiar datos de un usuario existente:** Con este botón deslizable, puede activar o desactivar la opción de copiar la información (permisos), que posee un usuario existente actualmente en MPI, a el usuario o usuarios nuevos que desea crear. 
 
 - **Perfiles:** Si activó la opción "Copiar datos de un usuario existente", debe seleccionar uno o varios perfiles existente a partir del cual desea crear el nuevo usuario.
 
@@ -438,7 +438,7 @@ Para crear un nuevo perfil debe hacerlo a través de una invitación.
 
 ### ¿Qué es el ACL?
 
-El ACL (Access Control List), es un módulo de gestión de permisos y reglas desarrollado en PlacetoPay y utilizado por ACS. Este se encarga de gestionar los permisos y accesos de los diferentes roles y perfiles creados en ACS. 
+El ACL (Access Control List), es un módulo de gestión de permisos y reglas desarrollado en PlacetoPay y utilizado por MPI. Este se encarga de gestionar los permisos y accesos de los diferentes roles y perfiles creados en MPI. 
 
 Estos permisos y reglas de acceso, se diferencian de los permisos básicos registrados en los roles, en que estos son más específicos y ofrecen una capa de seguridad extra a los datos manejados en la aplicación, ya que permiten que se visualice la información que corresponde solo a un cliente en específico y que no se filtre otra información que pertenece a otros clientes u organizaciones.
 
