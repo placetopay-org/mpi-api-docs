@@ -135,64 +135,84 @@ El índice de transacciones se visualiza como en la siguiente imagen:
 
 ## Filtros:
 
-Para buscar un listado o una transacción en específico puede utilizar los filtros. ACS cuenta con dos tipos de filtros para las autenticaciones, uno básico y otro avanzado para hacer consultas más rigurosas.
+Para buscar un listado o una transacción específica, puede utilizar los filtros. MPI cuenta con dos tipos de filtros para hacer búsquedas de transacciones, uno básico y otro avanzado para hacer consultas más rigurosas.
 
-Para acceder a la funcionalidad, dé clic en el botón *Filtrar* ubicado en la parte lateral superior izquierda de la vista:
+Para acceder a la funcionalidad, dé clic en el botón **Filtrar** ubicado en la parte lateral superior izquierda del índice de transacciones:
 
 #### Filtros básicos:
 
-![](https://wiki.placetopay.com/images/b/b7/Acs-auth-filters.png)
+![](https://wiki.placetopay.com/images/4/44/Basic-filters-transactions.png)
 
 La búsqueda se hace por:
 
 - **Rango de fecha:** Debe dar clic en una fecha inicial del calendario y luego en otra fecha posterior a la primera (el rango no debe ser mayor a 60 días y no debe superar la fecha actual), luego dé clic en el botón negro para guardar el rango de fechas.
 
-- **ID de la transacción:** Aquí se registra el identificador único de la transacción.
+- **Estado de autenticación:** Seleccione uno o varios estados por los cuales desea hacer búsquedas de transacciones.
 
 
 #### Filtros avanzados:
 
-![](https://wiki.placetopay.com/images/6/67/Acs-advanced-filters.png)
+![](https://wiki.placetopay.com/images/5/56/Advanced-filters-mpi-2.png)
 
-Al desplegar los filtros básicos, hay una opción *Ver filtros avanzados*, seleccionela y se desplegará una vista como la siguiente:
+Al desplegar los filtros básicos, hay una opción **Filtros avanzados**, seleccionela y se desplegará una vista como la siguiente:
 
 Aquí además de los dos filtros básicos, se pueden agregar más datos de búsqueda, tales como:
 
-- BIN
+- BIN de la tarjeta
 - Últimos 4 dígitos del número de tarjeta
 - Número de tarjeta
-- Banco emisor
-- Estado de la transacción
-
+- Referencia de la transacción
+- Código de autorización
+- País en que se procesó la transacción
+- Código del comercio
+- Nombre del comercio
+- Versión del protocolo
 
 ## Detalle de una transacción:
 
-En el detalle de la autenticación, el cual se puede visualizar dando clic en el botón *Ver* de una autenticación, se encuentra información esencial del proceso de autenticación, como el estado de la autenticación, la información básica de la transacción, la información del tarjetahabiente, del comercio, los datos de entrega y una línea de tiempo con los detalles de todo el proceso de autenticación y de la información captada por cada uno de los mensajes presentes en el proceso y correspondientes al protocolo 3-D Secure.
+Para visualizar el detalle de una transacción, haga clic sobre la fecha de la transacción como se muestra en la imagen siguiente.
 
-![](https://wiki.placetopay.com/images/b/be/Acs-auth-details.png)
+![](https://wiki.placetopay.com/images/8/8f/Transaction-detail-mpi-2.png)
 
-### Calificación:
+En el detalle se encuentra información esencial de la traza de la transacción, como el estado de la autenticación, la información básica de la transacción, la información del tarjetahabiente, del comercio, los datos de entrega y una línea de tiempo con los detalles de todo el proceso de autenticación y de la información captada por cada uno de los mensajes presentes en el proceso y correspondientes al protocolo 3-D Secure.
 
-Algunas autenticaciones cuentan con calificaciones que permiten darle un puntaje de seguridad. Este puntaje determina el nivel de riesgo de la transacción, teniendo en cuenta el historial de transacciones que poseen características similares.
+### Valores resumen en la transacción:
 
-![](https://wiki.placetopay.com/images/5/5f/Acs-scores.png)
+En el detalle de la transacción, en la parte superior, se encuentran en recuadros datos importantes de la transacción, como son la versión del protocolo, si se verificó la transacción y tarjeta, el estado de la autenticación, el flujo con el cual se ejecutó, si la firma del certificado es válida.
 
-### Información de entrega:
+Un ejemplo de esta sección de la transacción, se muestra a continuación:
 
-Aquí se visualiza la información relacionada con la ubicación en la cual se va a entregar el bien o servicio adquirido con la transacción. También, se puede visualizar un mapa con la ubicación.
+![](https://wiki.placetopay.com/images/c/c1/Transaction-details-2.png)
 
-![](https://wiki.placetopay.com/images/d/d6/Acs-delivery-data.png)
+### Información general de la transacción:
 
+En esta sección se presenta la información básica de la transacción como la marca, el comercio, el identificador, el código ECI y las fechas de creación y actualización de la misma.
+
+Se relaciona un ejemplo de esta vista a continuación:
+
+![](https://wiki.placetopay.com/images/2/23/Transaction-info-2.png)
+
+### Geolocalización de la transacción:
+
+Aquí se visualiza la ubicación en un mapa, en la cual se procesó la transacción.
+
+![](https://wiki.placetopay.com/images/7/79/Transaction-localization.png)
 
 ### Traza de la autenticación:
 
-Cada autenticación tiene una traza, la cual se entiende en ACS como una línea secuencial que registra los pasos realizados en el proceso de autenticación, los datos que recibe, las peticiones y respuestas de los tipos de mensaje que procesa, los estados y descripción de errores si se presentan.
+Cada autenticación tiene una traza, en la cual se muestra una línea secuencial con el registro de los pasos realizados en el proceso de autenticación, los datos que recibe, las peticiones y respuestas de los tipos de mensaje que procesa, los estados y descripción de errores si se presentan.
 
 Este es un ejemplo de una traza de una autenticación exitosa:
 
-![](https://wiki.placetopay.com/images/c/c4/Acs-auth-trace.png)
+![](https://wiki.placetopay.com/images/2/2b/Traza-example-2.png)
 
-Además, cada paso tiene la opción *Ver más*, la cual muestra la estructura de la petición o la respuesta con sus respectivos datos. Un ejemplo de este detalle es el siguiente:
+Además, cada paso tiene la opción **Ver más**, la cual muestra la estructura de la petición o la respuesta con sus respectivos datos. 
+
+Acceda al detalle de la traza, haciendo clic en la opción señalada:
+
+![](https://wiki.placetopay.com/images/9/92/Trace-detail-2.png)
+
+Un ejemplo de este detalle es el siguiente:
 
 ![](https://wiki.placetopay.com/images/c/c1/Acs-trace-detail.png)
 
@@ -200,9 +220,6 @@ Además, cada paso tiene la opción *Ver más*, la cual muestra la estructura de
 type: tab
 title: Reportes
 -->
-
-[No Actualizado]
-
 
 # Reportes
 
