@@ -201,6 +201,9 @@ type: tab
 title: Reportes
 -->
 
+[No Actualizado]
+
+
 # Reportes
 
 Para acceder al módulo de reportes, diríjase al menú lateral izquierdo, despliegue la opción *Tablero* y busque la sección de *Reportes* en los títulos.

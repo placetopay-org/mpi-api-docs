@@ -3,6 +3,9 @@ type: tab
 title: Clases CIIU
 -->
 
+[No Actualizado ningún módulo]
+
+
 # Categorías de actividad económica
 
 Para acceder al módulo de países, diríjase al menú lateral izquierdo, despliegue la opción *Sistema* y busque la sección de *Países* en los títulos.

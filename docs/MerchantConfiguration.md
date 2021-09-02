@@ -1,29 +1,23 @@
+[No Actualizado]
+
 # Comercios en MPI
 
 ## ¿Qué es un comercio?
 
-Un emisor o banco emisor, es la institución financiera responsable de emitir los medios de pago, como tarjetas de débito o de crédito. Estas tarjetas de pago se emiten con la marca de la asociación de tarjetas o franquicia. También pueden existir emisores de tarjetas de pago propias y no franquiciadas.
+Un comercio es...
 
 Entre las funciones de un emisor están:
 
-- El emisor tiene la responsabilidad de autorizar o denegar una transacción cuando recibe los datos de la compra. 
-
-- El emisor se encarga de transferir el dinero de una compra hecha por el consumidor, al adquiriente, que a su vez es quien paga al comercio y mantiene relación con este. 
-
-- El emisor debe dar el mantenimiento requerido a cuentas y tarjetas.
-
-- El emisor es responsable de resolver cargos disputados a su favor, por motivos de fraudes o riesgos.
-
-- El emisor se encarga de activar, suspender y bloquear una tarjeta de pago cuando se requiera.
+- El comercio tiene la responsabilidad de...
 
 
 ## ¿Cómo acceder a la gestión de comercios de MPI?
 
-Para acceder al listado de emisores de la aplicación siga los siguientes pasos:
+Para acceder al listado de comercios de la aplicación siga los siguientes pasos:
 
-1. Remítase al menú lateral izquierdo dónde visualizará tres opciones, "Dashboard", "Sistema" y "Seguridad", seleccione "Sistema" y luego "Emisores":
+1. Remítase al menú lateral izquierdo dónde visualizará tres opciones, "Tablero", "Configuración" y "Seguridad", seleccione "Configuración" y luego "Comercios":
 
-![](https://wiki.placetopay.com/images/e/e8/Issuers-menu.2.png)
+![]()
 
 2. Visualizará una pantalla similar a la siguiente:
 
@@ -31,11 +25,11 @@ Para acceder al listado de emisores de la aplicación siga los siguientes pasos:
 
 ## ¿Cómo crear un comercio en MPI?
 
-Para crear un emisor, haga clic en el botón Crear ubicado en la parte lateral derecha del índice de emisores.
+Para crear un comercio, haga clic en el botón **Crear** ubicado en la parte lateral derecha del índice de comercios.
 
 Visualizará un formulario similar al siguiente:
 
-![](https://wiki.placetopay.com/images/3/35/Create-issuer.png)
+![]()
 
 Para diligenciarlo tenga en cuenta los siguientes datos:
 

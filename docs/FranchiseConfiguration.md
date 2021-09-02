@@ -1,3 +1,5 @@
+[No Actualizado]
+
 # Franquicias en MPI
 
 ## ¿Qué es una franquicia?
