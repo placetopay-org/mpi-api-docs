@@ -11,9 +11,9 @@ Las franquicias son las que gestionan el uso y los beneficios asociados a las ta
 
 Para acceder al listado de franquicias de la aplicación siga los siguientes pasos:
 
-1. Remítase al menú lateral izquierdo dónde visualizará tres opciones, "Tablero", "Configuración" y "Seguridad", seleccione la opción *Configuración* y luego *Franquicias*, como muestra la siguiente imagen:
+1. Remítase al menú lateral izquierdo dónde visualizará tres opciones, "Tablero", "Configuración" y "Seguridad", seleccione la opción **Configuración** y luego **Franquicias**, como muestra la siguiente imagen:
 
-![](https://wiki.placetopay.com/images/3/31/Mpi-franchises-menu.png)
+![](https://wiki.placetopay.com/images/7/76/Mpi-franchises-menu-2.png)
 
 2. Haga clic en el menú "Configuración", se desplegará un listado de opciones, haga clic en la opción "Franquicias".
 

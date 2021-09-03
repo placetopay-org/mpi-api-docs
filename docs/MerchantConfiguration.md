@@ -15,9 +15,9 @@ Entre las funciones de un emisor están:
 
 Para acceder al listado de comercios de la aplicación siga los siguientes pasos:
 
-1. Remítase al menú lateral izquierdo dónde visualizará tres opciones, "Tablero", "Configuración" y "Seguridad", seleccione "Configuración" y luego "Comercios":
+1. Remítase al menú lateral izquierdo dónde visualizará tres opciones, "Tablero", "Configuración" y "Seguridad", seleccione **Configuración** y luego **Comercios**:
 
-![](https://wiki.placetopay.com/images/2/28/Mpi-merchants-menu.png)
+![](https://wiki.placetopay.com/images/d/d2/Mpi-merchants-menu-2.png)
 
 2. Visualizará una pantalla similar a la siguiente:
 

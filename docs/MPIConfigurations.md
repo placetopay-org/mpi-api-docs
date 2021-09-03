@@ -5,9 +5,9 @@ title: Clases CIIU
 
 # Categorías de actividad económica
 
-Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción *Configuración* y busque la sección de *CIIU* en los títulos.
+Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción **Configuración** y busque la sección de **CIIU** en los títulos.
 
-![](https://wiki.placetopay.com/images/2/23/Mpi-ciuu-menu.png)
+![](https://wiki.placetopay.com/images/d/d2/Mpi-ciiu-menu-3.png)
 
 ## Índice de las categorías de actividad económica:
 
@@ -85,9 +85,9 @@ title: Adquirientes
 
 # Adquirientes
 
-Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción *Configuración* y busque la sección de *Adquirientes* en los títulos.
+Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción **Configuración** y busque la sección de **Adquirientes** en los títulos.
 
-![](https://wiki.placetopay.com/images/c/c5/Mpi-acquirers-menu.png)
+![](https://wiki.placetopay.com/images/b/b4/Mpi-acquirers-menu-2.png)
 
 <!--
 type: tab
@@ -96,9 +96,9 @@ title: Certificados
 
 # Certificados SSL
 
-Para acceder al módulo de certificados, diríjase al menú lateral izquierdo, despliegue la opción *Configuración* y busque la sección de *Certificados* en los títulos.
+Para acceder al módulo de certificados, diríjase al menú lateral izquierdo, despliegue la opción **Configuración** y busque la sección de **Certificados** en los títulos.
 
-![](https://wiki.placetopay.com/images/5/5b/Mpi-certificates-menu.png)
+![](https://wiki.placetopay.com/images/3/36/Mpi-certificates-menu-2.png)
 
 ## ¿Qué son y para qué utilizar los certificados SSL?
 
@@ -203,9 +203,9 @@ title: Tipos de contactos
 
 # Tipos de contactos
 
-Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción *Configuración* y busque la sección de *Tipos de contactos* en los títulos.
+Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción **Configuración** y busque la sección de **Tipos de contactos** en los títulos.
 
-![](https://wiki.placetopay.com/images/b/b3/Mpi-contact-types-menu.png)
+![](https://wiki.placetopay.com/images/d/d4/Mpi-contact-types-menu-2.png)
 
 ## Índice de los tipos de contactos:
 
@@ -256,9 +256,9 @@ title: Consultores comerciales
 
 # Consultores comerciales
 
-Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción *Configuración* y busque la sección de *Consultores comerciales* en los títulos.
+Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción **Configuración** y busque la sección de **Consultores comerciales** en los títulos.
 
-![](https://wiki.placetopay.com/images/6/64/Mpi-commerce-consultants.png)
+![](https://wiki.placetopay.com/images/6/6d/Mpi-consultants-menu-2.png)
 
 
 <!--
@@ -270,9 +270,9 @@ title: Códigos del comercio
 
 # Códigos de categoría del comercio
 
-Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción *Configuración* y busque la sección de *Códigos de categoría del comercio* en los títulos.
+Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción **Configuración** y busque la sección de **Códigos de categoría del comercio** en los títulos.
 
-![](https://wiki.placetopay.com/images/9/96/Mpi-category-codes.png)
+![](https://wiki.placetopay.com/images/b/bc/Mpi-category-codes-menu.2.png)
 
 
 <!--
@@ -284,10 +284,9 @@ title: Aliados comerciales
 
 # Aliados comerciales
 
-Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción *Configuración* y busque la sección de *Aliados comerciales* en los títulos.
+Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción **Configuración** y busque la sección de **Aliados comerciales** en los títulos.
 
-![](https://wiki.placetopay.com/images/9/92/Mpi-merchant-allies.png)
-
+![](https://wiki.placetopay.com/images/3/35/Mpi-allies-menu-2.png)
 
 <!--
 type: tab
@@ -300,7 +299,7 @@ title: Tipos de adjuntos
 
 Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción *Configuración* y busque la sección de *Tipos de adjuntos* en los títulos.
 
-![](https://wiki.placetopay.com/images/1/17/Mpi-attachments.png)
+![](https://wiki.placetopay.com/images/8/86/Mpi-attachments-menu-2.png)
 
 <!--
 type: tab
