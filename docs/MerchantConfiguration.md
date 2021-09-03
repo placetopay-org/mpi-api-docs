@@ -1,6 +1,6 @@
-# Comercios en MPI
+[No Actualizado]
 
-[NO ACTUALIZADO]
+# Comercios en MPI
 
 ## ¿Qué es un comercio?
 
