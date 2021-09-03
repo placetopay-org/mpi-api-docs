@@ -9,57 +9,72 @@ Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la
 
 ![](https://wiki.placetopay.com/images/2/23/Mpi-ciuu-menu.png)
 
-## Índice de **:
+## Índice de las categorías de actividad económica:
 
-En esta sección se visualiza el índice o listado de los países creados para utilizarse en ACS. La información se encuentra organizada en una tabla y muestra los datos más relevantes de los países como son: Nombre, Código alfabético, Código numérico, Estado y acciones disponibles.
+En esta sección se visualiza el índice o listado de las categorías de la actividad económica a las cuales están suscritas los diferentes comercios.
 
-![](https://wiki.placetopay.com/images/6/69/Countries-index.png)
+Un ejemplo de un índice de actividad económica es el siguiente:
 
-#### Filtros:
+![](https://wiki.placetopay.com/images/0/0e/Mpi-ciiu.png)
 
-En el índice de datos se encuentra la funcionalidad de filtros, esta funcionalidad permite hacer búsquedas específicas de datos. Los filtros están ubicados en la parte superior lateral izquierda.
+### Módulos:
 
-Para los ** están disponibles para búsquedas, los campos de **.
+Este índice de datos se encuentra agrupado en cuatro módulos:
+
+- Clases
+- Grupos
+- Divisiones
+- Secciones
+
+> La información de cada módulo se encuentra organizada en una tabla y muestra los datos más relevantes de las categorías de actividad económica, como son: indicador de la sección de la actividad económica, indicador del grupo de actividad, clase del grupo de actividad, descripción de esta y acciones disponibles para cada registro de actividad.
+
+### Filtros:
+
+En el índice de datos se encuentra la funcionalidad de filtros, esta funcionalidad permite hacer búsquedas específicas de clases CIIU. 
+
+Los filtros están ubicados en la parte superior lateral izquierda. Haga clic en el botón **Filtros**.
+
+Un ejemplo de cómo se visualizan los filtros es el siguiente:
+
+![](https://wiki.placetopay.com/images/a/ab/Ciiu-filters.png)
+
+#### Campos disponibles:
+
+Para estos filtros, están disponibles para realizar búsquedas, los campos de sección, grupo, clase y descripción.
+
+#### Funcionalidad de los filtros:
 
 Para ejecutar la búsqueda haga clic en el botón **Buscar** y para limpiar los datos de búsqueda ingresados previamente, haga clic en el botón **Limpiar filtros**.
 
-![]()
+## Acciones para las clases CIIU:
 
-## Acciones para los **:
-
-En el índice de países puede acceder a las acciones disponibles para las monedas:haciendo clic en el menú con tres puntos, ubicado al final de cada registro de país:
+En el listado de registros puede acceder a las acciones disponibles para cada clase CIIU, haciendo clic en el menú con tres puntos ubicado al final de cada clase:
 
 Las acciones disponibles son:
 
-- **Ver:** Puede visualizar los detalles de cada país haciendo clic en la opción *Ver*.
+- **Editar:** Puede editar la información con la cual se creó la clase, haciendo clic en la opción *Editar*. 
 
-- **Editar:** Puede editar la información con la cual creó un país, haciendo clic en la opción *Editar*. 
+- **Eliminar:** Puede eliminar una clase, haciendo clic en la opción *Eliminar*, desplegando el menú con tres ubicado al final del registro. 
 
-- Puede habilitar o deshabilitar un país, deslizando el botón tipo switch con nombre *Habilitar* cuando está deshabilitado el país, o con nombre *Deshabilitar* cuando está habilitado y desea deshabilitarlo. Utilice esta función acorde con las necesidades del territorio donde se utilizarán los servicios de ACS.
+## ¿Cómo crear una nueva clase CIIU?
 
-## ¿Cómo crear un nuevo **?
+Para crear una nueva clase, haga clic en el botón **Crear**, ubicado en la parte lateral derecha del índice de datos.
 
-Para crear un nuevo país haga clic en el botón *Crear*, ubicado en la parte lateral derecha del índice de países.
+Visualizará un formulario como el siguiente:
 
-![](https://wiki.placetopay.com/images/2/2e/Create-button-country.png)
-
-## Formulario de creación y edición:
-
-Para crear o editar un nuevo país, debe diligenciar un formulario similar al siguiente:
-
-![](https://wiki.placetopay.com/images/9/92/Country-create.png)
+![](https://wiki.placetopay.com/images/2/22/Create-ciiu-class.png)
 
 Tenga en cuenta la siguiente información para diligenciar el formulario de creación y edición:
 
-- **Código numérico:** Para este campo debe buscar el código numérico correspondiente al país que va a crear. El código se establece en la norma ISO 3166-1 numérico y consta de tres dígitos numéricos.
+- **Código:** Ingrese el código numérico de la clase.
 
-- **Código alfa 2:** Para este campo debe buscar el código alfabético correspondiente al país que va a crear. El código se establece en la norma ISO 3166-1 alfa-2, que define códigos de dos letras para cada país.
+- **Descripción en inglés:** Ingrese la descripción de la actividad de la clase CIIU en inglés.
 
-- **Código alfa 3:** Para este campo debe buscar el código alfabético correspondiente al país que va a crear. El código se establece en la norma ISO 3166-1 alfa-3, que define códigos de tres letras para cada país.
+- **Descripción en español:** Ingrese la descripción de la actividad de la clase CIIU en español.
 
-- **Nombre:** Nombre por el cual se reconoce al país en idioma inglés para la casilla "en" y en idioma español para la casilla "es".
+- **División:** Seleccione el indicador de la división CIIU para la clase a crear.
 
-- **Código de marcado:** Ingrese un número que indique el código de marcado establecido para el país. Este código es utilizado para obtener los indicadores de números telefónicos del país para realizar llamadas.
+- **Grupo:** Seleccione el grupo CIIU para la clase a crear.
 
 <!--
 type: tab
