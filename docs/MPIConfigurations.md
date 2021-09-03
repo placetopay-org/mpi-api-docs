@@ -201,14 +201,51 @@ type: tab
 title: Tipos de contactos
 -->
 
-[No Actualizado]
-
 # Tipos de contactos
 
 Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción *Configuración* y busque la sección de *Tipos de contactos* en los títulos.
 
 ![](https://wiki.placetopay.com/images/b/b3/Mpi-contact-types-menu.png)
 
+## Índice de los tipos de contactos:
+
+En esta sección se visualiza el índice o listado de los tipos de contacto registrados en MPI.
+
+Un ejemplo de este índice es el siguiente:
+
+![](https://wiki.placetopay.com/images/9/9b/Mpi-contact-types-inde.png)
+
+## Acciones para los tipos de contacto:
+
+En el listado de registros puede acceder a las acciones disponibles para cada tipo de contacto, haciendo clic en el menú con tres puntos ubicado al final de cada tipo:
+
+Las acciones disponibles son:
+
+- **Ver:** Puede ver los detalles de un tipo de contacto, haciendo clic en la opción *Ver*. 
+
+  Visualizará una pantalla como la siguiente:
+
+  ![](https://wiki.placetopay.com/images/3/3f/Contact-detail-mpi.png)
+
+- **Editar:** Puede editar la información con la cual se creó un tipo de contacto, haciendo clic en la opción *Editar*. 
+
+- **Eliminar:** Puede eliminar un tipo de contacto, haciendo clic en la opción *Eliminar*, desplegando el menú con tres ubicado al final del registro. 
+
+## ¿Cómo crear un nuevo tipo de contacto?
+
+Para crear un nuevo tipo de contacto, haga clic en el botón **Crear**, ubicado en la parte lateral derecha del índice de datos.
+
+Visualizará un formulario como el siguiente:
+
+![](https://wiki.placetopay.com/images/a/ad/Contact-type-create.png)
+
+Tenga en cuenta la siguiente información para diligenciar el formulario de creación y edición:
+
+- **Código:** Ingrese un código numérico para identificar el tipo de contacto.
+
+- **Descripción en inglés:** Ingrese la descripción del tipo de contacto en inglés.
+
+- **Descripción en español:** Ingrese la descripción  del tipo de contacto en español.
 
 <!--
 type: tab
