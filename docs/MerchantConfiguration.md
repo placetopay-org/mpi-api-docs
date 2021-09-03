@@ -1,6 +1,6 @@
-[No Actualizado]
-
 # Comercios en MPI
+
+[NO ACTUALIZADO]
 
 ## ¿Qué es un comercio?
 
@@ -17,7 +17,7 @@ Para acceder al listado de comercios de la aplicación siga los siguientes pasos
 
 1. Remítase al menú lateral izquierdo dónde visualizará tres opciones, "Tablero", "Configuración" y "Seguridad", seleccione "Configuración" y luego "Comercios":
 
-![]()
+![](https://wiki.placetopay.com/images/2/28/Mpi-merchants-menu.png)
 
 2. Visualizará una pantalla similar a la siguiente:
 

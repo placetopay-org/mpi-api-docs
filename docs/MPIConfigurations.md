@@ -3,14 +3,11 @@ type: tab
 title: Clases CIIU
 -->
 
-[No Actualizado ningún módulo]
-
-
 # Categorías de actividad económica
 
-Para acceder al módulo de países, diríjase al menú lateral izquierdo, despliegue la opción *Sistema* y busque la sección de *Países* en los títulos.
+Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción *Configuración* y busque la sección de *CIIU* en los títulos.
 
-![](https://wiki.placetopay.com/images/9/91/Countries-menu.png)
+![](https://wiki.placetopay.com/images/2/23/Mpi-ciuu-menu.png)
 
 ## Índice de **:
 
@@ -71,9 +68,9 @@ title: Adquirientes
 
 # Adquirientes
 
-Para acceder al módulo de países, diríjase al menú lateral izquierdo, despliegue la opción *Sistema* y busque la sección de *Países* en los títulos.
+Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción *Configuración* y busque la sección de *Adquirientes* en los títulos.
 
-![](https://wiki.placetopay.com/images/9/91/Countries-menu.png)
+![](https://wiki.placetopay.com/images/c/c5/Mpi-acquirers-menu.png)
 
 ## Índice de **:
 
@@ -135,9 +132,9 @@ title: Certificados
 
 # Certificados SSL
 
-Para acceder al módulo de certificados, diríjase al menú lateral izquierdo, despliegue la opción *Sistema* y busque la sección de *Certificados* en los títulos.
+Para acceder al módulo de certificados, diríjase al menú lateral izquierdo, despliegue la opción *Configuración* y busque la sección de *Certificados* en los títulos.
 
-![](https://wiki.placetopay.com/images/6/6b/Certificates-menu-2.png)
+![](https://wiki.placetopay.com/images/5/5b/Mpi-certificates-menu.png)
 
 ## ¿Qué son y para qué utilizar los certificados SSL?
 
@@ -260,9 +257,9 @@ title: Tipos de contactos
 
 # Tipos de contactos
 
-Para acceder al módulo de países, diríjase al menú lateral izquierdo, despliegue la opción *Sistema* y busque la sección de *Países* en los títulos.
+Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción *Configuración* y busque la sección de *Tipos de contactos* en los títulos.
 
-![](https://wiki.placetopay.com/images/9/91/Countries-menu.png)
+![](https://wiki.placetopay.com/images/b/b3/Mpi-contact-types-menu.png)
 
 ## Índice de **:
 
@@ -323,9 +320,9 @@ title: Consultores comerciales
 
 # Consultores comerciales
 
-Para acceder al módulo de países, diríjase al menú lateral izquierdo, despliegue la opción *Sistema* y busque la sección de *Países* en los títulos.
+Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción *Configuración* y busque la sección de *Consultores comerciales* en los títulos.
 
-![](https://wiki.placetopay.com/images/9/91/Countries-menu.png)
+![](https://wiki.placetopay.com/images/6/64/Mpi-commerce-consultants.png)
 
 ## Índice de **:
 
@@ -386,9 +383,9 @@ title: Códigos del comercio
 
 # Códigos de categoría del comercio
 
-Para acceder al módulo de monedas, diríjase al menú lateral izquierdo, despliegue la opción *Sistema* y busque la sección de *Códigos de categoría del comercio* en los títulos.
+Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción *Configuración* y busque la sección de *Códigos de categoría del comercio* en los títulos.
 
-![](https://wiki.placetopay.com/images/f/f3/Merchant-category-codes-menu-2.png)
+![](https://wiki.placetopay.com/images/9/96/Mpi-category-codes.png)
 
 ## Índice de códigos de categoría del comercio:
 
@@ -426,9 +423,9 @@ title: Aliados comerciales
 
 # Aliados comerciales
 
-Para acceder al módulo de monedas, diríjase al menú lateral izquierdo, despliegue la opción *Sistema* y busque la sección de *Códigos de categoría del comercio* en los títulos.
+Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción *Configuración* y busque la sección de *Aliados comerciales* en los títulos.
 
-![](https://wiki.placetopay.com/images/f/f3/Merchant-category-codes-menu-2.png)
+![](https://wiki.placetopay.com/images/9/92/Mpi-merchant-allies.png)
 
 ## Índice de códigos de categoría del comercio:
 
@@ -465,9 +462,9 @@ title: Tipos de adjuntos
 
 # Tipos de adjuntos
 
-Para acceder al módulo de monedas, diríjase al menú lateral izquierdo, despliegue la opción *Sistema* y busque la sección de *Códigos de categoría del comercio* en los títulos.
+Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción *Configuración* y busque la sección de *Tipos de adjuntos* en los títulos.
 
-![](https://wiki.placetopay.com/images/f/f3/Merchant-category-codes-menu-2.png)
+![](https://wiki.placetopay.com/images/1/17/Mpi-attachments.png)
 
 ## Índice de códigos de categoría del comercio:
 
