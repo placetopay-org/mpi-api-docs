@@ -195,7 +195,6 @@ En la tercera sección, se da la opción de registrar el certificado obtenido, l
 
 > El estado **Expirado**, indica que el certificado ya no está disponible para ser utilizado y debe proceder a crear y firmar uno nuevo.
 
-
 <!--
 type: tab
 title: Tipos de contactos
@@ -252,13 +251,55 @@ type: tab
 title: Consultores comerciales
 -->
 
-[No Actualizado]
-
 # Consultores comerciales
 
 Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción **Configuración** y busque la sección de **Consultores comerciales** en los títulos.
 
 ![](https://wiki.placetopay.com/images/6/6d/Mpi-consultants-menu-2.png)
+
+## Índice de los consultores comerciales:
+
+En esta sección se visualiza el índice o listado de los consultores comerciales registrados en MPI.
+
+Un ejemplo de este índice es el siguiente:
+
+![](https://wiki.placetopay.com/images/0/0f/Consultats-index.png)
+
+## Buscador de consultores:
+
+El índice de consultores tiene la funcionalidad de buscador, está ubicado en la parte lateral izquierda y se puede buscar por el nombre completo del consultor o fragmentos de éste.
+
+![](https://wiki.placetopay.com/images/f/fa/Search-consultants.png)
+
+## Acciones para los consultores comerciales:
+
+En el listado de registros puede acceder a las acciones disponibles para cada consultor, haciendo clic en el menú con tres puntos ubicado al final de cada tipo:
+
+Las acciones disponibles son:
+
+- **Ver:** Puede ver los detalles de un consultor, haciendo clic en la opción *Ver*. 
+
+- **Editar:** Puede editar la información con la cual se creó un consultor, haciendo clic en la opción *Editar*. 
+
+- **Eliminar:** Puede eliminar un consultor, haciendo clic en la opción *Eliminar*, desplegando el menú con tres ubicado al final del registro. 
+
+## ¿Cómo crear un nuevo consultor comercial?
+
+Para crear un nuevo consultor, haga clic en el botón **Crear**, ubicado en la parte lateral derecha del índice de datos.
+
+Visualizará un formulario como el siguiente:
+
+![](https://wiki.placetopay.com/images/0/0a/Mpi-create-consultat.png)
+
+Tenga en cuenta la siguiente información para diligenciar el formulario de creación y edición:
+
+- **Nombre:** Ingrese el nombre del consultor comercial.
+
+- **Usuario:** Seleccione el usuario con el cual se va a habilitar el consultor.
+
+- **País:** Seleccione el país donde opera el consultor comercial, de la lista desplegable.
+
+- **Habilitar/Deshabilitar:** Puede habilitar o deshabilitar un consultor, deslizando el botón tipo switch con nombre *Habilitar* cuando está deshabilitado el consultor, o con nombre *Deshabilitar* cuando está habilitado y desea deshabilitarlo.
 
 
 <!--
@@ -266,14 +307,53 @@ type: tab
 title: Códigos del comercio
 -->
 
-[No Actualizado]
-
 # Códigos de categoría del comercio
 
 Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción **Configuración** y busque la sección de **Códigos de categoría del comercio** en los títulos.
 
 ![](https://wiki.placetopay.com/images/b/bc/Mpi-category-codes-menu.2.png)
 
+## Índice de códigos de categoría del comercio:
+
+En esta sección se visualiza el índice o listado de los códigos relacionados con las categorías de los comercios a los cuales MPI les procesa transacciones. 
+
+La información se encuentra organizada en una tabla y muestra los datos relevantes de los códigos como son el código numérico en sí, su descripción y las acciones.
+
+## Buscador de códigos:
+
+El índice de códigos de categoría tiene la funcionalidad del buscador, está ubicado en la parte lateral izquierda y puede buscar un código específico, un fragmento del código,el código completo o un fragmento de la descripción del código.
+
+## Función del módulo:
+
+Este módulo se pone a disposición del cliente a modo informativo y aclaratorio, ya que este listado de códigos va a facilitar la aclaración del tipo de comercio y la descripción a la cual hace referencia el código cuando se presenta en alguna traza de una transacción.
+
+![](https://wiki.placetopay.com/images/e/e4/Merchant-category-codes-index-2.png)
+
+## Acciones de los códigos de categoría del comercio:
+
+La anterior imagen muestra un ejemplo de la vista del módulo, las funcionalidades que están disponibles son:
+
+En el menú ubicado al final de cada código se despliega una lista con los botones de editar y eliminar el código.
+
+- **Editar:** Puede editar la información con la cual se creó un código de categoría, haciendo clic en la opción *Editar*. 
+
+- **Eliminar:** Puede eliminar un código de categoría, haciendo clic en la opción *Eliminar*. 
+
+## ¿Cómo crear un nuevo código de categoría para un comercio?
+
+Para crear un nuevo código, haga clic en el botón **Crear** ubicado en la parte lateral derecha de la pantalla. 
+
+Se presentará un formulario como el siguiente:
+
+![](https://wiki.placetopay.com/images/c/c8/Acs-merchant-code-create.png)
+
+Diligencie teniendo en cuenta lo siguiente:
+
+- **Código:** Ingrese un valor numérico de 4 dígitos que esté incluído en el listado en el ISO 18245, el cual es una normatividad encargada de la asignación de códigos de categoría de comerciantes para utilizarse en servicios financieros.
+
+- **Descripción en inglés:** Ingrese la descripción del código según el tipo de comercio.
+
+- **Descripción en español:** Ingrese la descripción del código según el tipo de comercio.
 
 <!--
 type: tab
