@@ -168,6 +168,26 @@ Aquí además de los dos filtros básicos, se pueden agregar más datos de búsq
 - Nombre del comercio
 - Versión del protocolo
 
+## ¿Cómo crear reportes de transacciones?
+
+El módulo de transacciones tiene la funcionalidad de crear reportes de transacciones. Para crear un reporte, siga los siguientes pasos:
+
+ 1. Diríjase a la sección de filtros y realice una búsqueda con los datos con los cuales espera las transacciones del reporte.
+
+ 2. Haga clic en el botón exportar, como se muestra en la siguiente imagen:
+
+    ![](https://wiki.placetopay.com/images/8/84/Export-transactions.png)
+
+ 3. Seleccione el formato en el cual desea obtener el reporte de transacciones.
+
+  **Tipos de archivos generados para los reportes**
+
+  - Archivo separado por comas (CSV).
+  - Archivo separado por tabuladores (TSV).
+  - Archivo de Excel (XLSX).
+
+  4. Su reporte será generado y será redireccionado a este, también puede consultar el reporte en el menú **Tablero** -> **Reportes**, y selecciona el que corresponda a la fecha y hora de generación del exporte.
+
 ## Detalle de una transacción:
 
 Para visualizar el detalle de una transacción, haga clic sobre la fecha de la transacción como se muestra en la imagen siguiente.
@@ -248,6 +268,18 @@ Estos reportes se pueden ver y descargar los archivos con toda la información d
   > Tenga en cuenta que solo se pueden descargar los reportes en estado **Completado**.
 
 - **Eliminar:** Puede eliminar un usuario, haciendo clic en la opción *Eliminar*. 
+
+## Tipos de archivos generados para los reportes:
+
+  - Archivo separado por comas (CSV).
+  - Archivo separado por tabuladores (TSV).
+  - Archivo de Excel (XLSX).
+
+
+## Creación de reportes de transacciones:
+
+Para crear reportes de transacciones debe dirigirse a la sección de **Transacciones** de esta documentación y luego ir al título **¿Cómo crear reportes de transacciones?**, ya que estos reportes son creados desde el módulo de transacciones.
+
 
 
 <!-- type: tab-end -->
