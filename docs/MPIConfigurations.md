@@ -360,13 +360,54 @@ type: tab
 title: Aliados comerciales
 -->
 
-[No Actualizado]
-
 # Aliados comerciales
 
 Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción **Configuración** y busque la sección de **Aliados comerciales** en los títulos.
 
 ![](https://wiki.placetopay.com/images/3/35/Mpi-allies-menu-2.png)
+
+## Índice de aliados comerciales:
+
+En esta sección se visualiza el índice o listado de los aliados comerciales registrados en MPI.
+
+Un ejemplo de este índice es el siguiente:
+
+![](https://wiki.placetopay.com/images/b/b0/Merchant-allies-index.png)
+
+## Buscador de aliados:
+
+El índice de aliados comerciales, tiene la funcionalidad del buscador, que está ubicado en la parte lateral izquierda y mediante el cual se puede hacer búsquedas por el nombre completo del aliado o fragmentos de éste.
+
+![](https://wiki.placetopay.com/images/d/d6/Search-allies.png)
+
+## Acciones para los aliados comerciales:
+
+En el listado de registros puede acceder a las acciones disponibles para cada aliado, haciendo clic en el menú con tres puntos ubicado al final de cada registro:
+
+Las acciones disponibles son:
+
+- **Ver:** Puede ver los detalles de un aliado, haciendo clic en la opción *Ver*. 
+
+- **Editar:** Puede editar la información con la cual se creó un aliado, haciendo clic en la opción *Editar*. 
+
+- **Eliminar:** Puede eliminar un aliado, haciendo clic en la opción *Eliminar*. 
+
+## ¿Cómo crear un nuevo aliado comercial?
+
+Para crear un nuevo aliado, haga clic en el botón **Crear**, ubicado en la parte lateral derecha del índice de datos.
+
+Visualizará un formulario como el siguiente:
+
+![](https://wiki.placetopay.com/images/f/f3/Create-merchant-ally.png)
+
+Tenga en cuenta la siguiente información para diligenciar el formulario de creación y edición:
+
+- **Nombre:** Ingrese el nombre del aliado comercial.
+
+- **País:** Seleccione el país donde opera el aliado comercial, de la lista desplegable.
+
+- **Habilitar/Deshabilitar:** Puede habilitar o deshabilitar un aliado, deslizando el botón tipo switch con nombre *Habilitar* cuando está deshabilitado el aliado, o con nombre *Deshabilitar* cuando está habilitado y desea deshabilitarlo.
+
 
 <!--
 type: tab
