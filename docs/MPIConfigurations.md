@@ -408,19 +408,52 @@ Tenga en cuenta la siguiente información para diligenciar el formulario de crea
 
 - **Habilitar/Deshabilitar:** Puede habilitar o deshabilitar un aliado, deslizando el botón tipo switch con nombre *Habilitar* cuando está deshabilitado el aliado, o con nombre *Deshabilitar* cuando está habilitado y desea deshabilitarlo.
 
-
 <!--
 type: tab
 title: Tipos de adjuntos
 -->
-
-[No Actualizado]
 
 # Tipos de adjuntos
 
 Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción *Configuración* y busque la sección de *Tipos de adjuntos* en los títulos.
 
 ![](https://wiki.placetopay.com/images/8/86/Mpi-attachments-menu-2.png)
+
+## Índice de tipos de adjuntos:
+
+En esta sección se visualiza el índice o listado de los tipos de adjuntos registrados en MPI.
+
+Un ejemplo de este índice es el siguiente:
+
+![](https://wiki.placetopay.com/images/d/dd/Attachment-index.png)
+
+## Acciones para el módulo de tipos de adjuntos:
+
+En el listado de registros puede acceder a las acciones disponibles para cada tipo de adjunto, haciendo clic en el menú con tres puntos ubicado al final de cada registro:
+
+Las acciones disponibles son:
+
+- **Ver:** Puede ver los detalles de un tipo de adjunto, haciendo clic en la opción *Ver*. 
+
+- **Editar:** Puede editar la información con la cual se creó un tipo de adjunto, haciendo clic en la opción *Editar*. 
+
+- **Eliminar:** Puede eliminar un tipo de adjunto, haciendo clic en la opción *Eliminar*. 
+
+## ¿Cómo crear un nuevo tipo de adjunto?
+
+Para crear un nuevo tipo de adjunto, haga clic en el botón **Crear**, ubicado en la parte lateral derecha del índice de datos.
+
+Visualizará un formulario como el siguiente:
+
+![](https://wiki.placetopay.com/images/0/03/Attachment-create.png)
+
+Tenga en cuenta la siguiente información para diligenciar el formulario de creación y edición:
+
+- **Código:** Ingrese el código numérico para asignar al tipo de adjunto.
+
+- **Descripción en inglés:** Ingrese la descripción del nuevo tipo de adjunto en inglés.
+
+- **Descripción en español:** Ingrese la descripción del nuevo tipo de adjuntoen español.
 
 <!--
 type: tab
