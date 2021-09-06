@@ -81,13 +81,79 @@ type: tab
 title: Adquirientes
 -->
 
-[No Actualizado]
-
 # Adquirientes
 
 Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción **Configuración** y busque la sección de **Adquirientes** en los títulos.
 
 ![](https://wiki.placetopay.com/images/b/b4/Mpi-acquirers-menu-2.png)
+
+## Índice de adquirientes:
+
+En esta sección se visualiza el índice o listado de los adquirientes registrados en MPI.
+
+Un ejemplo de este índice es el siguiente:
+
+![](https://wiki.placetopay.com/images/c/c4/Acquirers-index.png)
+
+## Buscador de adquirientes:
+
+El índice de adquirientes tiene la funcionalidad de buscador, está ubicado en la parte lateral izquierda y puede hacer búsquedas por el nombre completo del adquiriente o fragmentos de éste.
+
+![](https://wiki.placetopay.com/images/e/e2/Acquirer-search.png)
+
+## Acciones para los adquirientes:
+
+En el listado de registros puede acceder a las acciones disponibles para cada adquiriente, haciendo clic en el menú con tres puntos ubicado al final de cada tipo:
+
+Las acciones disponibles son:
+
+- **Ver:** Puede ver los detalles de un adquiriente, haciendo clic en la opción *Ver*.
+
+  Un ejemplo de un detalle de un adquiriente es el siguiente:
+
+  ![](https://wiki.placetopay.com/images/9/99/Acquirer-detail.png)
+
+  > En esta vista puede visualizar que hay una sección de nombre **Bines**, en la cual se listan los bines creados para el adquiriente seleccionado y además tiene la opción de crear nuevos bines, esta funcionalidad se explica al final de este módulo en el título **¿Cómo crear un BIN para un adquiriente?**.
+
+- **Editar:** Puede editar la información con la cual se creó un adquiriente, haciendo clic en la opción *Editar*. 
+
+- **Eliminar:** Puede eliminar un adquiriente, haciendo clic en la opción *Eliminar*. 
+
+## ¿Cómo crear un nuevo adquiriente?
+
+Para crear un nuevo adquiriente, haga clic en el botón **Crear**, ubicado en la parte lateral derecha del índice de datos.
+
+Visualizará un formulario como el siguiente:
+
+![](https://wiki.placetopay.com/images/3/31/Create-adquirer.png)
+
+Tenga en cuenta la siguiente información para diligenciar el formulario de creación y edición:
+
+- **Nombre:** Ingrese el nombre del adquiriente.
+
+- **País:** Seleccione el país donde opera el adquiriente comercial, de la lista desplegable.
+
+- **Habilitar/Deshabilitar:** Puede habilitar o deshabilitar un adquiriente, deslizando el botón tipo switch con nombre *Habilitar* cuando está deshabilitado el adquiriente, o con nombre *Deshabilitar* cuando está habilitado y desea deshabilitarlo.
+
+## ¿Cómo crear un BIN para un adquiriente?
+
+Los adquirientes poseen bines específicos, en los cuales se basa cada adquiriente para realizar las diferentes operaciones.
+
+La opción de crear un bin se encuentra en el detalle de un adquiriente, en la sección **Bines**, luego haga clic en el botón **Crear**, ubicado en la parte lateral derecha de la vista, y se desplegará un formulario como el siguiente, diligencielo y luego haga clic en el botón **Crear** situado en la parte inferior del formulario:
+
+![](https://wiki.placetopay.com/images/6/6d/Bin-create-in-acquirer-info.png)
+
+Tenga en cuenta la siguiente información para diligenciar el formulario:
+
+- **Franquicia:** Seleccione de la lista desplegable, la franquicia o marca a la cual pertenece el BIN que desea registrar.
+
+- **BIN:** Ingrese un número de 6 dígitos el cual corresponde al BIN de la tarjeta en la franquicia seleccionada.
+
+## Acciones disponibles para los bines:
+
+Actualmente los bines de adquirientes, solo tienen la opción de eliminar.
+
+- **Eliminar:** Puede eliminar un BIN, haciendo clic en la opción *Eliminar*, desplegando el menú con tres ubicado al final del registro. 
 
 <!--
 type: tab
