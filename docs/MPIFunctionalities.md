@@ -281,5 +281,4 @@ Estos reportes se pueden ver y descargar los archivos con toda la información d
 Para crear reportes de transacciones debe dirigirse a la sección de **Transacciones** de esta documentación y luego ir al título **¿Cómo crear reportes de transacciones?**, ya que estos reportes son creados desde el módulo de transacciones.
 
 
-
 <!-- type: tab-end -->

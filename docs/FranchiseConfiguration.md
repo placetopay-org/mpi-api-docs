@@ -1,3 +1,8 @@
+<!--
+type: tab
+title: Información General 
+-->
+
 # Franquicias en MPI
 
 ## ¿Qué es una franquicia?
@@ -14,7 +19,12 @@ Para acceder al listado de franquicias de la aplicación siga los siguientes pas
 
 2. Visualizará una pantalla con el listado de franquicias organizadas en una tabla, la cual corresponde al índice de franquicias:
 
-## ¿Cómo crear una franquicia en MPI?
+<!--
+type: tab
+title: Creación de una franquicia
+-->
+
+# ¿Cómo crear una franquicia en MPI?
 
 Para crear una franquicia, haga clic en el botón **Crear** ubicado en la parte lateral derecha del índice de franquicias, posteriormente diligencie los datos del formulario teniendo en cuenta la siguiente información:
 
@@ -38,7 +48,12 @@ Para crear una franquicia, esta debe haber pasado por un proceso de certificaci�
 
 También, la franquicia debe proporcionar información como el tipo de tarjetas que soportan, las clases y los bines aceptados, para proceder a realizar una creación exitosa de franquicia en MPI y que esta coincida con las especificaciones y requerimientos esperados en la aplicación.
 
-## Listado de franquicias
+<!--
+type: tab
+title: Índice de franquicias 
+-->
+
+# Listado de franquicias
 
 En esta sección se visualiza el listado o índice de franquicias en una tabla donde se muestran los datos principales de cada una, tales como: Nombre, ID de negocio Estado y Acciones. 
 
@@ -73,7 +88,12 @@ Tampoco podrán autenticarse las transacciones cuyas tarjetas pertenezcan a una 
 
 Así mismo, deshabilitar una franquicia puede causar el fallo en los adquirientes y comercios que tengan suscrita tal franquicia.
 
-## Funcionalidades en las franquicias
+<!--
+type: tab
+title: Funcionalidades
+-->
+
+# Funcionalidades en las franquicias
 
 El módulo de franquicias es uno de los más importantes en MPI y de su correcta configuración depende gran parte del buen funcionamiento de la aplicación y del procesamiento de las autenticaciones.
 
@@ -97,11 +117,22 @@ Aquí se encuentran relacionados los dos certificados agregados en la creación 
 
 Para ver el detalle del certificado haga clic en el botón con ícono de ojo para desplegar la información de cada certificado.
 
-### Servidores de directorio
+<!--
+type: tab
+title: Gestión de servidores de directorio
+-->
+
+# Servidores de directorio
+
+La sección para gestionar los servidores de directorio se encuentra en la vista del detalle de una franquicia. 
+
+Al acceder a este detalle visualizará las siguientes secciones:
+
+![](https://wiki.placetopay.com/images/6/6b/Franchise-funcitonalities.png)
 
 En esta sección se listan los servidores de directorio (DS), creados para la franquicia seleccionada. 
 
-En el listado se puede visualizar la URL del servidor de directorio, el estado del mismo, la versión del protocol para la cual fue creado, las acciones disponibles para cada uno y el botón para crear un nuevo DS.
+En el listado se puede visualizar la URL del servidor de directorio, el estado del mismo, la versión del protocolo para la cual fue creado, las acciones disponibles para cada uno y el botón para crear un nuevo DS.
 
 #### Acciones para los servidores de directorio
 
@@ -123,7 +154,7 @@ Diligencie el formulario teniendo en cuenta la siguiente información:
 
 - **Protocolo:** Seleccione la versión del protocolo para configurar el servidor de directorio. 
 
-- **Controlador de conexión:** Seleccione eltipo de controlador de conexión para la transmisión de datos. Las opciones son las siguientes:
+- **Controlador de conexión:** Seleccione el tipo de controlador de conexión para la transmisión de datos. Las opciones son las siguientes:
 
   - **CURL,** Para hacer llamadas a URL, esta es la opción recomendada a seleccionar.
 
@@ -156,7 +187,18 @@ En esta sección se encuentran listados los rangos de tarjeta creados para el DS
 
   > Los rangos de tarjeta para un servidor de directorio son previamente configurados y migrados a la aplicación de MPI por el equipo de soporte de Evertec Placetopay. 
 
-### Configuraciones
+<!--
+type: tab
+title: Gestión de configuraciones
+-->
+
+# Configuraciones
+
+La sección para gestionar los servidores de directorio se encuentra en la vista del detalle de una franquicia. 
+
+Al acceder a este detalle visualizará las siguientes secciones:
+
+![](https://wiki.placetopay.com/images/6/6b/Franchise-funcitonalities.png)
 
 En esta sección se listan las configuraciones creadas para la franquicia seleccionada. 
 
@@ -179,3 +221,5 @@ Diligencie el formulario teniendo en cuenta la siguiente información:
 - **Campo:** Seleccione de la lista desplegable el campo que require configurar para la franquicia.
 
 - **Valor:** Ingrese el valor correspondiente al campo seleccionado que desea configurar.
+
+<!-- type: tab-end -->
