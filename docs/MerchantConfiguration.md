@@ -7,12 +7,7 @@ title: Información General
 
 ## ¿Qué es un comercio?
 
-Un comercio es...
-
-Entre las funciones de un emisor están:
-
-- El comercio tiene la responsabilidad de...
-
+Un comercio en MPI son todas aquellas organizaciones establecidas legalmente y con convenio con Evertec Placetopay, que permiten la compra y venta de bienes o servicios de forma virtual, utilizando los productos que ofrece la compañía en cuanto a soluciones transaccionales y de seguridad.
 
 ## ¿Cómo acceder a la gestión de comercios de MPI?
 
@@ -20,13 +15,18 @@ Para acceder al listado de comercios de la aplicación siga los siguientes pasos
 
 1. Remítase al menú lateral izquierdo dónde visualizará tres opciones, "Tablero", "Configuración" y "Seguridad", seleccione **Configuración** y luego **Comercios**:
 
-![](https://wiki.placetopay.com/images/d/d2/Mpi-merchants-menu-2.png)
+    ![](https://wiki.placetopay.com/images/d/d2/Mpi-merchants-menu-2.png)
 
 2. Visualizará una pantalla similar a la siguiente:
 
-![]()
+    ![](https://wiki.placetopay.com/images/8/8b/Merchant-index-2.png)
 
-## ¿Cómo crear un comercio en MPI?
+<!--
+type: tab
+title: Creación de un comercio
+-->
+
+# ¿Cómo crear un comercio en MPI?
 
 Para crear un comercio, haga clic en el botón **Crear** ubicado en la parte lateral derecha del índice de comercios.
 
@@ -63,12 +63,16 @@ Pertenece al dominio el adquiriente y entre sus funciones principales están:
   >> - Solicitar al emisor la autorización del pago.
   >> - Responder al comercio o pasarela de pagos el estado final de la autenticación.
 
+<!--
+type: tab
+title: Índice de comercios 
+-->
 
 ## Índice de comercios
 
 En esta sección se visualiza el listado o índice de emisores, la información se presenta en una tabla donde se muestran los datos principales de cada emisor, tales como: Nombre, País y Estado. 
 
-![](https://wiki.placetopay.com/images/4/4a/Issuer-actions.png)
+![](https://wiki.placetopay.com/images/4/43/Merchant-index-1.png)
 
 #### Filtros:
 
