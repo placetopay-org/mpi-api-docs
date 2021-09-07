@@ -1,4 +1,7 @@
-[No Actualizado]
+<!--
+type: tab
+title: Información General 
+-->
 
 # Comercios en MPI
 
@@ -21,7 +24,7 @@ Para acceder al listado de comercios de la aplicación siga los siguientes pasos
 
 2. Visualizará una pantalla similar a la siguiente:
 
-![](https://wiki.placetopay.com/images/4/4e/Issuer-index.png)
+![]()
 
 ## ¿Cómo crear un comercio en MPI?
 
@@ -191,3 +194,5 @@ Luego visualizará una vista similar a la siguiente:
 En la parte inferior de la vista, encontrará tres pestañas que contienen los campos de configuración de los emisores, agrupados en tres secciones: General, Desafíos y Servicios.
 
 Ingresando a cada una de las pestañas, podrá ver la información de los campos del emisor organizada en tablas, en las cuales se muestra el nombre, el valor inicial del campo y el estado del mismo.
+
+<!-- type: tab-end -->

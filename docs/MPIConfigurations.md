@@ -9,6 +9,10 @@ Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la
 
 ![](https://wiki.placetopay.com/images/d/d2/Mpi-ciiu-menu-3.png)
 
+## ¿Qué es una clase CIIU?
+
+La Clasificación industrial internacional uniforme de todas las actividades económicas (CIIU), es una clasificación de actividades económicas por procesos productivos que agrupa unidades estadísticas con base en su actividad económica principal y confiere códigos e indicadores para diferenciar cada actividad económica, configurando así las clases CIIU.
+
 ## Índice de las categorías de actividad económica:
 
 En esta sección se visualiza el índice o listado de las categorías de la actividad económica a las cuales están suscritas los diferentes comercios.
@@ -86,6 +90,10 @@ title: Adquirientes
 Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción **Configuración** y busque la sección de **Adquirientes** en los títulos.
 
 ![](https://wiki.placetopay.com/images/b/b4/Mpi-acquirers-menu-2.png)
+
+## ¿Qué es un adquiriente?
+
+Un adquiriente es una institución financiera que tiene relación con un comercio para procesar transacciones y recibir fondos para éstas.
 
 ## Índice de adquirientes:
 
@@ -378,6 +386,10 @@ title: Códigos del comercio
 Para acceder a este módulo, diríjase al menú lateral izquierdo, despliegue la opción **Configuración** y busque la sección de **Códigos de categoría del comercio** en los títulos.
 
 ![](https://wiki.placetopay.com/images/b/bc/Mpi-category-codes-menu.2.png)
+
+## ¿Qué es un código de categoría de comercio?
+
+El código de categoría de comerciante (MCC), son números de cuatro dígitos que los procesadores de tarjetas de crédito asignan a las empresas para pagos con tarjeta de crédito. El código se utiliza para clasificar al comerciante en una categoría particular en función de los bienes o servicios que más vende. 
 
 ## Índice de códigos de categoría del comercio:
 
