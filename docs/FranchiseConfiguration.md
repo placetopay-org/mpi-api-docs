@@ -1,11 +1,8 @@
-[No Actualizado]
-
 # Franquicias en MPI
 
 ## ¿Qué es una franquicia?
 
-Una franquicia de una tarjeta de crédito, es una compañía aliada con los bancos emisores de tarjetas de crédito. Tienen como función proveer diversos beneficios bancarios a sus clientes, siendo estos los tarjetabientes. 
-Las franquicias son las que gestionan el uso y los beneficios asociados a las tarjetas emitidas por los bancos emisores.
+Una franquicia de una tarjeta de crédito, es una compañía aliada con los bancos emisores de tarjetas de crédito. Tienen como función proveer diversos beneficios bancarios a sus clientes (tarjetabientes) y gestionar el uso de las tarjetas. 
 
 ## ¿Cómo acceder a la gestión de franquicias de MPI?
 
@@ -13,46 +10,43 @@ Para acceder al listado de franquicias de la aplicación siga los siguientes pas
 
 1. Remítase al menú lateral izquierdo dónde visualizará tres opciones, "Tablero", "Configuración" y "Seguridad", seleccione la opción **Configuración** y luego **Franquicias**, como muestra la siguiente imagen:
 
-![](https://wiki.placetopay.com/images/7/76/Mpi-franchises-menu-2.png)
+    ![](https://wiki.placetopay.com/images/7/76/Mpi-franchises-menu-2.png)
 
-2. Haga clic en el menú "Configuración", se desplegará un listado de opciones, haga clic en la opción "Franquicias".
-
-3. Visualizará una pantalla similar a la ilustrada en la siguiente imagen:
-
-![](https://wiki.placetopay.com/images/4/4c/Franchise-index.png)
+2. Visualizará una pantalla con el listado de franquicias organizadas en una tabla, la cual corresponde al índice de franquicias:
 
 ## ¿Cómo crear una franquicia en MPI?
 
-Para crear una franquicia, haga clic en el botón *Crear* ubicado en la parte lateral derecha del índice de franquicias, posteriormente diligencia los datos del formulario teniendo en cuenta la siguiente información:
+Para crear una franquicia, haga clic en el botón **Crear** ubicado en la parte lateral derecha del índice de franquicias, posteriormente diligencie los datos del formulario teniendo en cuenta la siguiente información:
 
-- **Marca,** Nombre de la franquicia, por ejemplo Mastercard, VISA...
+- **Marca,** Ingrese el nombre de la franquicia, por ejemplo Mastercard, VISA...
 
-- **Patrón,** Ingrese un patrón basado en una expresión regular, con este se valida que el número de tarjeta que llegue al MPI, sea válido según los estándares propios de cada franquicia.
+- **ID de negocio,** Ingrese el identificador numérico de la franquicia.
 
-- **Algoritmo para el CAVV,** El Cardholder Authentication Verification Value (CAVV), es un valor de verificación de autenticación del titular de la tarjeta. Aquí se debe seleccionar un algoritmo que valide este valor, el cual resulta de hacer una transacción. En el momento MPI cuenta con un algoritmo para VISA y otro para MASTERCARD.
+- **Prefijo del Id del solicitante,** Ingrese al menos 3 carácteres que correspondan al identificador del solicitante de la creación de la franquicia.
 
-- **Algoritmo para el ECI,** El Electronic Commerce
-Indicator (ECI), es un valor para indicar los resultados del intento de autenticación. En MPI hay tres algoritmos disponibles, para las franquicias de VISA, MASTERCARD y JCB.
+- **Certificados intermedios,** Copie y pegue en este campo el bloque de texto correspondiente al certificado intermedio.
 
-- **Logo,** Puede adjuntar una imagen con el logo de la franquicia.
+- **Certificados raíz,** Copie y pegue en este campo el bloque de texto correspondiente al certificado raíz.
 
 En la siguiente imagen se puede visualizar un ejemplo del formulario de creación de una franquicia:
 
-![](https://wiki.placetopay.com/images/a/a0/Acs-create-franchise.png)
+![](https://wiki.placetopay.com/images/9/9f/Create-franchise-mpi.png)
 
 ## ¿Cuáles son los requerimientos para crear una franquicia?
 
-Para crear una franquicia, esta debe haber pasado por un proceso de certificación para MPI con PlacetoPay Evertec.
+Para crear una franquicia, esta debe haber pasado por un proceso de certificación de la marca con PlacetoPay Evertec.
 
-También, la franquicia debe proporcionar información como el tipo de tarjetas que soportan, las clases y los bines aceptados, para proceder a realizar una creación exitosa de franquicia en MPI y que esta coincida con las especificaciones y requerimientos de la franquicia en específico.
+También, la franquicia debe proporcionar información como el tipo de tarjetas que soportan, las clases y los bines aceptados, para proceder a realizar una creación exitosa de franquicia en MPI y que esta coincida con las especificaciones y requerimientos esperados en la aplicación.
 
 ## Listado y funciones de las franquicias
 
-En esta sección se visualiza el listado o índice de franquicias en una tabla donde se muestran los datos principales de cada una, tales como: Marca, Patrón, Algoritmo para el CAVV, Algoritmo para el ECI, Estado y Acciones. Estos datos se explican más adelante. 
+En esta sección se visualiza el listado o índice de franquicias en una tabla donde se muestran los datos principales de cada una, tales como: Nombre, ID de negocio Estado y Acciones. 
 
-En el título "Acciones" ubicado en la parte lateral derecha,se encuentra un menú con tres puntos, haga clic en este menú y despliegue las acciones o funcionalidades disponibles para cada franquicia. En el menú se encuentran las siguientes acciones:
+Al final de cada registro de franquicia, en la parte lateral derecha, se encuentra un menú con tres puntos, haga clic en este menú y despliegue las acciones o funcionalidades disponibles para cada franquicia.
 
-![](https://wiki.placetopay.com/images/6/62/Acs-franchise-index.png)
+ El menú que se despliega se visualizará como la siguiente imagen:
+
+![](https://wiki.placetopay.com/images/1/13/Franchises-index-mpi.png)
 
 ### Acciones para las franquicias:
 
@@ -60,26 +54,22 @@ En el título "Acciones" ubicado en la parte lateral derecha,se encuentra un men
 
   Visualizará una vista similar a la siguiente:
 
-![](https://wiki.placetopay.com/images/7/7d/Franchise-detail.png)
+  ![](https://wiki.placetopay.com/images/b/b6/Franchise-detail-mpi.png)
+
+- **Habilitar/Deshabilitar:** Esta opción se encuentra disponible en el detalle de la franquicia (diríjase a la imagen anterior para visualizar el botón de deshabilitar), deslice el botón tipo switch para habilitar la franquicia si se encuentra deshabilitada o para deshabilitarla cuando se encuentre habilitada. 
+  
+  > Al habilitar o deshabilitar, la aplicación le entregará un mensaje de confirmación de habilitación y cambiará el estado en la franquicia editada.
 
 - **Editar:** Seleccione esta opción para actualizar o corregir los datos con los cuales creó la franquicia. 
+Visualizará un formulario similar al de creación de la franquicia, el cual se explicó previamente.
 
-  Visualizará un formulario similar al de creación de la franquicia.
-
-![](https://wiki.placetopay.com/images/5/5d/Edit-franchise.png)
-
-- **Habilitar o Deshabilitar:** Deslice el botóntipo switch para habilitar la franquicia si se encuentra deshabilitada o para deshabilitarla cuando se encuentre habilitada. 
-
-![](https://wiki.placetopay.com/images/a/a9/Franchise-toggle.png)
-
-Al habilitar o deshabilitar, la aplicación le entregará un mensaje de confirmación similar al siguiente e inmediatamente cambiará el estado en la franquicia editada.
-
-![](https://wiki.placetopay.com/images/0/09/Enable-franchise.png)
+- **Eliminar:** Puede eliminar una clase, haciendo clic en la opción *Eliminar*. 
 
 ### ¿Qué ocurre al deshabilitar una franquicia?
 
-Tenga en cuenta que si una franquicia se encuentra deshabilitada, no podrá hacer movimientos con ella en la aplicación. Por ejemplo no puede visualizar una franquicia deshabilitada en el listado de franquicias disponibles, al momento de crear un certificado o un emisor. 
+Tenga en cuenta que si una franquicia se encuentra deshabilitada, no podrá hacer movimientos con ella en la aplicación. Por ejemplo no puede seleccionar una franquicia deshabilitada en el listado de franquicias disponibles, al momento de crear una suscripción de un adquieriente para un comercio. 
 
 Tampoco podrán autenticarse las transacciones cuyas tarjetas pertenezcan a una franquicia deshabilitada. 
 
-Así mismo puede causar el fallo en los emisores que tengan suscrita tal franquicia.
+Así mismo, deshabilitar una franquicia puede causar el fallo en los adquirientes y comercios que tengan suscrita tal franquicia.
+

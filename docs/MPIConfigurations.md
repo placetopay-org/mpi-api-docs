@@ -54,7 +54,7 @@ Las acciones disponibles son:
 
 - **Editar:** Puede editar la información con la cual se creó la clase, haciendo clic en la opción *Editar*. 
 
-- **Eliminar:** Puede eliminar una clase, haciendo clic en la opción *Eliminar*, desplegando el menú con tres ubicado al final del registro. 
+- **Eliminar:** Puede eliminar una clase, haciendo clic en la opción *Eliminar*. 
 
 ## ¿Cómo crear una nueva clase CIIU?
 
@@ -200,7 +200,7 @@ Puede editar la información con la cual se creó un certificado, haciendo clic 
 
 **Eliminar:** 
 
-Puede eliminar un certificado, haciendo clic en la opción *Eliminar*, desplegando el menú con tres ubicado al final del registro. 
+Puede eliminar un certificado, haciendo clic en la opción *Eliminar*.. 
 
 ## Creación de un certificado:
 
@@ -294,7 +294,7 @@ Las acciones disponibles son:
 
 - **Editar:** Puede editar la información con la cual se creó un tipo de contacto, haciendo clic en la opción *Editar*. 
 
-- **Eliminar:** Puede eliminar un tipo de contacto, haciendo clic en la opción *Eliminar*, desplegando el menú con tres ubicado al final del registro. 
+- **Eliminar:** Puede eliminar un tipo de contacto, haciendo clic en la opción *Eliminar*. 
 
 ## ¿Cómo crear un nuevo tipo de contacto?
 
@@ -347,7 +347,7 @@ Las acciones disponibles son:
 
 - **Editar:** Puede editar la información con la cual se creó un consultor, haciendo clic en la opción *Editar*. 
 
-- **Eliminar:** Puede eliminar un consultor, haciendo clic en la opción *Eliminar*, desplegando el menú con tres ubicado al final del registro. 
+- **Eliminar:** Puede eliminar un consultor, haciendo clic en la opción *Eliminar*. 
 
 ## ¿Cómo crear un nuevo consultor comercial?
 
