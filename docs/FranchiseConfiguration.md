@@ -214,7 +214,7 @@ En el listado se puede visualizar el campo, el valor para el campo, las acciones
 
 Para crear una nueva configuración para la franquicia, haga clic en el botón **Crear una configuración**, y se desplegará un formulario como el siguiente:
 
-![]()
+![](https://wiki.placetopay.com/images/7/73/Create-configuration-franchise.png)
 
 Diligencie el formulario teniendo en cuenta la siguiente información:
 
