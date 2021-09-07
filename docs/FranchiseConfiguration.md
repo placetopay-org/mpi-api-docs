@@ -38,7 +38,7 @@ Para crear una franquicia, esta debe haber pasado por un proceso de certificaci�
 
 También, la franquicia debe proporcionar información como el tipo de tarjetas que soportan, las clases y los bines aceptados, para proceder a realizar una creación exitosa de franquicia en MPI y que esta coincida con las especificaciones y requerimientos esperados en la aplicación.
 
-## Listado y funciones de las franquicias
+## Listado de franquicias
 
 En esta sección se visualiza el listado o índice de franquicias en una tabla donde se muestran los datos principales de cada una, tales como: Nombre, ID de negocio Estado y Acciones. 
 
@@ -63,7 +63,7 @@ Al final de cada registro de franquicia, en la parte lateral derecha, se encuent
 - **Editar:** Seleccione esta opción para actualizar o corregir los datos con los cuales creó la franquicia. 
 Visualizará un formulario similar al de creación de la franquicia, el cual se explicó previamente.
 
-- **Eliminar:** Puede eliminar una clase, haciendo clic en la opción *Eliminar*. 
+- **Eliminar:** Puede eliminar una franquicia, haciendo clic en la opción *Eliminar*. 
 
 ### ¿Qué ocurre al deshabilitar una franquicia?
 
@@ -73,3 +73,109 @@ Tampoco podrán autenticarse las transacciones cuyas tarjetas pertenezcan a una 
 
 Así mismo, deshabilitar una franquicia puede causar el fallo en los adquirientes y comercios que tengan suscrita tal franquicia.
 
+## Funcionalidades en las franquicias
+
+El módulo de franquicias es uno de los más importantes en MPI y de su correcta configuración depende gran parte del buen funcionamiento de la aplicación y del procesamiento de las autenticaciones.
+
+Las funcionalidades adicionales a las ya mencionadas en cuanto a las franquicias, se pueden acceder en la vista del detalle de una franquicia. 
+
+Al acceder a este detalle visualizará las siguientes secciones:
+
+![](https://wiki.placetopay.com/images/6/6b/Franchise-funcitonalities.png)
+
+En la imagen puede visualizar los botones de creación y de despligue de las acciones para cada sección, además de las clasificaciones de las mismas. 
+
+### Información básica de la franquicia
+
+Está ubicada en la parte superior del detalle de la franquicia, contiene el estado y los datos con los cuales se creó la misma, además de la fecha y los usuarios que la crearon o la han modificado.
+
+### Certificados
+
+Aquí se encuentran relacionados los dos certificados agregados en la creación de la franquicia, correspondientes al certificado raíz y al intermedio.
+
+#### ¿Cómo visualizar el detalle del certificado?
+
+Para ver el detalle del certificado haga clic en el botón con ícono de ojo para desplegar la información de cada certificado.
+
+### Servidores de directorio
+
+En esta sección se listan los servidores de directorio (DS), creados para la franquicia seleccionada. 
+
+En el listado se puede visualizar la URL del servidor de directorio, el estado del mismo, la versión del protocol para la cual fue creado, las acciones disponibles para cada uno y el botón para crear un nuevo DS.
+
+#### Acciones para los servidores de directorio
+
+- **Ver:** Puede ver los detalles de un tipo de DS, haciendo clic en la opción *Ver*. 
+
+- **Editar:** Puede editar la información con la cual se creó un DS, haciendo clic en la opción *Editar*. 
+
+- **Habilitar/Deshabilitar:** Puede habilitar o deshabilitar un DS, deslizando el botón tipo switch con nombre *Habilitar* cuando está deshabilitado el DS, o con nombre *Deshabilitar* cuando está habilitado y desea deshabilitarlo.
+
+#### ¿Cómo crear un nuevo servidor de directorio?
+
+Para crear un nuevo DS, haga clic en el botón **Crear Servidor de Directorio**, y se desplegará un formulario como el siguiente:
+
+![](https://wiki.placetopay.com/images/5/5f/Create-ds-mpi.png)
+
+Diligencie el formulario teniendo en cuenta la siguiente información:
+
+- **URL:** Ingrese un formato válido de URL que represente la ruta del servidor de directorio donde recibirá y gestionará las solicitudes de autenticación.
+
+- **Protocolo:** Seleccione la versión del protocolo para configurar el servidor de directorio. 
+
+- **Controlador de conexión:** Seleccione eltipo de controlador de conexión para la transmisión de datos. Las opciones son las siguientes:
+
+  - **CURL,** Para hacer llamadas a URL, esta es la opción recomendada a seleccionar.
+
+  - **STREAM,** Para transmitir los datos vía streaming.
+
+- **Tiempo de espera**: Ingresar en números el tiempo de espera a configurar, para obtener una respuesta del servidor de directorio.
+
+- **Cadena de certificación:** Copie el bloque de texto correspondiente al certificado. Copie el bloque incluyendo las etiquetas de "---BEGIN CERTIFICATE---" y "---END CERTIFICATE---". 
+
+
+#### Detalle de un servidor de directorio
+
+En el detalle de un servidor de directorio se accede a diferentes funcionalidades para configurarlo, un detalle de un DS se puede ver como el siguiente:
+
+![](https://wiki.placetopay.com/images/e/e7/Ds-franchise-detail.png)
+
+Se puede evidenciar en la anterior imagen tres secciones:
+
+1. **Información general del servidor de directorio:** 
+En esta sección se encuentra la información con la cual fue creado el DS, el estado de habilitación del mismo, además de la fecha de creación y actualizaciones y los nombres de los usuarios que realizaron tales movimientos.
+
+2. **Configuraciones:**
+En esta sección se listan las configuraciones creadas para el DS específico, presentadas en una tabla con el nombre del campo de configuración, el valor para el mismo y las acciones para cada uno. Además, se encuentra el botón para crear una nueva configuración para el DS seleccionado.
+
+3. **Rango de tarjetas:** 
+En esta sección se encuentran listados los rangos de tarjeta creados para el DS, se presentan los datos listados en una tabla con el rango inicial y final, las versiones que soportan cada rango para el ACS y el DS y en algunos casos encontrará información de indicadores de ACS.
+
+  **Buscador de rangos,**
+  En esta sección también se encuentra un buscador en la parte lateral izquierda, mediante esta funcionalidad puede hacer búsquedas de rangos de tarjeta, ingresando un rango con 10 dígitos.
+
+  > Los rangos de tarjeta para un servidor de directorio son previamente configurados y migrados a la aplicación de MPI por el equipo de soporte de Evertec Placetopay. 
+
+### Configuraciones
+
+En esta sección se listan las configuraciones creadas para la franquicia seleccionada. 
+
+En el listado se puede visualizar el campo, el valor para el campo, las acciones disponibles para cada configuración y el botón para crear una nueva.
+
+#### Acciones para las configuraciones
+
+- **Editar:** Puede editar la información con la cual se creó una configuración, haciendo clic en la opción *Editar*. 
+
+- **Eliminar:** Puede eliminar una configuración, haciendo clic en la opción *Eliminar*. 
+
+#### ¿Cómo crear una nueva configuración?
+
+Para crear una nueva configuración para la franquicia, haga clic en el botón **Crear una configuración**, y se desplegará un formulario como el siguiente:
+
+![]()
+
+Diligencie el formulario teniendo en cuenta la siguiente información:
+
+- **Campo:** Seleccione de la lista desplegable el campo que require configurar para la franquicia.
+
+- **Valor:** Ingrese el valor correspondiente al campo seleccionado que desea configurar.
