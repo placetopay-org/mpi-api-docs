@@ -183,10 +183,10 @@ Diligencie teniendo en cuenta la siguiente información:
 
 <!--
 type: tab
-title: Información principal del comercio
+title: Información detallada
 -->
 
-# Información principal del comercio
+# Información detallada del comercio
 
 Para ir a los detalles de un comercio, haga clic en la acción **Ver** del menú desplegable del comercio. 
 
@@ -316,7 +316,7 @@ Al dar clic en el botón **Guardar**, se redireccionará a una vista como la sig
 
 <!--
 type: tab
-title: Otras gestiones para un comercio 
+title: Otras gestiones 
 -->
 
 # Otras gestiones en el detalle del comercio
@@ -341,7 +341,7 @@ Esta métrica muestra en una gráfica, el monto de las transacciones realizadas 
 
 ## Sección de tokens
 
-En esta sección se listan todos los tokens de acceso creados para el comercio específico, estos se encuentran listados en una tabla con el nombre, el usuario que lo creó, la fecha de crewación y expiración y las acciones que en este caso solo tiene disponible la acción de eliminar y crear nuevo token.
+En esta sección se listan todos los tokens de acceso creados para el comercio específico, estos se encuentran listados en una tabla con el nombre, el usuario que lo creó, la fecha de creación y expiración y las acciones que en este caso solo tiene disponible la acción de eliminar y crear nuevo token.
 
 ### ¿Cómo crear un nuevo token?
 
@@ -359,5 +359,39 @@ Luego de dar clic en el botón **Crear**, se redireccionará al detalle del toke
 
 
 ## Sección de adquirientes suscritos
+
+En esta sección se listan todos los adquirientes suscritos al comercio específico, estos se encuentran listados en una tabla con la franquicia, la versión del protocolo, el adquiriente, el código identificador, el estado del certificado SSL, el estado de la suscripción del adquiriente y las acciones que tiene disponible la suscripción.
+
+### ¿Cómo crear una nueva suscripción?
+
+Para crear una nueva suscripción para un comercio, deberá hacer clic en el botón **Suscribir adquiriente**.
+
+Se mostrará un formulario como el siguiente:
+
+![](https://wiki.placetopay.com/images/d/df/Suscription-create.png)
+
+### Funcionalidades para las suscripciones:
+
+Al final de cada registro de suscripción, se encuentra un menú con tres puntos, haga clic en este y se desplegarán las acciones disponibles, las cuales son:
+
+- **Editar:** Puede editar la información con la cual se creó la suscripción, haciendo clic en la opción *Editar*. 
+
+- **Eliminar:** Puede eliminar la suscripción, haciendo clic en la opción *Eliminar*. 
+
+### ¿Cómo validar una suscripción?
+
+Para probar la validez de una suscripción de adquiriente para un comercio, diríjase al final del registro de la suscripción y haga clic en el botón con ícono de probeta, como lo indica la siguiente imagen:
+
+![](https://wiki.placetopay.com/images/4/42/Validate-suscription.png)
+
+Luego se desplegará una ventana donde le indicará el estado de validación de la suscripción, se visualizará similar al siguiente ejemplo para una validación de suscripción exitosa:
+
+![](https://wiki.placetopay.com/images/3/30/Success-subs.png)
+
+Y el siguiente ejemplo para una validación fallida:
+
+![](https://wiki.placetopay.com/images/2/20/Fail-subs.png)
+
+> Si la validación de la suscripción resulta fallida, debe revisar nuevamente que su certificado SSL esté firmado correctamente, que no esté expirado, que la franquicia y el adquiriente estén habilitados, y los rangos de tarjeta correctos y cargados.
 
 <!-- type: tab-end -->
