@@ -105,12 +105,28 @@ En el índice de comercios se encuentran las acciones disponibles para cada come
 
 <!--
 type: tab
-title: Funcionalidades 
+title: Importación de comercios
 -->
 
-# Funcionalidades del comercio
+# Importación de comercios
 
-## Información principal del comercio
+En el índice de comercios, en la parte lateral derecha, se encuentra el acceso a la funcionalidad de importación de comercios, para acceder a esta, haga clic en el botón **Importe**.
+
+<!--
+type: tab
+title: Métricas de los comercios
+-->
+
+# Métricas de los comercios
+
+En el índice de comercios, en la parte lateral derecha, se encuentra el acceso a la funcionalidad de métricas para los comercios, para acceder a esta, haga clic en el botón **Métricas**.
+
+<!--
+type: tab
+title: Información principal del comercio
+-->
+
+# Información principal del comercio
 
 Para ir a los detalles de un comercio, haga clic en la acción **Ver** del menú desplegable del comercio. 
 
@@ -170,9 +186,38 @@ Para acceder a este menú, haga clic en el menú **Contactos**, que se ubica al 
 
 Luego visualizará un índice como el siguiente:
 
-![]()
+![](https://wiki.placetopay.com/images/3/3d/Contacts-index.png)
 
-En ella encontrará el listado de contactos agregados para el comercio, un buscador de contactos en el cual puede hacer búsquedas por nombre, marca o país. Además, de las acciones y el botón para crear un nuevo contacto.
+En ella encontrará el listado de contactos agregados para el comercio, un buscador de contactos en el cual puede hacer búsquedas por nombre, tipo o correco electrónico. Además, de las acciones y el botón para crear un nuevo contacto.
+
+### Agregar un nuevo contacto:
+
+Para crear una nueva sucursal para el comercio, haga clic en el botón **Crear**, ubicado en la parte lateral derecha y visualizará un formulario como el siguiente:
+
+![](https://wiki.placetopay.com/images/c/c1/Create-contact.png)
+
+Para diligenciarlo tenga en cuenta los siguientes datos:
+
+- **Tipo de adjunto:** Seleccione de la lista desplegable el tipo de contacto que desea agregar al comercio.
+
+- **Nombre:** Ingrese el nombre del contacto o persona.
+
+- **Apellido:** Ingrese el apellido del contacto o persona.
+
+- **Correo electrónico:** Ingrese el correo electrónico
+del contacto.
+
+- **Cargo:** Ingrese el nombre del cargo que ocupa el contacto.
+
+- **Tipo de documento:** Seleccione de la lista desplegable el documento con el cual se identifica el contacto.
+
+- **Documento:** Digite el número de documento correspondiente al tipo seleccionado.
+
+- **Móvil:** Ingrese el teléfono correspondiente al móvil, ingrese solo números en este campo.
+
+- **Teléfono:** Ingrese el teléfono correspondiente al fijo u otro número móvil, ingrese solo números en este campo.
+
+- **Dirección:** Ingrese la direcció en la cual se encuentra ubicado el contacto.
 
 <!--
 type: tab
@@ -185,9 +230,29 @@ Para acceder a este menú, haga clic en el menú **Adjuntos**, que se ubica al l
 
 Luego visualizará un índice como el siguiente:
 
-![]()
+![](https://wiki.placetopay.com/images/d/d3/Attachments-index.png)
 
-En ella encontrará el listado de adjuntos agregados para el comercio, un buscador de adjuntos en el cual puede hacer búsquedas por nombre, marca o país. Además, de las acciones y el botón para crear un nuevo adjuntos.
+En ella encontrará el listado de adjuntos agregados para el comercio, un buscador de adjuntos en el cual puede hacer búsquedas por nombre o tipo. Además, de las acciones y el botón para crear un nuevo adjuntos.
+
+### Agregar un nuevo adjunto:
+
+Para crear una nueva sucursal para el comercio, haga clic en el botón **Crear**, ubicado en la parte lateral derecha y visualizará un formulario como el siguiente:
+
+![](https://wiki.placetopay.com/images/1/15/Attachment-create-mpi.png)
+
+Para diligenciarlo tenga en cuenta los siguientes datos:
+
+- **Tipo de adjunto:** Seleccione de la lista desplegable el tipo de archivo adjunto que desea cargar.
+
+- **Nombre:** Ingrese en el campo el nombre a asignarle al nuevo tipo de archivo adjunto.
+
+- **Carga de archivo:** Haga clic en el campo y se redireccionará a los archivos de su equipo personal, seleccione y cargue el archivo que desea subir.
+
+### ¿Cómo descargar el archivo creado?
+
+Al dar clic en el botón **Guardar**, se redireccionará a una vista como la siguiente, en la cual puede descargar el archivo creado, haciendo clic en el botón **Descargar**:
+
+  ![](https://wiki.placetopay.com/images/a/a7/Attachment-detail.png)
 
 <!--
 type: tab
