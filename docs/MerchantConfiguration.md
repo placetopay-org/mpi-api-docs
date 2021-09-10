@@ -151,6 +151,36 @@ title: Métricas de los comercios
 
 En el índice de comercios, en la parte lateral derecha, se encuentra el acceso a la funcionalidad de métricas para los comercios, para acceder a esta, haga clic en el botón **Métricas**.
 
+![](https://wiki.placetopay.com/images/2/20/Metric-options.png)
+
+### Detalle de la métrica:
+
+Al hacer clic en el botón **Métricas**, se redireccionará a la siguiente vista con el detalle de las métricas creadas, en caso de existir. Visualizará una pantalla como la siguiente:
+
+![](https://wiki.placetopay.com/images/2/2f/Metric-merchant.png)
+
+En este detalle se evidencia las métricas creadas para diversos comercios.
+
+## Crear nueva métrica:
+
+Para crear nuevos importes puede hacerlo mediante el botón **Metricas** ubicado en el índice de comercios, y cuando no existan métricas creadas, se redireccionará a una vista como la siguiente. Haga clic en el botón **Crear**.
+
+![](https://wiki.placetopay.com/images/5/53/Create-merchant-1.png)
+
+También, puede crear nuevas métricas, yendo al índice de métricas y haciendo clic en el botón **Generar nueva métrica**.
+
+Visualizará el siguiente formulario de creación de métrica seleccionando cualquiera de las rutas de creación ya mencionadas:
+
+![](https://wiki.placetopay.com/images/e/ee/Metric-form-create-merchant.png)
+
+Diligencie teniendo en cuenta la siguiente información:
+
+- **Nombre:** Ingrese en este campo el nombre con el cual desea nombrar la métrica conforme a la función que va a tener.
+
+- **Comercios:** Seleccione de la lista uno o varios comercios para los cuales desea generar la métrica.
+
+- **Rango de fecha:** Seleccione del calendario una fecha inicial y una final para crear un rango y obtener a partir de este los datos, luego dé clic en el botón de check.
+
 <!--
 type: tab
 title: Información principal del comercio
