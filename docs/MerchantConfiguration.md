@@ -316,7 +316,7 @@ Al dar clic en el botón **Guardar**, se redireccionará a una vista como la sig
 
 <!--
 type: tab
-title: Secciones en el detalle del comercio 
+title: Otras gestiones para un comercio 
 -->
 
 # Otras gestiones en el detalle del comercio
@@ -327,5 +327,37 @@ La siguiente imagen muestra cada una de estas secciones y se procede a describir
 
 ![](https://wiki.placetopay.com/images/2/21/Merchant-detail-sections.png)
 
+## Sección de métricas
+
+En esta sección se muestran las métricas para el comercio seleccionado. Existen dos tipos de métricas actualmente:
+
+### Métrica de total de transacciones procesadas
+
+Esta métrica muestra en una gráfica, la cantidad de transacciones realizadas, diferenciadas por estados.
+
+### Métrica de montos de transacciones procesadas
+
+Esta métrica muestra en una gráfica, el monto de las transacciones realizadas en MPI y diferenciadas por estados.
+
+## Sección de tokens
+
+En esta sección se listan todos los tokens de acceso creados para el comercio específico, estos se encuentran listados en una tabla con el nombre, el usuario que lo creó, la fecha de crewación y expiración y las acciones que en este caso solo tiene disponible la acción de eliminar y crear nuevo token.
+
+### ¿Cómo crear un nuevo token?
+
+Para crear un nuevo token para un comercio, que le permite el acceso para procesar una autenticación con la aplicación de MPI, deberá hacer clic en el botón **Crear token**.
+
+Se mostrará un formulario como el siguiente, donde únicamente le pedirá ingresar un nombre para identificar al nuevo token a crear:
+
+![](https://wiki.placetopay.com/images/e/e2/Form-toke-create.png)
+
+Luego de dar clic en el botón **Crear**, se redireccionará al detalle del token creado y se visualizará como el siguiente:
+
+![](https://wiki.placetopay.com/images/e/e1/Token-detail.png)
+
+> Copie el bloque de texto correspondiente al token y consérvelo ya que este no se podrá visualizar de nuevo y si lo pierde, deberá crear un nuevo token.
+
+
+## Sección de adquirientes suscritos
 
 <!-- type: tab-end -->
