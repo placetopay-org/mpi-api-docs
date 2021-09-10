@@ -403,7 +403,7 @@ El índice de códigos de categoría tiene la funcionalidad del buscador, está 
 
 ## Función del módulo:
 
-Este módulo se pone a disposición del cliente a modo informativo y aclaratorio, ya que este listado de códigos va a facilitar la aclaración del tipo de comercio y la descripción a la cual hace referencia el código cuando se presenta en alguna traza de una transacción.
+Este módulo se pone a disposición del cliente a modo informativo y aclaratorio, ya que este listado de códigos va a facilitar la aclaración del tipo de comercio y la descripción a la cual hace referencia el código cuando se presenta en alguna traza de una transacción. Además, al momento de registrar un comercio en MPI, es necesario conocer el MCC del comercio a registrar.
 
 ![](https://wiki.placetopay.com/images/e/e4/Merchant-category-codes-index-2.png)
 

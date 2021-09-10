@@ -32,171 +32,175 @@ Para crear un comercio, haga clic en el botón **Crear** ubicado en la parte lat
 
 Visualizará un formulario similar al siguiente:
 
-![]()
+![](https://wiki.placetopay.com/images/2/22/Merchant-create.png)
 
 Para diligenciarlo tenga en cuenta los siguientes datos:
 
-- **Nombre:** Ingrese en este campo el nombre del banco emisor que va a crear.
+- **Nombre:** Ingrese en este campo el nombre del comercio que va a crear.
 
-- **Idioma:** Seleccione de la lista desplegable el idioma principal con el cual desea que se procesen las autenticaciones para los usuarios.
+- **Marca:** Ingrese en este campo el nombre de la marca oficial del comercio que va a crear.
 
-- **País:** Seleccione de la lista desplegable el país dónde opera el banco emisor.
+- **País:** Seleccione de la lista desplegable el país dónde opera el comercio.
 
-- **Slug:** Ingrese una cadena clave para el emisor. Esta cadena se agregará a las URL donde se gestionen configuraciones y servicios del emisor.
+- **Documento:** Seleccione de la lista desplegable el documento con el cual se identifica al comercio, y en el campo siguiente digite el número de documento correspondiente al tipo seleccionado.
 
-- **Logo:** Aquí puede cargar una imagen con el logo del emisor. Para hacerlo haga clic en la opción *Seleccionar archivo* y busque la imagen correspondiente al logo en su equipo. La imagen debe tener unas dimensiones máximas de 1000x1000.
+- **Moneda:** Seleccione de la lista desplegable la moneda con la cual procesa las transacciones el comercio.
+
+- **Clase CIIU:** Seleccione de la lista desplegable la clase de categoría de actividad económica del comercio, para ello guíese con el indicador numérico que precede a la descripción de la actividad. Para más información de este campo, puede dirigirse al módulo de esta documentación en la siguiente ruta: **Funcionamiento de MPI** -> **Configuración** -> **Otras configuraciones** -> **Clases CIIU**.
+
+- **Código de categoría del comerciante:** Seleccione de la lista desplegable el código de categoría del comerciante correspondiente al comercio a registrar, para ello guíese con el indicador numérico que precede a la descripción de la actividad. Para más información de este campo, puede dirigirse al módulo de esta documentación en la siguiente ruta: **Funcionamiento de MPI** -> **Configuración** -> **Otras configuraciones** -> **Códigos del comercio**.
+
+- **Consultor comercial:** Seleccione de la lista desplegable el consultor comercial que opera para el comercio en el país seleccionado.
+
+- **Aliado comercial:** Seleccione de la lista desplegable el aliado comercial que opera para el comercio en el país seleccionado.
+
+- **Url:** Ingrese una URL válida que funcionará para conectar el comercio con MPI. A esta URL se redirigirá el usuario al procesar una autenticación.
+
+- **Habilitar/Deshabilitar:** Puede habilitar o deshabilitar un comercio, deslizando el botón tipo switch con nombre *Habilitar* cuando está deshabilitado el comercio, o con nombre *Deshabilitar* cuando está habilitado y desea deshabilitarlo.
 
 
 ## ¿Cuáles son los requerimientos para crear un comercio en MPI?
 
-Para crear y configurar un emisor en ACS, este debe haber emitido tarjetas de pago con las franquicias que ya hayan sido certificadas para funcionar en ACS.
+Para crear y configurar un comercio en MPI, se requiere inicialmente que tenga un convenio y esté certificado con Evertec Placetopay, también que el país y el idioma con el cual opera el comercio, estén disponibles para MPI.
 
-Se requiere que el país y el idioma con el cual se vaya a crear el emisor, estén disponibles para ACS.
+Se requiere que exista una relación entre emisor, adquiriente y comercio y que estos estén registrados en las aplicaciones de ACS y de MPI de Evertec Placetopay, para lograr un proceso de autenticación exitosa utilizando el protocolo 3-D Secure. 
 
-Se requiere que exista una relación entre emisor, adquiriente y comercio y que estos estén registrados en las aplicaciones de ACS y de MPI de PlacetoPay Evertec, para lograr un proceso de autenticación exitosa. 
-
-Importante tener en cuenta habilitar todos los campos de configuración del menú *Campos de configuración* de la aplicación, antes de crear el emisor, ya que todos estos campos son requeridos para el funcionamiento básico de un emisor.
-
-> En este punto es importante recordar que la aplicación de **MPI** también implementa y pertenece al flujo propuesto por el protocolo 3-D Secure para autenticar un tarjetahabiente.
-Pertenece al dominio el adquiriente y entre sus funciones principales están:
-  >> - Recibir y responder la petición de autenticación enviada por el comercio o pasarela de pagos.
-  >> - Solicitar al emisor la autorización del pago.
-  >> - Responder al comercio o pasarela de pagos el estado final de la autenticación.
+Importante tener en cuenta que previo a la creación del comercio, debe haber creado previamente en MPI, el consultor y el aliado comercial con los cuales operarán el comercio.
 
 <!--
 type: tab
 title: Índice de comercios 
 -->
 
-## Índice de comercios
+# Índice de comercios
 
-En esta sección se visualiza el listado o índice de emisores, la información se presenta en una tabla donde se muestran los datos principales de cada emisor, tales como: Nombre, País y Estado. 
+En esta sección se visualiza el listado o índice de comercios, la información se presenta en una tabla donde se muestran los datos principales de cada comercio, tales como: Nombre, Documento, País, Estado y acciones disponibles para cada comercio. 
 
 ![](https://wiki.placetopay.com/images/4/43/Merchant-index-1.png)
 
-#### Filtros:
+### Buscador de comercios:
 
-En el índice de datos se encuentra la funcionalidad de filtros, esta funcionalidad permite hacer búsquedas específicas de datos. Los filtros están ubicados en la parte superior lateral izquierda.
-
-Para los ** están disponibles para búsquedas, los campos de **.
-
-Para ejecutar la búsqueda haga clic en el botón **Buscar** y para limpiar los datos de búsqueda ingresados previamente, haga clic en el botón **Limpiar filtros**.
-
-![]()
+El índice de comercios tiene la funcionalidad de buscador,está ubicado en la parte lateral izquierda y se puede buscar por el nombre completo del comercio, el documento, el código ISO alfa-3 o fragmentos de éstos datos.
 
 ### Acciones disponibles para los comercios:
 
-En el título "Acciones" ubicado en la parte lateral derecha del índice de emisores, se encuentra un menú con tres puntos,haga clic en este menú y despliegue las acciones o funcionalidades disponibles para cada emisor. En el menú se encuentran las siguientes acciones:
+En el índice de comercios se encuentran las acciones disponibles para cada comercio. Para visualizarlo, diríjase a cada registro de comercio y en la parte lateral derecha encontrará un menú con tres puntos, haga clic en este menú y despliegue las acciones, en las cuales se encuentran:
 
-- **Ver:** Seleccione esta opción para visualizar los detalles del emisor, sus configuraciones y componentes.
+- **Ver:** Seleccione esta opción para visualizar los detalles del comercio, sus configuraciones y componentes.
 
-  Visualizará una vista similar a la siguiente:
+  Visualizará una pantalla similar a la siguiente:
 
-![](https://wiki.placetopay.com/images/c/c6/Issuer-detail2.png)
+  ![](https://wiki.placetopay.com/images/1/1f/Merchant-detail.png)
 
-- **Editar:** Seleccione esta opción para actualizar o corregir los datos con los cuales creó el emisor. 
+- **Editar:** Seleccione esta opción para actualizar o corregir los datos con los cuales creó el comercio. Visualizará un formulario similar al de creación del comercio. Todos los datos son editables.
 
-  Visualizará un formulario similar al de creación del emisor. Todos los datos son editables.
+  En el formulario de edición también se encuentra la opción de deshabilitar:
 
-![](https://wiki.placetopay.com/images/3/3c/Edit-issuer.png)
+  - **Habilitar/Deshabilitar:** Deslice el botón tipo switch para habilitar el comercio si se encuentra deshabilitado o para deshabilitarlo cuando se encuentre habilitado. Esta opción se encuentra en la vista de editar comercio.
 
-- **Habilitar o Deshabilitar:** Deslice el botón tipo switch para habilitar el emisor si se encuentra deshabilitado o para deshabilitarlo cuando se encuentre habilitado. 
-
-![](https://wiki.placetopay.com/images/8/81/Issuer-actions-toggle.png)
-
-Al habilitar o deshabilitar, la aplicación le entregará un mensaje de confirmación similar al siguiente e inmediatamente cambiará el estado del emisor editado.
-
-![](https://wiki.placetopay.com/images/c/ca/Issuer-toggle.png)
-
-### ¿Cómo habilitar un comercio?
-
-1. **Active los campos de configuración requeridos:** En el menú *Campos de configuración* de la aplicación, habilite todos los campos de configuración (debe habilitarlos antes de crear el emisor), ya que estos son requeridos para la habilitación del emisor. Para obtener más información de los campos de configuración, vaya al título *Campos de configuración* del presente documento.
-
-    La siguiente imagen muestra un índice de los campos de configuración donde todos los campos visibles están habilitados, así deben estar para comenzar a configurar correctamente el emisor.
-
-    ![](https://wiki.placetopay.com/images/a/a7/Settings-index-2.png)
-
-    > Si algún campo se encuentra deshabilitado, despliegue el menú de la parte lateral derecha y seleccione la opción *Habilitar*.
-
-2. **Habilitar estrategias del emisor:** En los detalles del emisor, en la pestaña *Configuraciones*, y luego en la pestaña *Servicios*, encontrará las estrategias disponibles para el emisor (esta funcionalidad se explica más adelante), debe habilitar ambas estrategias (cardholderStrategy y otpStrategy).
-
-    Un ejemplo del menú *Services* es el siguiente:
-
-   ![](https://wiki.placetopay.com/images/c/c4/Issuer-settings-disable-services.png)
-
-    
-    Nótese que en la imagen anterior, las estrategia se encuentran deshabilitadas. Si se intentara habilitar el emisor con una o ambas estrategias deshabilitadas, arrojaría un error como el siguiente y no permitiría ejecutar la habilitación del emisor.
-
-    ![](https://wiki.placetopay.com/images/f/f6/Issuer-enable-error2.png)
+    > Tenga en cuenta que al inhabilitar un comercio resultará en el fallo de todas las transacciones y usuarios dependientes del mismo.
 
 
-3. **Suscribir franquicia al emisor:** En la pestaña *Franquicias suscritas* del detalle del emisor, seleccione una franquicia del listado, sino hay franquicias disponibles, debe ir al menú *Franquicias* de la aplicación y crear una nueva franquicia para el emisor, para esto guíese de la sección *Configuración de franquicias* de la presente documentación.
+- **Eliminar:** Puede eliminar un comercio, haciendo clic en la opción *Eliminar*. 
 
-    > La franquicia seleccionada debe ser diferente a franquicias previamente suscritas a otros emisores. 
-    
-4. **Configurar rangos de tarjeta para el emisor:** En la pestaña *Gestionar rangos de tarjetas* del detalle del emisor, haga clic en el botón *Crear* y cree rangos de tarjeta manuales o por importación, para ello guíese de la sección *Gestión de rangos de tarjetas* del presente documento.
-    
-5. **Crear certificado tipo Cliente para las franquicias del emisor:** Para habilitar un emisor debe crear un certificado tipo *CLIENT*, en el menú de *Certificados*, y seleccionar el emisor correspondiente y una franquicia suscrita para el mismo emisor. Luego debe firmar el certificado con la entidad certificadora y en el índice de certificados, este debe registrar en el campo *Certificado* con el estado *Encontrado*, que indica que fue validado correctamente. 
+<!--
+type: tab
+title: Funcionalidades 
+-->
 
-    Para crear el certificado, guíese de la sección *Otras configuraciones* pestaña *Certificados SSL*.
+# Funcionalidades del comercio
 
-    Un ejemplo de la primera vista del formulario de creación de un certificado es el siguiente:
+## Información principal del comercio
 
-    ![](https://wiki.placetopay.com/images/8/8a/Client-certificate.png)
+Para ir a los detalles de un comercio, haga clic en la acción **Ver** del menú desplegable del comercio. 
 
-## Detalles de un comercio
+En la vista del detalle se encuentra la información con la cual se creó el comercio, el estado en que se encuentra(está habilitado o no), las fechas de creación del comercio y de actualización y los usuarios que hicieron la creación y/o la actualización.
 
-### Información principal del comercio:
+Además, en la parte lateral derecha, hay un botón para acceder al formulario de edición en caso de requerirlo. Y a la opción de eliminar.
 
-Para ir a los detalles de un emisor, haga clic en la acción *Ver* del menú desplegable del emisor, ubicado en el índice de emisores. 
+Además, tiene los accesos para gestionar las sucursales de un comercio, los contactos y los adjuntos.
 
-En la siguiente imagen se visualiza un ejemplo de la parte superior de la vista de *Detalles de un emisor*. En la vista se encuentra la información con la cual se creó el emisor, el estado en que se encuentra el emisor (está habilitado o no),las fechas de creación del emisor y de actualización y los usuarios que hicieron la creación y/o la actualización.
+En la siguiente imagen se resalta el acceso a cada uno de estos módulos y se describen a continuación:
 
-En la parte lateral derecha hay un recuadro en el cual se debe mostrar el logo del emisor, para este ejemplo no se cargó una imagen, por lo cual se muestra en negro.
+![](https://wiki.placetopay.com/images/4/49/Merchant-components.png)
 
-Además, en la parte lateral derecha, hay un botón para acceder al formulario de edición en caso de requerirlo.
+<!--
+type: tab
+title: Gestión de sucursales 
+-->
 
-![](https://wiki.placetopay.com/images/c/c6/Issuer-detail2.png)
+# Gestión de sursales
 
-## Gestión de sursales:
-
-Para acceder a este menú, haga clic en el menú *Franquicias suscritas*, que actualmente se ubica al lado derecho del menú *Detalles del emisor*. 
+Para acceder a este menú, haga clic en el menú **Sucursales**, que se ubica al lado derecho del menú **Detalles del comercio**, en el detalle del comercio.
 
 Luego visualizará una vista similar a la siguiente:
 
-![](https://wiki.placetopay.com/images/6/62/Issuer-franchises.png)
+![](https://wiki.placetopay.com/images/f/fb/Merchant-branches.png)
 
-En ella encontrará el listado de franquicias agregadas para el emisor y un formulario para agregar nuevas franquicias.
-
-> Para las franquicias solo está disponible la función de *Eliminar*, la cual se ejecuta dando clic en el botón con el mismo nombre ubicado al frente de cada franquicia.
+En ella encontrará el listado de sucursales agregadas para el comercio, un buscador de sucursales en el cual puede hacer búsquedas por nombre, marca o país. Además, de las acciones y el botón para crear nueva sucursal.
 
 ### Agregar una nueva sucursal:
 
-Para suscribir una nueva franquicia a su emisor, dírijase a la primera sección de la vista actual, al apartado *Franquicia* y despliegue la lista de franquicias disponibles haciendo clic en la flecha hacia abajo. Seleccione una franquicia y haga clic en el botón *Agregar*.
+Para crear una nueva sucursal para el comercio, haga clic en el botón **Crear**, ubicado en la parte lateral derecha y visualizará un formulario como el siguiente:
 
-![](https://wiki.placetopay.com/images/1/1f/Add-franchise.png)
+![](https://wiki.placetopay.com/images/5/5d/Create-branch.png)
 
-## Gestión de contactos:
+Para diligenciarlo tenga en cuenta los siguientes datos:
 
-Para acceder a este menú, haga clic en el menú *Gestionar rangos de tarjetas*, ubicado en la parte superior de la vista.
+- **Nombre:** Ingrese en este campo el nombre de la sucursal que va a crear.
 
-Visualizará un índice similar al siguiente:
+- **Marca:** Ingrese en este campo el nombre de la marca oficial del comercio al cual le va a crear una nueva sucursal.
 
-![](https://wiki.placetopay.com/images/2/22/Acs-card-ranges-index.png)
+- **País:** Seleccione de la lista desplegable el país dónde opera la sucursal.
 
-En esta sección se importan y crean los rangos de tarjetas aceptadas para un emisor específico. Puede ver la información principal de cada rango organizada en una tabla, entre los datos están: BIN del rango, Rango inicial, Rango final, Franquicia, Clase y las respectivas acciones que tienen cada uno de los rangos.
+- **Moneda:** Seleccione de la lista desplegable la moneda con la cual procesa las transacciones la sucursal.
 
+- **Url:** Ingrese una URL válida que funcionará para conectar la sucursal con MPI. A esta URL se redirigirá el usuario al procesar una autenticación.
 
-### Gestión de adjuntos:
+- **Habilitar/Deshabilitar:** Puede habilitar o deshabilitar la sucursal, deslizando el botón tipo switch con nombre *Habilitar* cuando está deshabilitada la sucursal, o con nombre *Deshabilitar* cuando está habilitada y desea deshabilitarla.
 
-Para acceder a este menú, haga clic en el menú *Configuraciones*, del detalle del emisor. 
+<!--
+type: tab
+title: Gestión de contactos 
+-->
 
-Luego visualizará una vista similar a la siguiente:
+# Gestión de contactos
 
-![](https://wiki.placetopay.com/images/7/75/Issuer-general-settings2.png)
+Para acceder a este menú, haga clic en el menú **Contactos**, que se ubica al lado derecho del menú **Sucursales**. 
 
-En la parte inferior de la vista, encontrará tres pestañas que contienen los campos de configuración de los emisores, agrupados en tres secciones: General, Desafíos y Servicios.
+Luego visualizará un índice como el siguiente:
 
-Ingresando a cada una de las pestañas, podrá ver la información de los campos del emisor organizada en tablas, en las cuales se muestra el nombre, el valor inicial del campo y el estado del mismo.
+![]()
+
+En ella encontrará el listado de contactos agregados para el comercio, un buscador de contactos en el cual puede hacer búsquedas por nombre, marca o país. Además, de las acciones y el botón para crear un nuevo contacto.
+
+<!--
+type: tab
+title: Gestión de adjuntos 
+-->
+
+# Gestión de adjuntos
+
+Para acceder a este menú, haga clic en el menú **Adjuntos**, que se ubica al lado derecho del menú **Contactos**. 
+
+Luego visualizará un índice como el siguiente:
+
+![]()
+
+En ella encontrará el listado de adjuntos agregados para el comercio, un buscador de adjuntos en el cual puede hacer búsquedas por nombre, marca o país. Además, de las acciones y el botón para crear un nuevo adjuntos.
+
+<!--
+type: tab
+title: Secciones en el detalle del comercio 
+-->
+
+# Otras gestiones en el detalle del comercio
+
+En el detalle de un comercio se encuentra la gestión de diversos componentes y configuraciones que requiere este para su buen funcionamiento.
+
+La siguiente imagen muestra cada una de estas secciones y se procede a describir cada una a continuación:
+
+![](https://wiki.placetopay.com/images/2/21/Merchant-detail-sections.png)
+
 
 <!-- type: tab-end -->
