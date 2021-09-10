@@ -110,7 +110,37 @@ title: Importación de comercios
 
 # Importación de comercios
 
-En el índice de comercios, en la parte lateral derecha, se encuentra el acceso a la funcionalidad de importación de comercios, para acceder a esta, haga clic en el botón **Importe**.
+En el índice de comercios, en la parte lateral derecha, se encuentra el acceso a la funcionalidad de importación de comercios, para acceder a esta, haga clic en el botón **Importe**. Se desplegarán dos opciones: Crear y Ver.
+
+![](https://wiki.placetopay.com/images/5/59/Mpi-functionalities-import.png)
+
+## Ver importes de comercios:
+
+Si selecciona la opción **Ver**, se redireccionará al listado de importes creados para todos los comercios. Se verá como la siguiente imagen:
+
+![](https://wiki.placetopay.com/images/9/95/Imports-index-mpi.png)
+
+En este índice se encuentran listados los importes creados para los diferentes comercios, organizados en una tabla con la fecha de importación, el nombre del archivo importado y el estado de importación. 
+
+### Detalle del importe:
+
+Se puede acceder también a detalle del importe mediante el botón **Ver**, localizado al final de cada registro. Visualizará una pantalla como la siguiente:
+
+![](https://wiki.placetopay.com/images/7/71/Import-detail.png)
+
+En este detalle se evidencia además el tipo del archivo, la fecha de creación y actualización y los usuarios que realizaron cambios o agregaron el importe.
+
+## Crear importes de comercios:
+
+Para crear nuevos importes puede hacerlo mediante el botón **Importe** ubicado en el índice de importes, o mediante la opción **Crear** en el menú **Importe**, del índice de comercios.
+
+![](https://wiki.placetopay.com/images/5/59/Mpi-functionalities-import.png)
+
+Al acceder a cualquiera de las dos opciones de creación, visualizará el siguiente formulario de creación de importe:
+
+![](https://wiki.placetopay.com/images/6/67/Import-create.png)
+
+Para crear la importación debe hacer clic en el campo de seleccionar archivo, ir a la carpeta de su equipo donde tenga el archivo de importación que desea cargar, seleccionarlo y hacer clic en el botón **Crear importación**.
 
 <!--
 type: tab
