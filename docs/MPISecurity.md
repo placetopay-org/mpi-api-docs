@@ -15,7 +15,7 @@ En este módulo se puede visualizar el listado de tokens creados para cada comer
 
 El siguiente es un ejemplo de un índice de tokens.
 
-![](https://wiki.placetopay.com/images/4/47/Tokens-index.png)
+![](https://wiki.placetopay.com/images/6/6a/Mpi-tokens-index-2.png)
 
 
 #### Filtros:
@@ -103,7 +103,7 @@ haga clic en el menú desplegable que se encuentra al lado derecho del avatar de
 
 Visualizará un menú como el siguiente, para visualizar los datos de su cuenta, haga clic en el botón **Cuenta**:
 
-![](https://wiki.placetopay.com/images/7/7c/Mpi-account.png)
+![](https://wiki.placetopay.com/images/3/38/Mpi-account-menu.png)
 
 ## ¿Qué funcionalidades se encuentran en el módulo de cuenta?
 
@@ -111,7 +111,7 @@ Visualizará un menú como el siguiente, para visualizar los datos de su cuenta,
 
 En esta parte registra el nombre de usuario, el correo electrónico y el perfil al cual está asociada la cuenta. Además, se presenta el avatar o imagen de perfil de usuario y los botones de **Administrar cuenta** y **Editar**. Esta sección se visualiza como en la siguiente imagen:
 
-![](https://wiki.placetopay.com/images/2/2a/Account-information.png)
+![](https://wiki.placetopay.com/images/b/b0/Account-module-2.png)
 
 #### Funcionalidades:
 
@@ -129,7 +129,7 @@ En esta parte se registran los movimiento realizados por el usuario que posee la
 
 Haga clic en el menú desplegable que se encuentra al lado derecho del avatar de usuario. Visualizará un menú como el siguiente, haga clic en el botón **Soporte**:
 
-![](https://wiki.placetopay.com/images/6/6d/Mpi-account-support.png)
+![](https://wiki.placetopay.com/images/2/28/Support-menu-2.png)
 
 ### ¿Para qué sirve el módulo de soporte?
 
@@ -143,7 +143,7 @@ Para cerrar sesión cuando desea finalizar la actividad en la aplicación, dirí
 
 Visualizará un menú como el siguiente, haga clic en el botón *Cerrar sesión*.
 
-![](https://wiki.placetopay.com/images/f/f9/Close-sesion-account.png)
+![](https://wiki.placetopay.com/images/d/dd/Logout-menu-2.png)
 
 <!--
 type: tab
