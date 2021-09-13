@@ -184,7 +184,7 @@ El certificado permite que cuando un usuario intente enviar información de las 
 
 La siguiente imagen muestra un ejemplo de la vista de un índice de certificados en MPI:
 
-![](https://wiki.placetopay.com/images/f/f3/Mpi-certificates.png)
+![](https://wiki.placetopay.com/images/3/39/Certificates-index-2.png)
 
 ### Acciones para los certificados:
 
@@ -363,7 +363,7 @@ Para crear un nuevo consultor, haga clic en el botón **Crear**, ubicado en la p
 
 Visualizará un formulario como el siguiente:
 
-![](https://wiki.placetopay.com/images/0/0a/Mpi-create-consultat.png)
+![](https://wiki.placetopay.com/images/3/33/Create-consultant-2.png)
 
 Tenga en cuenta la siguiente información para diligenciar el formulario de creación y edición:
 
@@ -549,7 +549,7 @@ Para cambiar el idioma con el que se imprimen los datos y los menús de MPI, hag
 
 Si selecciona la opción inglés, la aplicación se mostraría similar a como se visualiza en la siguiente imagen:
 
-![](https://wiki.placetopay.com/images/8/8a/Mpi-english.png)
+![](https://wiki.placetopay.com/images/e/e1/Mpi-account-info.png)
 
 ## Idiomas disponibles:
 
