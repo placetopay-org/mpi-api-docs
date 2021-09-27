@@ -157,7 +157,7 @@ En el índice de comercios, en la parte lateral derecha, se encuentra el acceso 
 
 Al hacer clic en el botón **Métricas**, se redireccionará a la siguiente vista con el detalle de las métricas creadas, en caso de existir. Visualizará una pantalla como la siguiente:
 
-![](https://wiki.placetopay.com/images/2/2f/Metric-merchant.png)
+![](https://wiki.placetopay.com/images/9/9c/Metric-detail-mpi.png)
 
 En este detalle se evidencia las métricas creadas para diversos comercios.
 

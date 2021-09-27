@@ -13,7 +13,7 @@ MPI traduce en inglés Merchant Server Plugin o en español, Complemento del Ser
 
 ## ¿Para qué es necesario MPI?
 
-La aplicación de MPI... verifica si una autenticación está disponible para un número de tarjeta, cumpliendo la importante función de autenticar a los tarjetahabientes en el flujo transaccional. Además, en el proceso de autenticación, es ACS el encargado de validar los datos ingresados y registrados para una transacción.
+La aplicación de MPI permite la comunicación entre el solicitante de la autenticación, que puede ser la pasarela de pagos, y el servidor de directorio que comunica a su vez con el otro componente del 3-D Secure (ACS). De tal forma, MPI es necesario porque es el componente que inicia el flujo de autenticación y envía la petición de autenticación a procesar, para obtener posteriormente una respuesta de autenticación y devolverla al solicitante.
 
 ## ¿Por qué se debe autenticar a un tarjetahabiente?
 
@@ -138,6 +138,35 @@ Luego obtendrá un índice de datos con mejor visualización como se muestra en 
 
 ![](https://wiki.placetopay.com/images/7/71/Transactions-hidden-filters.png)
 
+## ¿Qué hacer cuando el token de acceso ha expirado?
+
+Al generar una petición de autenticación, podrá obtener el mensaje **"No Autenticado"**, lo cual indica que el token de acceso para hacer solicitudes a un comercio específico ha expirado.
+
+Para solucionar este error, diríjase al detalle del comercio con el cual desea procesar la autenticación, posteriormente deslice la barra del detalle hacia abajo hasta encontrar la sección **Tokens**, la cual se verá como la siguiente:
+
+![](https://wiki.placetopay.com/images/a/aa/Token-section.png)
+
+Allí podrá visualizar el token que estaba utilizando y corroborar la fecha de expiración, además de que podrá crear uno nuevo para continuar con el proceso de autenticación.
+
+#### Crear nuevo token:
+
+Para crear el nuevo token, haga clic en el botón **Crear token**, asigne un nombre que le permita identificarlo y haga clic en el botón **Guardar**. Luego es importante que copie el bloque de texto que se asignó para el token, ya que este solo se muestra en esta ocasión y si lo pierde, debe proceder a crear uno nuevo.
+
+
+## ¿El número de tarjeta no está en el rango?
+
+Cuando procese una petición de autenticación, es probable que pueda ocurrirle el error **"La longitud del número de tarjeta no coincide con los valores esperados"**, el cual
+indica que el número de tarjeta con el cual está intentando ejecutar una petición de autenticación, no está en el rango de tarjetas ingresadas para esa franquicia.
+
+Para solucionar este error debe dirigirse a la franquicia con la cual está intentando procesar la autenticación, ir al detalle de esta, luego a la sección servidores de directorio y luego seleccione el servidor de directorio encargado de la autenticación y diríjase al detalle de este, guíese de la siguiente imagen:
+
+![](https://wiki.placetopay.com/images/0/0d/Ds-detail-mpi.png)
+
+Luego en el detalle del servidor de directorio, podrá visualizar los rangos de tarjeta disponibles y corroborar que la tarjeta que está intentando autenticar, no está en los rangos dados. La siguiente imagen muestra un ejemplo de rangos de tarjeta para un servidor de directorio específico:
+
+![](https://wiki.placetopay.com/images/c/c0/Card-ranges-mpi.png)
+
+Los rangos de tarjetas se sincronizan con los servidores de directorio a partir de los bines registrados en cada adquirente. De esta forma, si un rango de tarjeta no se encuentra disponible, debe de proceder a comunicarse con el servidor de directorio para que haga el respectivo proceso de sincronización de rangos de tarjeta.
 
 <!--
 type: tab
