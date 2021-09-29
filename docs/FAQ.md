@@ -27,7 +27,7 @@ El Protocolo 3-D Secure es quien define y describe la infraestructura y las paut
 
 ## ¿Cómo acceder a MPI?
 
-Para acceder a la consola de MPI, se requiere de un usuario registrado con el cual procederá a iniciar sesión. 
+Para acceder a la consola de MPI, se requiere de un usuario registrado, con permisos y cuyo acceso haya sido autorizado mediante una invitación, con el cual procederá a iniciar sesión. 
 
 ### Usuario:
 Para obtener el usuario de MPI, se debe hacer mediante una invitación que creará un usuario registrado y autenticado actualmente en la aplicación.
@@ -151,7 +151,6 @@ Allí podrá visualizar el token que estaba utilizando y corroborar la fecha de 
 #### Crear nuevo token:
 
 Para crear el nuevo token, haga clic en el botón **Crear token**, asigne un nombre que le permita identificarlo y haga clic en el botón **Guardar**. Luego es importante que copie el bloque de texto que se asignó para el token, ya que este solo se muestra en esta ocasión y si lo pierde, debe proceder a crear uno nuevo.
-
 
 ## ¿El número de tarjeta no está en el rango?
 
