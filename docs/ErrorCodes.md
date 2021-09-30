@@ -3,8 +3,8 @@
 Los siguientes son los códigos de error establecidos por el protocolo 3-D Secure, con su respectiva descripción y código HTTP asociado.
 
 
-Código   | Código HTTP  | Descripción                                                                              |
--------- |--------------|------------------------------------------------------------------------------------------|
+ Código  | Código HTTP  | Descripción                                                                             |
+ --------|--------------|------------------------------------------------------------------------------------------|
  1000    | 200          |Error de conexión a un servicio externo.                                                  |  
  1001    | 422          |Respuesta no válida de un servicio externo.                                               |
  1002    | 422          |Argumentos no válidos para iniciar una petición.                                          |

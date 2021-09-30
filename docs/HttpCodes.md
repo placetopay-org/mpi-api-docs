@@ -1,6 +1,6 @@
 # Códigos HTTP en el proceso de autenticación
 
-Los siguientes son códigos de estado HTTP que pueden resultar durante el proceso de autenticación y la descripción de sus particularidades dentro del servicio.
+Los siguientes son códigos de estado HTTP que pueden resultar durante el proceso de autenticación, con su respectiva descripción de sus objetivos dentro del servicio.
 
 Código                     | Descripción                                                                               |
 ---------------------------|-------------------------------------------------------------------------------------------|

@@ -13,5 +13,6 @@ Para integrarse al servicio de 3DS Server o 3DS Secure Merchant Plugin (MPI) de 
 
       Authorization:"Bearer 1c6b2cda415f40f6f9f82e24d31d3fa6deb3cbcdd1def686fef7ed721a8abf83"
 
+  > Este token se crea en el módulo de **Tokens**, ubicado en el menú **Funcionamiento de MPI** -> **Seguridad**.
 
 - **Comunicaciones seguras:** Para establecer los enlaces asegurados por Transport Layer Security (TLS), entre el servicio y los clientes conectados, el número de versión debe ser 1.2 o superior. Las claves RSA deben tener una longitud mínima de 2048 bits.
