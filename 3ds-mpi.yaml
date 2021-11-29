@@ -348,7 +348,7 @@ paths:
                   cardExpiryDate: '2411'
                   purchaseAmount: '8.25'
                   redirectURI: 'http://www.placetopay.com'
-                  purchaseCurrency: COP
+                  purchaseCurrency: 'COP'
               Petición exitosa con información de facturación del tarjetahabiente:
                 value:
                   acctNumber: '4012000000001097'
@@ -402,11 +402,11 @@ paths:
                   cardExpiryDate: '2411'
                   purchaseAmount: '800'
                   redirectURI: 'http://www.placetopay.com'
-                  purchaseCurrency: COP
+                  purchaseCurrency: 'COP'
               Petición con recurrencia:
                 value:
                   acctNumber: '4009000000502'
-                  cardholderName: John Doe
+                  cardholderName: 'John Doe'
                   cardExpiryDate: '2411'
                   redirectURI: 'http://www.placetopay.com'
                   messageCategory: '02'
@@ -414,11 +414,11 @@ paths:
                   recurringFrequency: '30'
                   recurringExpiry: '20210801'
                   purchaseAmount: '800'
-                  purchaseCurrency: COP
+                  purchaseCurrency: 'COP'
               Petición para una suscripción:
                 value:
                   acctNumber: '4009000000502'
-                  cardholderName: John Doe
+                  cardholderName: 'John Doe'
                   cardExpiryDate: '2411'
                   redirectURI: 'http://www.placetopay.com'
                   messageCategory: '02'
