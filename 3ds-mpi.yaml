@@ -348,7 +348,7 @@ paths:
                   cardExpiryDate: '2411'
                   purchaseAmount: '8.25'
                   redirectURI: 'http://www.placetopay.com'
-                  purchaseCurrency: 'COP'
+                  purchaseCurrency: COP
               Petición exitosa con información de facturación del tarjetahabiente:
                 value:
                   acctNumber: '4012000000001097'
