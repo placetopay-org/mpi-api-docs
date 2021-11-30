@@ -511,7 +511,7 @@ paths:
         - 'Transactions '
   /v1/merchants:
     post:
-      summary: Create massive onboarding merchants
+      summary: Crear un comercio
       operationId: post-user
       responses:
         '200':
