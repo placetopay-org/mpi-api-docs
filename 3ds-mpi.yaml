@@ -469,7 +469,6 @@ paths:
         - Authorization: []
       tags:
         - Sessions
-    parameters: []
   '/threeds/v2/transactions/{transactionID}':
     parameters:
       - schema:
