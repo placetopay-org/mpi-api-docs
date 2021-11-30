@@ -8,12 +8,12 @@ info:
     email: desarrollo@placetopay.com
     url: 'https://www.placetopay.com/web/'
 servers:
-  - url: 'https://3dss-test.placetopay.com/api/threeds/v2'
+  - url: 'https://3dss-test.placetopay.com/api'
     description: Sandbox
-  - url: 'https://3ds-mpi.placetopay.com/api/threeds/v2'
+  - url: 'https://3ds-mpi.placetopay.com/api'
     description: Producción
 paths:
-  /sessions:
+  /threeds/v2/sessions:
     post:
       summary: Crear una nueva sesión
       operationId: post-sessions
@@ -402,11 +402,11 @@ paths:
                   cardExpiryDate: '2411'
                   purchaseAmount: '800'
                   redirectURI: 'http://www.placetopay.com'
-                  purchaseCurrency: 'COP'
+                  purchaseCurrency: COP
               Petición con recurrencia:
                 value:
                   acctNumber: '4009000000502'
-                  cardholderName: 'John Doe'
+                  cardholderName: John Doe
                   cardExpiryDate: '2411'
                   redirectURI: 'http://www.placetopay.com'
                   messageCategory: '02'
@@ -414,11 +414,11 @@ paths:
                   recurringFrequency: '30'
                   recurringExpiry: '20210801'
                   purchaseAmount: '800'
-                  purchaseCurrency: 'COP'
+                  purchaseCurrency: COP
               Petición para una suscripción:
                 value:
                   acctNumber: '4009000000502'
-                  cardholderName: 'John Doe'
+                  cardholderName: John Doe
                   cardExpiryDate: '2411'
                   redirectURI: 'http://www.placetopay.com'
                   messageCategory: '02'
@@ -469,7 +469,8 @@ paths:
         - Authorization: []
       tags:
         - Sessions
-  '/transactions/{transactionID}':
+    parameters: []
+  '/threeds/v2/transactions/{transactionID}':
     parameters:
       - schema:
           type: string
@@ -509,6 +510,293 @@ paths:
       parameters: []
       tags:
         - 'Transactions '
+  /v1/merchants:
+    post:
+      summary: Create massive onboarding merchants
+      operationId: post-user
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  status:
+                    type: object
+                    required:
+                      - code
+                    properties:
+                      code:
+                        type: number
+                  data:
+                    type: object
+                    required:
+                      - token
+                    properties:
+                      token:
+                        type: string
+                        minLength: 1
+                required:
+                  - status
+                  - data
+              examples:
+                Comercio creado con éxito:
+                  value:
+                    status:
+                      code: 1000
+                    data:
+                      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9...
+        '401':
+          description: No autenticado
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  message:
+                    type: string
+                    minLength: 1
+                required:
+                  - message
+              examples:
+                No autenticado:
+                  value:
+                    message: Unauthenticated.
+        '422':
+          description: Mensajes de validación de datos
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                      error:
+                        type: string
+                        minLength: 1
+                    required:
+                      - code
+                      - error
+                required:
+                  - status
+              examples:
+                Validación de campo requerido:
+                  value:
+                    status:
+                      code: 1001
+                      error: The name field is required.
+                Validación por forma:
+                  value:
+                    status:
+                      code: 1002
+                      error: The country must be 3 characters.
+                El comercio ya existe:
+                  value:
+                    status:
+                      code: 1003
+                      error: The name has already been taken.
+                Nombre de la sucursal ya existe:
+                  value:
+                    status:
+                      code: 1004
+                      error: The branch.name has already been taken.
+                Franquiocia no habilitada:
+                  value:
+                    status:
+                      code: 1005
+                      error: 'The subscriptions.0.franchise is not enabled '
+                Acquiriente no habilitado:
+                  value:
+                    status:
+                      code: 1006
+                      error: The subscriptions.0.acquirerBIN is not enabled
+                Directory server no existe:
+                  value:
+                    status:
+                      code: 1007
+                      error: Franchise subscriptions.0.franchise does not have a directory server configured
+                Directory server no habilitado:
+                  value:
+                    status:
+                      code: 1008
+                      error: The directory server of franchise subscriptions.0.franchise is not enabled
+                Adquiriente no existe:
+                  value:
+                    status:
+                      code: 1009
+                      error: The selected subscriptions.0.acquirerBIN is invalid.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                  maxLength: 90
+                  description: Nombre del comercio
+                brand:
+                  type: string
+                  maxLength: 25
+                  minLength: 0
+                country:
+                  type: string
+                  minLength: 3
+                  maxLength: 3
+                  description: 'Código alfabatico del país '
+                currency:
+                  type: string
+                  maxLength: 3
+                  minLength: 3
+                  description: 'Código alfabatico de la moneda '
+                document:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      minLength: 1
+                      description: 'Tipo de documento '
+                    number:
+                      type: string
+                      minLength: 1
+                      description: Número de documento
+                url:
+                  type: string
+                  minLength: 1
+                  maxLength: 90
+                  description: Url del comercio
+                mcc:
+                  type: number
+                  description: 'código de categoría de comercial '
+                isicClass:
+                  type: number
+                  description: Código clase CIIU
+                branch:
+                  type: object
+                  description: Información de la sucursal
+                  required:
+                    - name
+                    - brand
+                    - country
+                    - currency
+                  properties:
+                    name:
+                      type: string
+                      minLength: 1
+                      maxLength: 90
+                      description: Nombre de la sucursal
+                    brand:
+                      type: string
+                      minLength: 1
+                      description: Marca
+                      maxLength: 25
+                    country:
+                      type: string
+                      maxLength: 3
+                      minLength: 3
+                      description: Código alfabatico del país de la sucursal
+                    currency:
+                      type: string
+                      minLength: 3
+                      maxLength: 3
+                      description: 'Código alfabatico de la moneda de la sucursal '
+                subscriptions:
+                  type: array
+                  uniqueItems: true
+                  minItems: 1
+                  description: Información de la suscripción por sucursal
+                  items:
+                    type: object
+                    description: Información de la subscripción
+                    properties:
+                      franchise:
+                        type: number
+                        description: |-
+                          ID
+                           de la franquicia
+                      acquirerBIN:
+                        type: number
+                        description: BIN del adquiriente
+                      version:
+                        type: number
+                        minimum: 1
+                        maximum: 2
+                        description: Versión del protocolo
+                    required:
+                      - franchise
+                      - acquirerBIN
+                      - version
+                invitations:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      email:
+                        type: string
+              required:
+                - name
+                - country
+                - currency
+                - document
+                - url
+                - mcc
+                - branch
+                - subscriptions
+                - invitations
+            examples:
+              Estructura para crear un comercio:
+                value:
+                  name: EGM Ingenieria sin frondteras
+                  brand: placetopay
+                  country: COL
+                  currency: COP
+                  document:
+                    type: RUT
+                    number: 123456789-0
+                  url: 'https://www.placetopay.com'
+                  mcc: 742
+                  isicClass: 111
+                  branch:
+                    name: Oficina principal
+                    brand: placetopay uno
+                    country: COL
+                    currency: COP
+                  subscriptions:
+                    - franchise: 1
+                      acquirerBIN: 12345678910
+                      version: 2
+                  invitations:
+                    - admin@admin.com: null
+          application/xml:
+            schema:
+              type: object
+              properties: {}
+        description: 'Envie los campos necesarios para que la API cree un nuevo comercio. '
+      description: Crear un comercio
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Accept
+          description: application/json
+          required: true
+        - schema:
+            type: string
+          in: header
+          name: Authorization
+          description: Bearer ACCESS_TOKEN
+          required: true
+      tags:
+        - Merchants
 components:
   schemas:
     PhoneProperties:
