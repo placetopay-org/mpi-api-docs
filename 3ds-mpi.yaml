@@ -414,11 +414,11 @@ paths:
                   recurringFrequency: '30'
                   recurringExpiry: '20210801'
                   purchaseAmount: '800'
-                  purchaseCurrency: COP
+                  purchaseCurrency: 'COP'
               Petición para una suscripción:
                 value:
                   acctNumber: '4009000000502'
-                  cardholderName: John Doe
+                  cardholderName: 'John Doe'
                   cardExpiryDate: '2411'
                   redirectURI: 'http://www.placetopay.com'
                   messageCategory: '02'
