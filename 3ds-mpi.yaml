@@ -402,11 +402,11 @@ paths:
                   cardExpiryDate: '2411'
                   purchaseAmount: '800'
                   redirectURI: 'http://www.placetopay.com'
-                  purchaseCurrency: COP
+                  purchaseCurrency: 'COP'
               Petición con recurrencia:
                 value:
                   acctNumber: '4009000000502'
-                  cardholderName: John Doe
+                  cardholderName: 'John Doe'
                   cardExpiryDate: '2411'
                   redirectURI: 'http://www.placetopay.com'
                   messageCategory: '02'
