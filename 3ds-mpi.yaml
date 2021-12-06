@@ -796,6 +796,225 @@ paths:
           required: true
       tags:
         - Merchants
+
+  /v1/merchants/{merchantID}/branches:
+    post:
+      summary: Agregar sucursales a un comercio
+      operationId: post-branches
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              properties:
+                branches:
+                  type: array
+                  uniqueItems: true
+                  minItems: 1
+                  description: Sucursales para agregar al comercio
+                  items:
+                    type: object
+                    description: Sucursales para agregar al comercio
+                    properties:
+                      name:
+                        type: string
+                        minLength: 1
+                        maxLength: 90
+                        description: Nombre de la sucursal
+                      brand:
+                        type: string
+                        minLength: 1
+                        maxLength: 25
+                        description: Marca
+                      country:
+                        type: string
+                        minLength: 3
+                        maxLength: 3
+                        description: Código alfabético del país de la sucursal
+                      currency:
+                        type: string
+                        minLength: 3
+                        maxLength: 3
+                        description: Código alfabético de la moneda de la sucursal
+                      url:
+                        type: string
+                        minLength: 1
+                        maxLength: 90
+                        description: Url de la página web de la sucursal
+                    required:
+                      - name
+                      - brand
+                      - country
+                      - currency
+                      - url
+            examples:
+              Estructura para agregar sucursales a un comercio:
+                value:
+                  branches:
+                    - name: Oficina Medellin
+                      brand: Evertec Medellin
+                      country: COL
+                      currency: COP
+                      url: 'https://example-uno.com'
+                    - name: Oficina Bogotá
+                      brand: Evertec Bogotá
+                      country: COL
+                      currency: COP
+                      url: 'https://example-dos.com'
+          application/xml:
+            schema:
+              type: object
+              properties: { }
+        description: Envíe los campos necesarios para que la API agregue las sucursales a un comercio.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  status:
+                    type: object
+                    required:
+                      - code
+                    properties:
+                      code:
+                        type: number
+                  data:
+                    type: object
+                    required:
+                      - token
+                    properties:
+                      token:
+                        type: string
+                        minLength: 1
+                required:
+                  - status
+                  - data
+              examples:
+                Sucursal creada con éxito:
+                  value:
+                    status:
+                      code: 1000
+                    data:
+                      - id: 1
+                        name: Oficina Ciudad A
+                        brand: Compañía Ciudad A
+                        url: 'https://company-a.com'
+                      - id: 2
+                        name: Oficina Ciudad B
+                        brand: Compañía Ciudad B
+                        url: 'https://company-b.com'
+        '401':
+          description: No autenticado
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  message:
+                    type: string
+                    minLength: 1
+                required:
+                  - message
+              examples:
+                No autenticado:
+                  value:
+                    message: Unauthenticated.
+        '404':
+          description: El comercio no existe
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                      error:
+                        type: string
+                        minLength: 1
+                    required:
+                      - code
+                      - error
+                required:
+                  - status
+              examples:
+                Validación de comercio exista:
+                  value:
+                    status:
+                      code: 1010
+                      error: The merchant does not exist
+        '422':
+          description: Mensajes de validación de datos
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                      error:
+                        type: string
+                        minLength: 1
+                    required:
+                      - code
+                      - error
+                required:
+                  - status
+              examples:
+                Validación de campo requerido:
+                  value:
+                    status:
+                      code: 1001
+                      error: The branches field is required.
+                Validación por tamaño:
+                  value:
+                    status:
+                      code: 1002
+                      error: The branches.0.country must be 3 characters.
+                Moneda no existe:
+                  value:
+                    status:
+                      code: 1002
+                      error: The selected branches.0.currency is invalid.
+                Nombre de la sucursal ya existe:
+                  value:
+                    status:
+                      code: 1004
+                      error: The branches.0.name has already been taken.
+                URL Invalida:
+                  value:
+                    status:
+                      code: 1004
+                      error: The branches.0.url must be a valid URL.
+      description: Agregar sucursales a un comercio
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Accept
+          description: application/json
+          required: true
+        - schema:
+            type: string
+          in: header
+          name: Authorization
+          description: Bearer ACCESS_TOKEN
+          required: true
+      tags:
+        - Merchants
 components:
   schemas:
     PhoneProperties:
