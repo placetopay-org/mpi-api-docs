@@ -472,7 +472,6 @@ paths:
         - Authorization: []
       tags:
         - Sessions
-    parameters: []
   '/api/v2/transactions/{transactionID}':
     parameters:
       - schema:
@@ -838,7 +837,7 @@ paths:
           required: true
       tags:
         - Merchants
-  '/v1/merchants/{merchantID}/branches':
+  /v1/merchants/{merchantID}/branches:
     post:
       summary: Agregar sucursales a un comercio
       operationId: post-branches
@@ -906,7 +905,7 @@ paths:
           application/xml:
             schema:
               type: object
-              properties: {}
+              properties: { }
         description: Envíe los campos necesarios para que la API agregue las sucursales a un comercio.
       responses:
         '200':
