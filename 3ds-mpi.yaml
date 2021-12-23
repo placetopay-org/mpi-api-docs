@@ -1421,19 +1421,16 @@ components:
         application/json:
           schema:
             description: ''
-            type:
-              - object
-              - string
+            type: object
+            nullable: true
             properties:
               enrolled:
-                type: string
                 example: 'Y'
-                minLength: 1
-                maxLength: 1
                 enum:
                   - 'Y'
                   - 'N'
                 description: Indica si la tarjeta con la cual se realizó la transacción está enrolada (está registrada en los rangos de tarjeta para el emisor específico).
+                type: string
               transStatus:
                 type: string
                 minLength: 1
@@ -1449,9 +1446,7 @@ components:
                 example: 'Y'
               transStatusReason:
                 type: string
-                minLength: 2
-                maxLength: 2
-                example: '14'
+                description: 'Proporciona información sobre por qué el campo Estado de la transacción (transStatus) tiene el valor especificado. '
                 enum:
                   - '01'
                   - '02'
@@ -1462,19 +1457,21 @@ components:
                   - '07'
                   - '08'
                   - '09'
-                  - 10
-                  - 11
-                  - 12
-                  - 13
-                  - 14
-                  - 15
-                  - 16
-                  - 17
-                  - 18
-                  - 19
-                  - 20
-                  - 21
-                description: 'Proporciona información sobre por qué el campo Estado de la transacción (transStatus) tiene el valor especificado. '
+                  - '10'
+                  - '11'
+                  - '12'
+                  - '13'
+                  - '14'
+                  - '15'
+                  - '16'
+                  - '17'
+                  - '18'
+                  - '19'
+                  - '20'
+                  - '21'
+                minLength: 2
+                maxLength: 2
+                nullable: true
               eci:
                 type: string
                 description: Indicador del resultado de la autenticación generado por el comercio electrónico.
