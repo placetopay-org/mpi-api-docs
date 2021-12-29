@@ -13,7 +13,7 @@ servers:
   - url: 'https://3ds-mpi.placetopay.com/api'
     description: Producción
 paths:
-  /threeds/v2/sessions:
+  /api/threeds/v2/sessions:
     post:
       summary: Crear una nueva sesión
       operationId: post-sessions
@@ -396,6 +396,7 @@ paths:
                   purchaseAmount: '8.25'
                   redirectURI: 'http://www.placetopay.com'
                   email: john.doe@example.com
+                  purchaseCurrency: 'COP'
               Petición con flujo con fricción o challenge:
                 value:
                   acctNumber: '4009000000502'
@@ -423,6 +424,8 @@ paths:
                   redirectURI: 'http://www.placetopay.com'
                   messageCategory: '02'
                   threeDSAuthenticationInd: '04'
+                  purchaseAmount: '800'
+                  purchaseCurrency: 'COP'
           application/xml:
             schema:
               type: object
@@ -469,33 +472,55 @@ paths:
         - Authorization: []
       tags:
         - Sessions
-  '/threeds/v2/transactions/{transactionID}':
+  '/api/v2/transactions/{transactionID}':
     parameters:
       - schema:
           type: string
         name: transactionID
         in: path
         required: true
-        description: ' Identificador de la transacción obtenido en la respuesta del endpoint /sessions'
+        description: ' Identificador de la transacción obtenido en la respuesta del endpoint api/threeds/v2/sessions'
     get:
       summary: Obtener información de una transacción
       operationId: get-transactions-transactionID
       responses:
         '200':
           $ref: '#/components/responses/success-response-transactions'
+        '400':
+          description: |-
+            > Respuesta recibida: 400 Bad Request
+
+                Este mensaje de error puede aparecer cuando en la petición no se     pasan correctamente los encabezados requeridos:
+                  - Por ejemplo host inválido o ausente.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples: {}
+            application/xml:
+              schema:
+                type: object
+                properties: {}
+          headers: {}
         '401':
           $ref: '#/components/responses/unauthorized-response'
+        '404':
+          description: |-
+            > Respuesta recibida: 400 Not Found
+
+                Este mensaje de error puede aparecer cuando el parámetro transactionID en el endpoint, no se reconoce como una transacción registrada en la base de datos y por tanto el recurso no se encuentra disponible.
       description: |-
-        **Este es el servicio para obtener información de una transacción que realizó el proceso de autenticación mediante el 3DS Server.**
+        **Este es el servicio para obtener información de una transacción que utilizó el flujo de autenticación del tarjetahabiente con el 3DS Server.**
 
-        Los siguientes pasos le darán una guía en la utilización del mismo:
+        Los siguientes pasos le darán una guía para la utilización del mismo:
 
-          **1.** Cree una solicitud HTTP de tipo GET en su servidor y con el endpoint /transactions
+          **1.** Cree una solicitud HTTP de tipo GET en su servidor y con el endpoint /api/v2/transactions/{transactionID}
           
           **2.** Adjunte al final de la url, como parámetro, el identificador de la transacción, el cual corresponde al campo
-          transactionID que se obtiene en la respuesta del servicio /sessions
+          transactionID que se obtiene en la respuesta del servicio con el endpoint api/threeds/v2/sessions
           
-          **3.** En el encabezado de la petición, ingrese el bearer token, el cual le permitirá registrarse como un usuario autorizado. Este encabezado es obligatorio.
+          **3.** En el encabezado de la petición, ingrese el Bearer token, el cual puede crear dirigiéndose al comercio y luego a la sección de Tokens. Este le permitirá registrarse como un usuario autorizado y es obligatorio.
           
           **4.** El encabezado deberá contener también, en el Content-Type, el valor de "application/json".
           
@@ -505,10 +530,26 @@ paths:
           **6.** Envíe la petición y obtenga una respuesta.
 
 
-        >La descripción de los campos de la respuesta, el tipo de dato, longitud y demás especificaciones, puede visualizarse en el apartado de respuestas, en el esquema de datos. 
-      parameters: []
+        > La descripción de los campos de la respuesta, el tipo de dato, longitud y demás especificaciones, puede visualizarse en el apartado de respuestas, en el esquema de datos. 
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Content-Type
+          description: application/json
+        - schema:
+            type: string
+          in: header
+          name: Authorization
+          description: Bearer ACCESS_TOKEN
+        - schema:
+            type: string
+          in: header
+          name: Accept
+          description: application/json
       tags:
         - 'Transactions '
+      x-internal: false
   /v1/merchants:
     post:
       summary: Crear un comercio
@@ -796,7 +837,6 @@ paths:
           required: true
       tags:
         - Merchants
-
   /v1/merchants/{merchantID}/branches:
     post:
       summary: Agregar sucursales a un comercio
@@ -1371,13 +1411,25 @@ components:
       scheme: bearer
   responses:
     success-response-transactions:
-      description: '> Respuesta recibida: 200 Ok'
+      description: |-
+        > Respuesta recibida: 200 Ok
+
+
+            Esta es una respuesta satisfactoria para el servicio de consulta de información de transacciones.
       content:
         application/json:
           schema:
             description: ''
             type: object
+            nullable: true
             properties:
+              enrolled:
+                example: 'Y'
+                enum:
+                  - 'Y'
+                  - 'N'
+                description: Indica si la tarjeta con la cual se realizó la transacción está enrolada (está registrada en los rangos de tarjeta para el emisor específico).
+                type: string
               transStatus:
                 type: string
                 minLength: 1
@@ -1390,11 +1442,39 @@ components:
                   - C
                   - R
                 maxLength: 1
-                pattern: 'Y'
+                example: 'Y'
+              transStatusReason:
+                type: string
+                description: 'Proporciona información sobre por qué el campo Estado de la transacción (transStatus) tiene el valor especificado. '
+                enum:
+                  - '01'
+                  - '02'
+                  - '03'
+                  - '04'
+                  - '05'
+                  - '06'
+                  - '07'
+                  - '08'
+                  - '09'
+                  - '10'
+                  - '11'
+                  - '12'
+                  - '13'
+                  - '14'
+                  - '15'
+                  - '16'
+                  - '17'
+                  - '18'
+                  - '19'
+                  - '20'
+                  - '21'
+                minLength: 2
+                maxLength: 2
+                nullable: true
               eci:
                 type: string
                 description: Indicador del resultado de la autenticación generado por el comercio electrónico.
-                example: '05'
+                example: '07'
                 minLength: 2
                 maxLength: 2
               acsTransID:
@@ -1403,18 +1483,28 @@ components:
                 minLength: 36
                 maxLength: 36
                 example: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+                format: uuid
               dsTransID:
                 type: string
                 description: Identificador único de transación generado por el DS.
                 minLength: 36
                 maxLength: 36
                 example: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+                format: uuid
               threeDSServerTransID:
                 type: string
                 description: Identificador único de transación generado por el 3DS Server.
                 minLength: 36
                 maxLength: 36
                 example: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+                format: uuid
+              sdkTransID:
+                type: string
+                format: uuid
+                example: 569c905d-b7cc-4f46-aad9-d6bedadbd2fc
+                minLength: 36
+                maxLength: 36
+                description: Identificador de transacción único universal asignado por 3DS SDK para identificar una transacción.
               authenticationValue:
                 type: string
                 description: |-
@@ -1423,42 +1513,47 @@ components:
                 minLength: 28
                 maxLength: 28
                 example: AJkBABIWcQAAAAM5FwIzdGiYeHM=
+              messageVersion:
+                type: string
+                minLength: 5
+                maxLength: 8
+                example: 2.2.0
+                enum:
+                  - 2.1.0
+                  - 2.2.0
+                description: Es el número de versión del protocolo 3DS que utiliza el sistema para ejecutar el flujo de autenticación. Esta versión la establece el servidor 3DS con el mensaje AReq y no cambia durante todo el flujo de una transacción.
             required:
+              - enrolled
               - transStatus
               - eci
               - acsTransID
               - dsTransID
               - threeDSServerTransID
-              - authenticationValue
+              - messageVersion
           examples:
             Respuesta Exitosa:
               value:
+                enrolled: 'Y'
                 transStatus: 'Y'
-                eci: '05'
+                transStatusReason: null
+                eci: '07'
                 acsTransID: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
                 dsTransID: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
-                threeDSServerTransID: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
-                authenticationValue: AJkBABIWcQAAAAM5FwIzdGiYeHM=
+                threeDSServerTransID: 569c905d-b7cc-4f46-aad9-d6bedadbd2fc
+                sdkTransID: null
+                authenticationValue: AJkBAmBANQAAACcPhAI0dAJBQVk=
+                messageVersion: 2.2.0
     unauthorized-response:
-      description: |-
+      description: |
         > Respuesta recibida: 401 Unauthorized
 
-            Este mensaje de error puede aparecer cuando en la petición no se pasan correctamente los encabezados requeridos:
+            Este mensaje de error puede aparecer cuando en la petición, el token aportado no permite autenticarse satisfactoriamente:
               - Token ausente, expirado o inválido
-              - Content Type ausente o inválido.
       content:
         application/json:
           schema:
             description: ''
             type: object
-            properties:
-              message:
-                type: string
-                minLength: 1
-                description: |
-                  Mensaje cuando se presenta un error en la petición al servicio.
-            required:
-              - message
           examples:
             Respuesta No Autorizado:
               value:
