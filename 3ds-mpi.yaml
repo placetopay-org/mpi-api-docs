@@ -396,18 +396,18 @@ paths:
                   purchaseAmount: '8.25'
                   redirectURI: 'http://www.placetopay.com'
                   email: john.doe@example.com
-                  purchaseCurrency: 'COP'
+                  purchaseCurrency: COP
               Petición con flujo con fricción o challenge:
                 value:
                   acctNumber: '4009000000502'
                   cardExpiryDate: '2411'
                   purchaseAmount: '800'
                   redirectURI: 'http://www.placetopay.com'
-                  purchaseCurrency: 'COP'
+                  purchaseCurrency: COP
               Petición con recurrencia:
                 value:
                   acctNumber: '4009000000502'
-                  cardholderName: 'John Doe'
+                  cardholderName: John Doe
                   cardExpiryDate: '2411'
                   redirectURI: 'http://www.placetopay.com'
                   messageCategory: '02'
@@ -415,17 +415,34 @@ paths:
                   recurringFrequency: '30'
                   recurringExpiry: '20210801'
                   purchaseAmount: '800'
-                  purchaseCurrency: 'COP'
+                  purchaseCurrency: COP
               Petición para una suscripción:
                 value:
                   acctNumber: '4009000000502'
-                  cardholderName: 'John Doe'
+                  cardholderName: John Doe
                   cardExpiryDate: '2411'
                   redirectURI: 'http://www.placetopay.com'
                   messageCategory: '02'
                   threeDSAuthenticationInd: '04'
                   purchaseAmount: '800'
-                  purchaseCurrency: 'COP'
+                  purchaseCurrency: COP
+              Petición para procesamiento con Visa DAF:
+                value:
+                  acctNumber: '4931119220729333'
+                  cardExpiryDate: '2710'
+                  purchaseAmount: '1.02'
+                  redirectURI: 'https://placetopay.com'
+                  purchaseCurrency: USD
+                  messageVersion: 2.2.0
+                  billAddrCity: Medellín
+                  billAddrCountry: COL
+                  billAddrLine1: 'Cl 72 No. 15 F-07, El libertador'
+                  billAddrPostCode: '76001'
+                  billAddrState: ANT
+                  email: john.doe@example.com
+                  mobilePhone:
+                    cc: '1'
+                    subscriber: '3101112233'
           application/xml:
             schema:
               type: object
@@ -467,6 +484,25 @@ paths:
         **6.** Puede visualizar el estado de la autenticación, redirigiéndose a la "redirectURI", dato arrojado en una respuesta exitosa o con estado "Y".
 
         > Para obtener estados en la autenticación diferentes al "Y", puede modificar el campo "acctNumber" de la petición, con los números de tarjetas de prueba dados en esta documentación.
+
+        **Requisitos DAF**
+
+        **1.** Registro en Visa Online
+
+        Los Adquirentes deben registrar a los comercios en la plataforma de Visa Online para estos puedan procesar autenticaciones con DAF, como resultado del registro, Visa otorgará un identificador de comercio VMID (Visa Merchant Identifiers), el cual deberá ser configurado en el panel de 3DS Server.
+
+        **2.** El rango de tarjetas debe soportar DAF, la columna **acsInfoInd** deberá contener un indicador con valor **83**. 
+
+        **3.** Datos requeridos
+        Visa DAF requiere los siguientes datos para que la autenticación sea aceptada por DAF, en ausencia de alguno de los estos, la autenticación se procesará sin DAF:
+
+        - Ciudad de la dirección de facturación del titular de la tarjeta (billAddrCity)
+        - País de la dirección de facturación del titular de la tarjeta (billAddrCountry)
+        - Dirección de facturación del titular de la tarjeta, línea 1 (billAddrLine1)
+        - Código postal de la dirección de facturación del titular de la tarjeta (billAddrPostCode)
+        - Estado/provincia/departamento de la dirección de facturación del titular de la tarjeta (billAddrState)
+        - Dirección de correo electrónico del titular de la tarjeta (email)
+        - Número de teléfono móvil del titular de la tarjeta (mobilePhone)
       parameters: []
       security:
         - Authorization: []
@@ -837,7 +873,7 @@ paths:
           required: true
       tags:
         - Merchants
-  /v1/merchants/{merchantID}/branches:
+  '/v1/merchants/{merchantID}/branches':
     post:
       summary: Agregar sucursales a un comercio
       operationId: post-branches
@@ -905,7 +941,7 @@ paths:
           application/xml:
             schema:
               type: object
-              properties: { }
+              properties: {}
         description: Envíe los campos necesarios para que la API agregue las sucursales a un comercio.
       responses:
         '200':
