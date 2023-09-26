@@ -13,7 +13,7 @@ servers:
   - url: 'https://3ds-mpi.placetopay.com/api'
     description: Producción
 paths:
-  /api/threeds/v2/sessions:
+  /threeds/v2/sessions:
     post:
       summary: Crear una nueva sesión
       operationId: post-sessions
@@ -472,7 +472,7 @@ paths:
         - Authorization: []
       tags:
         - Sessions
-  '/api/v2/transactions/{transactionID}':
+  '/v2/transactions/{transactionID}':
     parameters:
       - schema:
           type: string
