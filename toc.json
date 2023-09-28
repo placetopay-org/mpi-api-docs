@@ -36,13 +36,13 @@
     },
     {
       "type": "item",
-      "title": "Autenticación",
-      "uri": "docs/mpi/Authentication.md"
+      "title": "Autorización",
+      "uri": "docs/mpi/Authorization.md"
     },
     {
       "type": "item",
       "title": "Crear Sesión",
-      "uri": "docs/TestCards.md"
+      "uri": "docs/mpi/Session.md"
     },
     {
       "type": "item",

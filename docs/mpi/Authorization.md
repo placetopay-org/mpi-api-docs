@@ -1,7 +1,7 @@
-# Autenticación
+# Autorización
 Para interactuar con la API del 3DS Server, es necesario generar un token desde el comercio; cada petición a los servicios requiere de este token.
 
-Dicho token se enviará en el encabezado HTTP como un "Bearer Token", conforme al RFC 6750.
+Dicho token se enviará en el encabezado HTTP como un "Bearer Token", conforme al [RFC 6750](https://datatracker.ietf.org/doc/html/rfc6750).
 
 > Es importante destacar que el token es exclusivo del comercio y debe ser tratado con seguridad. No se debe compartir en áreas de acceso público ni en otros lugares de fácil acceso para terceros.
 
