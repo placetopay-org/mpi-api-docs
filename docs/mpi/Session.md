@@ -22,9 +22,9 @@ El término **"Sesión"** se refiere a la solicitud de autenticación en el cont
 ### Respuesta
 ```json
 {
-    "sessionToken": "d801d6f4993fc2efd3aff71a162f33888c19282e4686bd50ff4b8624e1527dbc",
-    "redirectURL": "https://3dss.placetopay.com/threeds/v2/sessions/571/d801d6f4993fc2efd3aff71a162f33888c19282e4686bd50ff4b8624e1527dbc",
-    "transactionID": 580
+  "sessionToken": "d801d6f4993fc2efd3aff71a162f33888c19282e4686bd50ff4b8624e1527dbc",
+  "redirectURL": "https://3dss.placetopay.com/threeds/v2/sessions/571/d801d6f4993fc2efd3aff71a162f33888c19282e4686bd50ff4b8624e1527dbc",
+  "transactionID": 580
 }
 ```
 
@@ -60,7 +60,7 @@ El término **"Sesión"** se refiere a la solicitud de autenticación en el cont
 ### Mensaje de "Unauthenticated"
 ```json
 {
-    "message": "Unauthenticated."
+  "message": "Unauthenticated."
 }
 ```
 Este mensaje se puede presentar cuando en los siguientes casos:
