@@ -46,8 +46,8 @@
     },
     {
       "type": "item",
-      "title": "Notificación",
-      "uri": "docs/mpi/Notification.md"
+      "title": "Información de la Autenticación",
+      "uri": "docs/mpi/AuthenticationInfo.md"
     },
     {
       "type": "item",

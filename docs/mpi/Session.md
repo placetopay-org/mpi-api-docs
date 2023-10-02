@@ -1,8 +1,8 @@
 # Sesión
 
-El término **"Sesión"** se refiere a la solicitud de autenticación en el contexto de 3DS. Para llevar a cabo una solicitud de autenticación exitosa, es esencial crear una sesión que se ajuste a las especificaciones y necesidades del protocolo 3DS. Puedes encontrar los detalles en [API - Iniciar Sesión](mpi-docs/crear-una-nueva-sesion).
+El término **"Sesión"** Se refiere a la solicitud de autenticación en el contexto de 3DS. Para llevar a cabo una solicitud de autenticación exitosa, es esencial crear una sesión que se ajuste a las especificaciones y necesidades del protocolo 3DS. Puedes encontrar los detalles en [API - Iniciar Sesión](crear-una-nueva-sesion).
 
-**Autorización:** Hace referencia al método indispensable de autorización con nuestra API para realizar peticiones. Dicho método se basa en **Bearer Token**. Para más información, consulta [Autorización](mpi/docs/autenticacion).
+**Autorización:** Hace referencia al método indispensable de autorización con nuestra API para realizar peticiones. Dicho método se basa en **Bearer Token**. Para más información, consulta [Autorización](authorization).
 
 **Crear Sesión:** Al enviar una solicitud para crear una sesión, 3DS Placetopay comprueba que el rango de la tarjeta sea compatible con el protocolo 3DS (donde verifica la versión del protocolo que soporta). Una vez realizada la verificación, responde proporcionando la URL hacia donde se realizará la redirección para completar el proceso de autenticación.
 
@@ -33,7 +33,7 @@ El término **"Sesión"** se refiere a la solicitud de autenticación en el cont
 ## Posibles errores
 
 
-| Código | Caussa                                                                           |
+| Código | Causa                                                                            |
 |--------|----------------------------------------------------------------------------------|
 | 1003   | No existe un comercio asociado                                                   | 
 | 1004   | No existe una suscripción asociada                                               | 
