@@ -16,7 +16,7 @@ La versión más reciente del protocolo es 3-D Secure 2 (3DS2), que introduce me
 | 2.3.0                 | Inactiva   |
 | 2.3.1                 | **Activa** |
 
-**Nota:** "Activa" significa que EMVCo require realizar pruebas a los componentes 3DS. "Inactiva" indica que no hay soporte para pruebas EMVCo.
+**Nota:** "Activa" significa que EMVCo requiere realizar pruebas a los componentes 3DS. "Inactiva" indica que no hay soporte para pruebas EMVCo.
 
 # ¿Cómo funciona 3-D Secure?
 

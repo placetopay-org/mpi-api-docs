@@ -25,8 +25,8 @@
         },
         {
           "type": "item",
-          "title": "Requerimientos de integración",
-          "uri": "docs/mpi/ClientRequirements.md"
+          "title": "Estados de autenticación",
+          "uri": "docs/mpi/TransactionStatus.md"
         }
       ]
     },
@@ -47,17 +47,7 @@
     {
       "type": "item",
       "title": "Notificación",
-      "uri": "docs/HttpCodes.md"
-    },
-    {
-      "type": "item",
-      "title": "Estados de autenticación",
-      "uri": "docs/TransactionStatus.md"
-    },
-    {
-      "type": "item",
-      "title": "Descripción de códigos de error",
-      "uri": "docs/ErrorCodes.md"
+      "uri": "docs/mpi/Notification.md"
     },
     {
       "type": "item",

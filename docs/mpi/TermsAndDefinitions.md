@@ -13,14 +13,10 @@ Las siguientes definiciones pretenden dar claridad sobre la información present
 - **SDK 3DS:** Kit de Desarrollo de Software 3-D Secure (SDK). Un componente que se incorpora en la App del Solicitante 3DS. El SDK 3DS realiza funciones relacionadas con 3-D Secure en nombre del Servidor 3DS.
 - **3DS Server (Servidor 3DS):** Se refiere al servidor o sistemas del Integrador 3DS que manejan transacciones en línea y facilitan la comunicación entre el Solicitante 3DS y el DS.
 - **3-D Secure (3DS):** Un protocolo de autenticación de comercio electrónico que permite el procesamiento seguro de transacciones de tarjetas de pago, no pago y confirmación de cuenta.
-- **ACS - Servidor de Control de Acceso:** Un componente que opera en el Dominio del Emisor, que verifica si la autenticación está disponible para un número de tarjeta y tipo de dispositivo, y autentica a Titulares de Tarjetas específicos.
+- **ACS - Servidor de Control de Acceso:** Un componente que opera en el Dominio del Emisor, que verifica si la autenticación está disponible para un número de tarjeta y tipo de dispositivo, y auténtica a Titulares de Tarjetas específicas.
 - **Acquirer Domain (Dominio del Adquirente):** Contiene los sistemas y funciones del Entorno del Solicitante 3DS y, opcionalmente, del Adquirente.
 - **Adquirente:** Una institución financiera que establece una relación de servicio contractual con un Comerciante con el propósito de aceptar tarjetas de pago. En el contexto de 3-D Secure, además del rol tradicional de recibir y enviar mensajes de autorización y liquidación (introduce la transacción en el intercambio), el Adquirente también determina si un Comerciante es elegible para apoyar la participación del Comerciante en 3-D Secure.
 - **Autenticación:** En el contexto de 3-D Secure, el proceso de confirmar que la persona que realiza una transacción de comercio electrónico está autorizada para usar la tarjeta de pago.
-
-
-
-
 - **Billetera Digital:** Un componente de software que permite a un usuario realizar un pago electrónico con un instrumento financiero (como una tarjeta de crédito) mientras oculta los detalles técnicos de la ejecución del protocolo de pago, incluidas tareas como ingresar un número de cuenta y proporcionar información de envío e identificación del Titular de la Tarjeta.
 - **Categoría de Mensaje:** Indica la categoría del mensaje EMV 3-D Secure. Puede ser Pago (01-PA) o No Pago (02-NPA).
 - **Comerciante:** Entidad que contrata con un Adquirente para aceptar tarjetas de pago. Gestiona la experiencia de compra en línea con el Titular de la Tarjeta, obtiene el número de tarjeta y luego transfiere el control al Servidor 3DS, que realiza la autenticación de pago.
@@ -33,7 +29,7 @@ Las siguientes definiciones pretenden dar claridad sobre la información present
 - **Indicador de Comercio Electrónico - ECI:** Valor específico del Sistema de Pago proporcionado por el ACS para indicar los resultados del intento de autenticar al Titular de la Tarjeta.
 - **Flujo de Desafío:** Un flujo 3-D Secure que involucra la interacción con el Titular de la Tarjeta.
 - **Flujo Sin Fricción:** Un flujo 3-D Secure que no involucra interacción con el Titular de la Tarjeta.
-- **Fuera de Banda (Out Of Band - OOB):** Una actividad de Desafío que se completa fuera de, pero en paralelo a, el flujo 3-D Secure. La Solicitud de Desafío final no se utiliza para transportar los datos que el ACS debe verificar, sino que solo señala que la autenticación ha sido completada. Los métodos o implementaciones de autenticación del ACS no están definidos por la especificación 3-D Secure.
+- **Fuera de Banda (Out Of Band - OOB):** Una actividad de Desafío que se completa fuera de, pero en paralelo a, el flujo 3-D Secure. La Solicitud de Desafío final no se utiliza para transportar los datos que el ACS debe verificar, sino que sólo señala que la autenticación ha sido completada. Los métodos o implementaciones de autenticación del ACS no están definidos por la especificación 3-D Secure.
 - **Mensaje de Solicitud de Autenticación - AReq:** Un mensaje EMV 3-D Secure enviado por el Servidor 3DS a través del DS al ACS para iniciar el proceso de autenticación.
 - **Mensaje de Respuesta de Autenticación - ARes:** Un mensaje EMV 3-D Secure devuelto por el ACS a través del DS en respuesta a un mensaje de Solicitud de Autenticación.
 - **Mensaje de Solicitud de Desafío - CReq:** Un mensaje EMV 3-D Secure enviado por el SDK 3DS o el Servidor 3DS donde se envía información adicional del Titular de la Tarjeta al ACS para apoyar el proceso de autenticación.
@@ -51,5 +47,5 @@ Las siguientes definiciones pretenden dar claridad sobre la información present
 - **Tarjeta:** En esta especificación, es sinónimo de la cuenta de una tarjeta de pago.
 - **Titular de la Tarjeta:** Una persona a quien se le emite una tarjeta o que está autorizada para usar dicha tarjeta.
 - **Token de autenticación:**  Es una cadena de texto que no pretende tener un significado alguno y representa un acceso de autorización que es emitido al cliente. El token permite reemplazar las credenciales de autenticación del propietario directamente, con el fin de proteger la información.
-- **Valor de Autenticación - AV:** Un valor criptográfico generado por el ACS para proporcionar una forma, durante el procesamiento de autorización, para que el sistema de autorización valide la integridad del resultado de la autenticación. El algoritmo AV es definido por cada Sistema de Pago.
+- **Valor de autenticación - AV:** Un valor criptográfico generado por el ACS para proporcionar una forma, durante el procesamiento de autorización, para que el sistema de autorización valide la integridad del resultado de la autenticación. El algoritmo AV es definido por cada Sistema de Pago.
 - **Versión del Mensaje:** Se refiere a la versión del protocolo que será utilizada por todos los componentes para procesar la transacción 3-D Secure. La versión del mensaje siempre es consistente en todos los mensajes del protocolo 3-D Secure para una transacción específica.
