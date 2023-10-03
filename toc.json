@@ -10,25 +10,19 @@
       "uri": "docs/mpi/Introduction.md"
     },
     {
-      "type": "group",
-      "title": "Generalidades del protocolo",
-      "items": [
-        {
-          "type": "item",
-          "title": "Términos y Definiciones",
-          "uri": "docs/mpi/TermsAndDefinitions.md"
-        },
-        {
-          "type": "item",
-          "title": "¿Qué es el Protocolo 3-D Secure?",
-          "uri": "docs/mpi/3DSSecureProtocolDefinition.md"
-        },
-        {
-          "type": "item",
-          "title": "Estados de autenticación",
-          "uri": "docs/mpi/TransactionStatus.md"
-        }
-      ]
+      "type": "item",
+      "title": "Términos y Definiciones",
+      "uri": "docs/mpi/TermsAndDefinitions.md"
+    },
+    {
+      "type": "item",
+      "title": "¿Qué es el Protocolo 3-D Secure?",
+      "uri": "docs/mpi/3DSSecureProtocolDefinition.md"
+    },
+    {
+      "type": "item",
+      "title": "Estados de autenticación",
+      "uri": "docs/mpi/TransactionStatus.md"
     },
     {
       "type": "divider",
@@ -64,40 +58,29 @@
       "title": "Panel Administrativo"
     },
     {
-      "type": "group",
-      "title": "Configuración",
-      "items": [
-        {
-          "type": "item",
-          "title": "Configuración general de MPI",
-          "uri": "docs/panel/MPIGeneralConfiguration.md"
-        },
-        {
-          "type": "item",
-          "title": "Configuración de comercios",
-          "uri": "docs/panel/MerchantConfiguration.md"
-        },
-        {
-          "type": "item",
-          "title": "Configuración de franquicias",
-          "uri": "docs/panel/FranchiseConfiguration.md"
-        },
-        {
-          "type": "item",
-          "title": "Otras configuraciones",
-          "uri": "docs/panel/MPIConfigurations.md"
-        }
-      ]
+      "type": "item",
+      "title": "Inicio",
+      "uri": "docs/panel/Home.md"
     },
     {
       "type": "item",
-      "title": "Funcionalidades",
-      "uri": "docs/panel/MPIFunctionalities.md"
+      "title": "Métricas",
+      "uri": "docs/panel/Metrics.md"
     },
     {
       "type": "item",
-      "title": "Seguridad",
-      "uri": "docs/panel/MPISecurity.md"
+      "title": "Transacciones",
+      "uri": "docs/panel/Authentications.md"
+    },
+    {
+      "type": "item",
+      "title": "Reportes",
+      "uri": "docs/panel/Reports.md"
+    },
+    {
+      "type": "item",
+      "title": "Comercios",
+      "uri": "docs/panel/MerchantConfiguration.md"
     },
     {
       "type": "item",

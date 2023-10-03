@@ -18,7 +18,7 @@ La versión más reciente del protocolo es 3-D Secure 2 (3DS2), que introduce me
 
 **Nota:** "Activa" significa que EMVCo requiere realizar pruebas a los componentes 3DS. "Inactiva" indica que no hay soporte para pruebas EMVCo.
 
-# ¿Cómo funciona 3-D Secure?
+## ¿Cómo funciona 3-D Secure?
 
 El protocolo 3D Secure (3DS) funciona como un paso adicional de autenticación para transacciones en línea realizadas con tarjetas de crédito.
 
@@ -36,7 +36,7 @@ El protocolo 3D Secure (3DS) funciona como un paso adicional de autenticación p
 
 Este proceso ayuda a proteger contra el uso no autorizado de tarjetas de crédito en línea, al proporcionar una capa adicional de seguridad y autenticación.
 
-# Flujos de autenticación
+## Flujos de autenticación
 
 **Flujo sin Fricción**
 ![3ds_frictionless.png](../../assets/images/3ds_frictionless.png)
