@@ -8,19 +8,17 @@ Las autenticaciones de no pago se refieren a transacciones que necesitan autenti
 
 ### Campos requeridos:
 
-> Por ser transacciones de pago (messageCategory = 01) se deben enviar los datos de una transacción básica.
-
 **Autenticaciones que se harán por navegador:**
 - messageCategory: 02 (NPA - Transacción de no pago).
 
-- deviceChannel: 02 (BRW - Navegador) Si no se envía, la plataforma lo agregará por defecto en este valor. 03 en las transacciones subsecuentes.
+- deviceChannel: 02 (BRW - Navegador) Si no se envía, la plataforma lo agregará por defecto en este valor.
 
 - threeDSAuthenticationInd: Las opciones son: 04 (Agregar tarjeta), 05 (Mantener tarjeta) y 06 (Verificar cuenta)
 
 - threeDSChallengeInd: 03 (Se solicita desafío desde el 3DS Requestor) Indica que la preferencia del 3DS Requestor es que se realice el desafío *(este campo es opcional pero recomendado incluir)*.
 
 **Autenticaciones que se harán por RI (Requestor Information):**
-- messageCategory: 01 (NPA - Transacción de pago).
+- messageCategory: 02 (NPA - Transacción de no pago).
 
 - deviceChannel: 03 (RI - Requestor Information).
 
@@ -38,7 +36,7 @@ Las autenticaciones de no pago se refieren a transacciones que necesitan autenti
   "redirectURI": "https://www.placetopay.com/web",
   "reference": "AUTH_001",
   "threeDSChallengeInd": "03",
-  "threeDSAuthenticationInd": "04",
+  "threeDSAuthenticationInd": "04"
 }
 ```
 
@@ -51,6 +49,6 @@ Las autenticaciones de no pago se refieren a transacciones que necesitan autenti
   "cardExpiryDate": "2902",
   "redirectURI": "https://www.placetopay.com/web",
   "reference": "AUTH_001",
-  "threeRIInd": "03",
+  "threeRIInd": "03"
 }
 ```
