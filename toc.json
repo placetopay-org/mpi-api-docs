@@ -7,22 +7,26 @@
     {
       "type": "item",
       "title": "Introducción",
-      "uri": "docs/mpi/Introduction.md"
+      "uri": "docs/mpi/Introduction.md",
+      "slug": "intro"
     },
     {
       "type": "item",
       "title": "Términos y Definiciones",
-      "uri": "docs/mpi/TermsAndDefinitions.md"
+      "uri": "docs/mpi/TermsAndDefinitions.md",
+      "slug": "terms-and-definitions"
     },
     {
       "type": "item",
-      "title": "¿Qué es el Protocolo 3-D Secure?",
-      "uri": "docs/mpi/3DSSecureProtocolDefinition.md"
+      "title": "¿Qué es el protocolo 3-D Secure?",
+      "uri": "docs/mpi/3DSSecureProtocolDefinition.md",
+      "slug": "3ds-protocol"
     },
     {
       "type": "item",
       "title": "Estados de autenticación",
-      "uri": "docs/mpi/TransactionStatus.md"
+      "uri": "docs/mpi/TransactionStatus.md",
+      "slug": "authentication-states"
     },
     {
       "type": "divider",
@@ -31,16 +35,50 @@
     {
       "type": "item",
       "title": "Autorización",
-      "uri": "docs/mpi/Authorization.md"
+      "uri": "docs/mpi/Authorization.md",
+      "slug": "authorization"
     },
     {
-      "type": "item",
+      "type": "group",
       "title": "Crear Sesión",
-      "uri": "docs/mpi/Session.md"
+      "uri": "docs/mpi/Session.md",
+      "slug": "sessions",
+      "items": [
+        {
+          "type": "item",
+          "title": "Autenticación recurrente",
+          "uri": "docs/mpi/SessionRecurrent.md",
+          "slug": "sessions-recurrent-authentication"
+        },
+        {
+          "type": "item",
+          "title": "Autenticación de no pago (suscripciones)",
+          "uri": "docs/mpi/SessionSubscription.md",
+          "slug": "sessions-subscription-authentication"
+        },
+        {
+          "type": "item",
+          "title": "Autenticación con DAF",
+          "uri": "docs/mpi/SessionDaf.md",
+          "slug": "sessions-daf-authentication"
+        },
+        {
+          "type": "item",
+          "title": "Autenticación con información previa",
+          "uri": "docs/mpi/SessionPriorInfo.md",
+          "slug": "sessions-prior-authentication"
+        },
+        {
+          "type": "item",
+          "title": "Autenticación desacoplada",
+          "uri": "docs/mpi/SessionDecoupled.md",
+          "slug": "sessions-decoupled-authentication"
+        }
+      ]
     },
     {
       "type": "item",
-      "title": "Información de la Autenticación",
+      "title": "Información de la autenticación",
       "uri": "docs/mpi/AuthenticationInfo.md"
     },
     {
