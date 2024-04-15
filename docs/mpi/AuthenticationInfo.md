@@ -22,7 +22,10 @@ Este servicio le permite consultar el estado de una transacción que pasó por e
     "threeDSServerTransID": "549ced88-3a1b-4aa8-8f03-1f8937a6c2f2",
     "sdkTransID": null,
     "authenticationValue": "AJkCBzBjSQAAAAPohAAmdEeHIJE=",
-    "messageVersion": "2.2.0"
+    "messageVersion": "2.2.0",
+    "authMethod": "02",
+    "authTimestamp": "202403142033",
+    "messageCategory": "02"
 }
 ```
 
