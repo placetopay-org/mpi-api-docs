@@ -1651,7 +1651,7 @@ components:
                 messageVersion: 2.2.0
                 messageCategory: '01'
                 authMethod: '02'
-                authTimestamp: '202103051200'
+                authTimestamp: '2020-04-21T01:44:54+00:00'
     unauthorized-response:
       description: |
         > Respuesta recibida: 401 Unauthorized
