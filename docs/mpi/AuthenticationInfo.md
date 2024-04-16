@@ -25,7 +25,7 @@ Este servicio le permite consultar el estado de una transacción que pasó por e
     "messageVersion": "2.2.0",
     "authMethod": "02",
     "authTimestamp": "2020-04-21T01:44:54+00:00",
-    "messageCategory": "02"
+    "messageCategory": "01"
 }
 ```
 
