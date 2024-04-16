@@ -335,6 +335,19 @@ paths:
                   $ref: '#/components/schemas/PhoneProperties'
                 merchantRiskIndicator:
                   $ref: '#/components/schemas/merchantRiskIndicatorProperties'
+                addPriorInformation:
+                  type: string
+                  description: |-
+                    Indica el tipo de solicitud de autenticación.
+
+                    **Valores aceptados:**
+                    * Y - Solicita a MPI Agregar información del PRIOR
+                    * N - Solicita No Agregar información del PRIOR
+                  minLength: 1
+                  maxLength: 1
+                  example: 'Y'
+                threeDSRequestorPriorAuthenticationInfo:
+                  $ref: '#/components/schemas/threeDSRequestorPriorAuthenticationInfo'
               required:
                 - acctNumber
                 - cardExpiryDate
@@ -404,6 +417,26 @@ paths:
                   purchaseAmount: '800'
                   redirectURI: 'http://www.placetopay.com'
                   purchaseCurrency: 'COP'
+              Petición exitosa para solicitar a mpi agregar información del PRIOR:
+                value:
+                  acctNumber: '4009000000502'
+                  cardExpiryDate: '2411'
+                  purchaseAmount: '800'
+                  redirectURI: 'http://www.placetopay.com'
+                  purchaseCurrency: 'COP'
+                  addPriorInformation: 'Y'
+              Petición exitosa enviando la información del PRIOR:
+                value:
+                  acctNumber: '4009000000502'
+                  cardExpiryDate: '2411'
+                  purchaseAmount: '800'
+                  redirectURI: 'http://www.placetopay.com'
+                  purchaseCurrency: 'COP'
+                  threeDSRequestorPriorAuthenticationInfo:
+                    threeDSReqPriorAuthMethod: '02'
+                    threeDSReqPriorAuthTimestamp: '202012121232'
+                    threeDSReqPriorRef: 'c83f3f5d-1a47-4eff-9fd0-6b63090a89c6'
+                    threeDSReqPriorAuthData: '1234565d-1a47-4eff-9fd0-6b63090a3445'
               Petición con recurrencia:
                 value:
                   acctNumber: '4009000000502'
@@ -1405,6 +1438,53 @@ components:
             * 07 = Otro (por ejemplo, juegos, servicios digitales no enviados, suscripciones a emedia, etc.)
           minLength: 2
           maxLength: 2
+    threeDSRequestorPriorAuthenticationInfo:
+      title: threeDSRequestorPriorAuthenticationInfo
+      type: object
+      description: '> Información sobre cómo el 3DS Requestor autenticó al titular de la tarjeta antes o durante la transacción.'
+      x-tags:
+        - Models
+      x-examples:
+        Ejemplo de petición:
+          threeDSReqPriorAuthMethod: 01
+          threeDSReqPriorAuthTimestamp: 202401011212
+          threeDSReqPriorRef: c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+          threeDSReqPriorAuthData: f234f3f5d-1a47-4eff-9fd4-1b62190a89f3
+      properties:
+        threeDSReqPriorAuthMethod:
+          type: string
+          description: |-
+            Método de autenticación usado en la transacción.
+
+            **Valores aceptados:**
+            * 01 – Autenticación sin fricción
+            * 02 – Autenticación con fricción
+          maxLength: 2
+          minLength: 2
+        threeDSReqPriorAuthTimestamp:
+          type: string
+          description: |- 
+            Timestamp de la transacción en UTC
+            
+            **Formatos aceptados:**
+                        * c – 2020-04-21T01:44:54+00:00
+                        * YmdHi – 202401011212
+          minLength: 12
+          maxLength: 12
+        threeDSReqPriorRef:
+          type: string
+          description: |-
+            Contiene el ACS Transaction ID de la transacción anterior que fue autenticada.
+
+            > **Ejemplos de valores aceptados:** c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+          maxLength: 72
+        threeDSReqPriorAuthData:
+          type: string
+          description: |-
+            Contiene el DS Transaction ID de la transacción anterior que fue autenticada.
+
+            > **Ejemplos de valores aceptados:** c83f3f5d-1a47-4eff-9fd0-6b63090a89c6
+          maxLength: 72
   securitySchemes:
     Authorization:
       type: http
@@ -1522,6 +1602,29 @@ components:
                   - 2.1.0
                   - 2.2.0
                 description: Es el número de versión del protocolo 3DS que utiliza el sistema para ejecutar el flujo de autenticación. Esta versión la establece el servidor 3DS con el mensaje AReq y no cambia durante todo el flujo de una transacción.
+              messageCategory:
+                type: string
+                minLength: 2
+                maxLength: 2
+                example: 02
+                enum:
+                  - 01 - 'Payment (01-PA)'
+                  - 02 - 'Non-Payment (02-NPA)'
+                description: Indica la categoria del mensaje.
+              authMethod:
+                type: string
+                minLength: 2
+                maxLength: 2
+                example: 02
+                enum:
+                  - 01 - 'Frictionless'
+                  - 02 - 'Friction'
+                description: Indica si la transacción tuvo o no desafío.
+              authTimestamp:
+                type: string
+                maxLength: 30
+                example: 2020-04-21T01:44:54+00:00
+                description: Indica el timestamp de la autenticacion.
             required:
               - enrolled
               - transStatus
@@ -1530,6 +1633,9 @@ components:
               - dsTransID
               - threeDSServerTransID
               - messageVersion
+              - messageCategory
+              - authMethod
+              - authTimestamp
           examples:
             Respuesta Exitosa:
               value:
@@ -1543,6 +1649,9 @@ components:
                 sdkTransID: null
                 authenticationValue: AJkBAmBANQAAACcPhAI0dAJBQVk=
                 messageVersion: 2.2.0
+                messageCategory: '01'
+                authMethod: '02'
+                authTimestamp: '202103051200'
     unauthorized-response:
       description: |
         > Respuesta recibida: 401 Unauthorized
